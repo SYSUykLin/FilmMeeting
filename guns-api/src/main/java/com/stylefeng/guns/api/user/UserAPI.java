@@ -12,4 +12,8 @@ public interface UserAPI {
 
     boolean checkUsername(String username);
 
+    UserInfoModel getUserInfo(int uuid);
+
+    UserInfoModel updateUserInfo(UserInfoModel userInfoModel);
+
 }

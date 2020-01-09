@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="guns-rest" />
+        <module name="guns-user" />
+        <module name="guns-api" />
+        <module name="guns-gateway" />
+        <module name="guns-admin" />
+        <module name="guns-generator" />
+        <module name="guns-core" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="guns-admin" target="1.8" />
+      <module name="guns-api" target="1.8" />
+      <module name="guns-core" target="1.8" />
+      <module name="guns-gateway" target="1.8" />
+      <module name="guns-generator" target="1.8" />
+      <module name="guns-parent" target="1.8" />
+      <module name="guns-rest" target="1.8" />
+      <module name="guns-user" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="guns-admin" options="-parameters" />
+      <module name="guns-api" options="-parameters" />
+      <module name="guns-core" options="-parameters" />
+      <module name="guns-gateway" options="-parameters" />
+      <module name="guns-generator" options="-parameters" />
+      <module name="guns-rest" options="-parameters" />
+      <module name="guns-user" options="-parameters" />
+    </option>
+  </component>
+</project>

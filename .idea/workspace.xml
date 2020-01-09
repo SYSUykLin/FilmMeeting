@@ -1,0 +1,1513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f1fbc0fb-346e-4439-a5b6-1373b6a9e629" name="Default Changelist" comment="Meeting update">
+      <change afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/guns_gateway_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/guns_gateway_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_101tec_zkclient_0_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_1_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_dubbo_2_6_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_47.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_spring_boot_dubbo_spring_boot_starter_2_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_2_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_core_2_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_generate_2_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_support_2_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatisplus_spring_boot_starter_1_0_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_3_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_9_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_9_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_9_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_penggle_kaptcha_2_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_20_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_2_6_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_zxing_core_3_2_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_ibeetl_beetl_2_8_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jhlabs_filters_2_0_235_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_2_7_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_9_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_0_9_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_micrometer_micrometer_core_1_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_3_7_0_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_core_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_schema_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spi_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spring_web_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger2_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_common_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_ui_2_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_annotations_1_5_20.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_models_1_5_20.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_2_0_1_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jline_jline_0_9_94.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_7_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_7_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_accessors_smart_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_2_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_ehcache_ehcache_core_2_6_11.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_abego_treelayout_org_abego_treelayout_core_1_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_antlr4_annotations_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_antlr4_runtime_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_10_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_10_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_cache_1_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_config_core_1_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_config_ogdl_1_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_core_1_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_crypto_cipher_1_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_crypto_core_1_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_crypto_hash_1_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_ehcache_1_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_event_1_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_lang_1_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_spring_1_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_web_1_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_8_5_29.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_8_5_29.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_8_5_29.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_velocity_velocity_1_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_zookeeper_zookeeper_3_4_8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_9_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ehcache_ehcache_3_3_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_library_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hdrhistogram_HdrHistogram_2_1_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_9_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_20_0_GA.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_2_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_netty_netty_3_2_5_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_latencyutils_LatencyUtils_2_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mapstruct_mapstruct_1_2_0_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_2_15_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_5_0_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_25.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_7_25.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_0_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_2_0_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_autoconfigure_2_0_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_0_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_configuration_processor_2_0_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_devtools_2_0_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_0_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_actuator_2_0_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_0_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_cache_2_0_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_0_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_0_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_0_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_0_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_0_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_validation_2_0_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_0_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_0_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_0_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_core_1_2_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_metadata_1_2_0_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_0_5_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_5_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_19.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/doc/Guns 技术文档 v1.0.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/guns-admin.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/sql/guns.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/GunsApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/GunsServletInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/config/EhCacheConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/config/SpringSessionConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/config/SwaggerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/config/properties/BeetlProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/config/properties/GunsProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/config/web/BeetlConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/config/web/ShiroConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/config/web/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/aop/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/aop/LogAop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/aop/PermissionAop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/beetl/BeetlConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/beetl/ShiroExt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/common/annotion/BussinessLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/common/annotion/Permission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/Const.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/DatasourceEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/cache/Cache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/cache/CacheKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/dictmap/DeleteDict.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/dictmap/DeptDict.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/dictmap/DictMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/dictmap/LogDict.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/dictmap/MenuDict.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/dictmap/NoticeMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/dictmap/RoleDict.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/dictmap/UserDict.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/dictmap/base/AbstractDictMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/dictmap/base/SystemDict.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/dictmap/factory/DictFieldWarpperFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/factory/ConstantFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/factory/IConstantFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/factory/MutiStrFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/factory/PageFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/state/BizLogType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/state/ExpenseState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/state/LogSucceed.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/state/LogType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/state/ManagerStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/state/MenuOpenStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/state/MenuStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/common/constant/state/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/common/exception/BizExceptionEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/common/exception/InvalidKaptchaException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/intercept/GunsUserFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/intercept/SessionHolderInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/listener/ConfigListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/log/LogManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/log/LogObjectHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/log/factory/LogFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/log/factory/LogTaskFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/shiro/ShiroDbRealm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/shiro/ShiroKit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/shiro/ShiroUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/shiro/check/ICheck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/shiro/check/PermissionCheckFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/shiro/check/PermissionCheckManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/shiro/factory/IShiro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/shiro/factory/ShiroFactroy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/tag/DictSelectorTag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/util/ApiMenuFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/util/Contrast.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/core/util/KaptchaUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/code/controller/CodeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/code/factory/DefaultTemplateFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/code/service/TableService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/controller/BlackboardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/controller/DeptController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/controller/DictController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/controller/KaptchaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/controller/LogController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/controller/LoginLogController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/controller/MenuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/controller/NoticeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/controller/RoleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/controller/UserMgrController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/DeptMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/DictMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/ExpenseMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/LoginLogMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/MenuMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/NoticeMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/OperationLogMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/RelationMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/RoleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/DeptMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/DictMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/ExpenseMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/LoginLogMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/MenuMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/NoticeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/OperationLogMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/RelationMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/RoleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/dao/mapping/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/factory/UserFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/model/Dept.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/model/Dict.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/model/Expense.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/model/LoginLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/model/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/model/Notice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/model/OperationLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/model/Relation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/model/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/IDeptService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/IDictService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/ILoginLogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/IMenuService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/INoticeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/IOperationLogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/IRelationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/IRoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/IUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/impl/DeptServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/impl/DictServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/impl/LoginLogServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/impl/MenuServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/impl/NoticeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/impl/OperationLogServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/impl/RelationServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/impl/RoleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/transfer/ManagerUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/transfer/ReqAddManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/transfer/ReqEditManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/transfer/UserDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/warpper/DeptWarpper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/warpper/DictWarpper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/warpper/LogWarpper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/warpper/MenuWarpper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/warpper/NoticeWrapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/warpper/RoleWarpper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/java/com/stylefeng/guns/modular/system/warpper/UserWarpper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/resources/META-INF/spring-devtools.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/resources/ehcache.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/blackboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/code/code.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/common/_container.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/common/_right.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/common/_tab.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/common/_theme.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/common/tags/NameCon.tag" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/common/tags/SelectCon.tag" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/common/tags/TimeCon.tag" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/common/tags/avatar.tag" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/common/tags/button.tag" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/common/tags/input.tag" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/common/tags/select.tag" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/common/tags/table.tag" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/common/tags/tag_tips" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/system/code/code.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/system/dept/dept.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/system/dept/dept_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/system/dept/dept_edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/system/dict/dict.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/system/dict/dict_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/system/dict/dict_edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/system/log/log.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/system/log/login_log.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/system/menu/menu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/system/menu/menu_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/system/menu/menu_edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/system/notice/notice.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/system/notice/notice_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/system/notice/notice_edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/system/role/role.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/system/role/role_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/system/role/role_assign.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/system/role/role_edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/system/user/user.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/system/user/user_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/system/user/user_chpwd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/system/user/user_edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/system/user/user_roleassign.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/WEB-INF/view/system/user/user_view.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/_fstyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/bootstrap-rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/font-awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/patterns/header-profile-skin-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/patterns/header-profile-skin-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/patterns/header-profile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/patterns/shattered.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/plugins/bootstrap-table/bootstrap-table.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/plugins/bootstrap-treetable/bootstrap-treetable.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/plugins/chosen/chosen-sprite.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/plugins/chosen/chosen-sprite@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/plugins/chosen/chosen.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/plugins/iCheck/custom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/plugins/iCheck/green.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/plugins/iCheck/green@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/plugins/images/sprite-skin-flat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/plugins/validate/bootstrapValidator.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/plugins/webuploader/webuploader.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/plugins/ztree/demo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/plugins/ztree/img/diy/1_close.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/plugins/ztree/img/diy/1_open.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/plugins/ztree/img/diy/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/plugins/ztree/img/diy/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/plugins/ztree/img/diy/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/plugins/ztree/img/diy/5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/plugins/ztree/img/diy/6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/plugins/ztree/img/diy/7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/plugins/ztree/img/diy/8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/plugins/ztree/img/diy/9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/plugins/ztree/img/line_conn.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/plugins/ztree/img/loading.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/plugins/ztree/img/zTreeStandard.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/plugins/ztree/img/zTreeStandard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/plugins/ztree/zTreeStyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/img/bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/img/boy.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/img/girl.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/img/icons.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/img/loading-upload.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/img/locked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/img/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/common/DateUtils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/common/Feng.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/common/ajax-object.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/common/bootstrap-table-object.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/common/select-list-object.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/common/tree-table-object.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/common/web-upload-object.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/common/ztree-object.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/contabs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/content.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/hplus.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/jquery.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/bootstrap-table/bootstrap-table.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/bootstrap-treetable/bootstrap-treetable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/chosen/chosen.jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/iCheck/icheck.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/laydate/laydate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/laydate/theme/default/font/iconfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/laydate/theme/default/font/iconfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/laydate/theme/default/font/iconfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/laydate/theme/default/font/iconfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/laydate/theme/default/laydate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/layer/layer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/layer/mobile/layer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/layer/mobile/need/layer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/layer/theme/default/icon-ext.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/layer/theme/default/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/layer/theme/default/layer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/layer/theme/default/loading-0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/layer/theme/default/loading-1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/layer/theme/default/loading-2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/metisMenu/jquery.metisMenu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/pace/pace.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/slimscroll/jquery.slimscroll.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/validate/additional-methods.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/validate/bootstrapValidator.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/validate/zh_CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/wangEditor/wangEditor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/webuploader/Uploader.swf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/webuploader/webuploader.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/webuploader/webuploader.custom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/webuploader/webuploader.custom.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/webuploader/webuploader.fis.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/webuploader/webuploader.flashonly.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/webuploader/webuploader.flashonly.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/webuploader/webuploader.html5only.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/webuploader/webuploader.html5only.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/webuploader/webuploader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/webuploader/webuploader.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/webuploader/webuploader.noimage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/webuploader/webuploader.noimage.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/webuploader/webuploader.nolog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/webuploader/webuploader.nolog.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/webuploader/webuploader.withoutimage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/webuploader/webuploader.withoutimage.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/js/plugins/ztree/jquery.ztree.all.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/modular/code/gen.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/modular/flowable/expense/expense.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/modular/flowable/expense/expense_info.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/modular/flowable/process/process.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/modular/flowable/process/process_info.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/modular/system/code/code.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/modular/system/dept/dept.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/modular/system/dept/dept_info.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/modular/system/dict/dict.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/modular/system/dict/dict_info.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/modular/system/log/log.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/modular/system/log/login_log.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/modular/system/menu/menu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/modular/system/menu/menu_info.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/modular/system/notice/notice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/modular/system/notice/notice_info.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/modular/system/role/role.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/modular/system/role/role_info.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/modular/system/user/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/main/webapp/static/modular/system/user/user_info.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/test/java/com/stylefeng/guns/base/BaseJunit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/test/java/com/stylefeng/guns/shiro/Base64Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/test/java/com/stylefeng/guns/system/BlackBoardTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/test/java/com/stylefeng/guns/system/DeptTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/test/java/com/stylefeng/guns/system/DictTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/test/java/com/stylefeng/guns/system/MenuTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/src/test/java/com/stylefeng/guns/system/UserTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/META-INF/spring-configuration-metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/META-INF/spring-devtools.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/blackboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/code/code.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/common/_container.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/common/_right.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/common/_tab.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/common/_theme.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/common/tags/NameCon.tag" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/common/tags/SelectCon.tag" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/common/tags/TimeCon.tag" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/common/tags/avatar.tag" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/common/tags/button.tag" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/common/tags/input.tag" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/common/tags/select.tag" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/common/tags/table.tag" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/common/tags/tag_tips" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/system/code/code.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/system/dept/dept.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/system/dept/dept_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/system/dept/dept_edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/system/dict/dict.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/system/dict/dict_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/system/dict/dict_edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/system/log/log.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/system/log/login_log.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/system/menu/menu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/system/menu/menu_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/system/menu/menu_edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/system/notice/notice.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/system/notice/notice_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/system/notice/notice_edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/system/role/role.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/system/role/role_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/system/role/role_assign.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/system/role/role_edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/system/user/user.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/system/user/user_add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/system/user/user_chpwd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/system/user/user_edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/system/user/user_roleassign.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/WEB-INF/view/system/user/user_view.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/GunsApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/GunsServletInitializer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/config/EhCacheConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/config/SpringSessionConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/config/SwaggerConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/config/properties/BeetlProperties.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/config/properties/GunsProperties.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/config/web/BeetlConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/config/web/ShiroConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/config/web/WebConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/aop/GlobalExceptionHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/aop/LogAop.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/aop/PermissionAop.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/beetl/BeetlConfiguration$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/beetl/BeetlConfiguration$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/beetl/BeetlConfiguration.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/beetl/ShiroExt.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/common/annotion/BussinessLog.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/common/annotion/Permission.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/common/constant/Const.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/common/constant/DatasourceEnum.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/common/constant/cache/Cache.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/common/constant/cache/CacheKey.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/common/constant/dictmap/DeleteDict.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/common/constant/dictmap/DeptDict.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/common/constant/dictmap/DictMap.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/common/constant/dictmap/LogDict.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/common/constant/dictmap/MenuDict.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/common/constant/dictmap/NoticeMap.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/common/constant/dictmap/RoleDict.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/common/constant/dictmap/UserDict.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/common/constant/dictmap/base/AbstractDictMap.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/common/constant/dictmap/base/SystemDict.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/common/constant/dictmap/factory/DictFieldWarpperFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/common/constant/factory/ConstantFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/common/constant/factory/IConstantFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/common/constant/factory/MutiStrFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/common/constant/factory/PageFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/common/constant/state/BizLogType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/common/constant/state/ExpenseState.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/common/constant/state/LogSucceed.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/common/constant/state/LogType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/common/constant/state/ManagerStatus.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/common/constant/state/MenuOpenStatus.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/common/constant/state/MenuStatus.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/common/constant/state/Order.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/common/exception/BizExceptionEnum.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/common/exception/InvalidKaptchaException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/intercept/GunsUserFilter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/intercept/SessionHolderInterceptor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/listener/ConfigListener.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/log/LogManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/log/LogObjectHolder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/log/factory/LogFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/log/factory/LogTaskFactory$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/log/factory/LogTaskFactory$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/log/factory/LogTaskFactory$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/log/factory/LogTaskFactory$4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/log/factory/LogTaskFactory$5.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/log/factory/LogTaskFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/shiro/ShiroDbRealm.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/shiro/ShiroKit.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/shiro/ShiroUser.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/shiro/check/ICheck.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/shiro/check/PermissionCheckFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/shiro/check/PermissionCheckManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/shiro/factory/IShiro.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/shiro/factory/ShiroFactroy.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/tag/DictSelectorTag.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/util/ApiMenuFilter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/util/Contrast.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/core/util/KaptchaUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/code/controller/CodeController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/code/factory/DefaultTemplateFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/code/service/TableService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/controller/BlackboardController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/controller/DeptController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/controller/DictController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/controller/KaptchaController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/controller/LogController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/controller/LoginController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/controller/LoginLogController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/controller/MenuController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/controller/NoticeController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/controller/RoleController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/controller/UserMgrController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/dao/DeptMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/dao/DictMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/dao/ExpenseMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/dao/LoginLogMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/dao/MenuMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/dao/NoticeMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/dao/OperationLogMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/dao/RelationMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/dao/RoleMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/dao/UserMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/dao/mapping/DeptMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/dao/mapping/DictMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/dao/mapping/ExpenseMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/dao/mapping/LoginLogMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/dao/mapping/MenuMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/dao/mapping/NoticeMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/dao/mapping/OperationLogMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/dao/mapping/RelationMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/dao/mapping/RoleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/dao/mapping/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/factory/UserFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/model/Dept.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/model/Dict.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/model/Expense.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/model/LoginLog.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/model/Menu.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/model/Notice.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/model/OperationLog.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/model/Relation.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/model/Role.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/model/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/service/IDeptService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/service/IDictService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/service/ILoginLogService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/service/IMenuService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/service/INoticeService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/service/IOperationLogService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/service/IRelationService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/service/IRoleService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/service/IUserService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/service/impl/DeptServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/service/impl/DictServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/service/impl/LoginLogServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/service/impl/MenuServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/service/impl/NoticeServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/service/impl/OperationLogServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/service/impl/RelationServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/service/impl/RoleServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/transfer/ManagerUser.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/transfer/ReqAddManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/transfer/ReqEditManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/transfer/UserDto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/warpper/DeptWarpper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/warpper/DictWarpper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/warpper/LogWarpper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/warpper/MenuWarpper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/warpper/NoticeWrapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/warpper/RoleWarpper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/com/stylefeng/guns/modular/system/warpper/UserWarpper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/ehcache.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/logback-spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/_fstyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/bootstrap-rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/font-awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/patterns/header-profile-skin-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/patterns/header-profile-skin-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/patterns/header-profile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/patterns/shattered.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/plugins/bootstrap-table/bootstrap-table.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/plugins/bootstrap-treetable/bootstrap-treetable.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/plugins/chosen/chosen-sprite.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/plugins/chosen/chosen-sprite@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/plugins/chosen/chosen.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/plugins/iCheck/custom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/plugins/iCheck/green.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/plugins/iCheck/green@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/plugins/images/sprite-skin-flat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/plugins/validate/bootstrapValidator.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/plugins/webuploader/webuploader.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/plugins/ztree/demo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/plugins/ztree/img/diy/1_close.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/plugins/ztree/img/diy/1_open.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/plugins/ztree/img/diy/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/plugins/ztree/img/diy/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/plugins/ztree/img/diy/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/plugins/ztree/img/diy/5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/plugins/ztree/img/diy/6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/plugins/ztree/img/diy/7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/plugins/ztree/img/diy/8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/plugins/ztree/img/diy/9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/plugins/ztree/img/line_conn.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/plugins/ztree/img/loading.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/plugins/ztree/img/zTreeStandard.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/plugins/ztree/img/zTreeStandard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/plugins/ztree/zTreeStyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/img/bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/img/boy.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/img/girl.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/img/icons.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/img/loading-upload.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/img/locked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/img/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/common/DateUtils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/common/Feng.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/common/ajax-object.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/common/bootstrap-table-object.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/common/select-list-object.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/common/tree-table-object.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/common/web-upload-object.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/common/ztree-object.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/contabs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/content.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/hplus.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/jquery.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/bootstrap-table/bootstrap-table.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/bootstrap-treetable/bootstrap-treetable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/chosen/chosen.jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/iCheck/icheck.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/laydate/laydate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/laydate/theme/default/font/iconfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/laydate/theme/default/font/iconfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/laydate/theme/default/font/iconfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/laydate/theme/default/font/iconfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/laydate/theme/default/laydate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/layer/layer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/layer/mobile/layer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/layer/mobile/need/layer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/layer/theme/default/icon-ext.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/layer/theme/default/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/layer/theme/default/layer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/layer/theme/default/loading-0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/layer/theme/default/loading-1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/layer/theme/default/loading-2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/metisMenu/jquery.metisMenu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/pace/pace.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/slimscroll/jquery.slimscroll.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/validate/additional-methods.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/validate/bootstrapValidator.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/validate/zh_CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/wangEditor/wangEditor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/webuploader/Uploader.swf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/webuploader/webuploader.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/webuploader/webuploader.custom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/webuploader/webuploader.custom.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/webuploader/webuploader.fis.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/webuploader/webuploader.flashonly.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/webuploader/webuploader.flashonly.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/webuploader/webuploader.html5only.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/webuploader/webuploader.html5only.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/webuploader/webuploader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/webuploader/webuploader.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/webuploader/webuploader.noimage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/webuploader/webuploader.noimage.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/webuploader/webuploader.nolog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/webuploader/webuploader.nolog.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/webuploader/webuploader.withoutimage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/webuploader/webuploader.withoutimage.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/js/plugins/ztree/jquery.ztree.all.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/modular/code/gen.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/modular/flowable/expense/expense.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/modular/flowable/expense/expense_info.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/modular/flowable/process/process.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/modular/flowable/process/process_info.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/modular/system/code/code.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/modular/system/dept/dept.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/modular/system/dept/dept_info.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/modular/system/dict/dict.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/modular/system/dict/dict_info.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/modular/system/log/log.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/modular/system/log/login_log.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/modular/system/menu/menu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/modular/system/menu/menu_info.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/modular/system/notice/notice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/modular/system/notice/notice_info.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/modular/system/role/role.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/modular/system/role/role_info.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/modular/system/user/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/classes/static/modular/system/user/user_info.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/guns-admin-1.0.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/guns-admin-1.0.0.jar.original" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/test-classes/com/stylefeng/guns/base/BaseJunit.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/test-classes/com/stylefeng/guns/shiro/Base64Test.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/test-classes/com/stylefeng/guns/system/BlackBoardTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/test-classes/com/stylefeng/guns/system/DeptTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/test-classes/com/stylefeng/guns/system/DictTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/test-classes/com/stylefeng/guns/system/MenuTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-admin/target/test-classes/com/stylefeng/guns/system/UserTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-api/guns-api.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-api/guns-core.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-api/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/user/UserAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/user/UserModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-api/src/main/resources/META-INF/spring.factories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-api/src/main/resources/default-config.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-api/target/classes/META-INF/spring.factories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-api/target/classes/com/stylefeng/guns/api/user/UserAPI.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-api/target/classes/default-config.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-api/target/guns-api-1.0.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-api/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/guns-core.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/CoreFlag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/aop/BaseControllerExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/base/controller/BaseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/base/controller/GlobalController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/base/controller/GunsErrorView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/base/tips/ErrorTip.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/base/tips/SuccessTip.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/base/tips/Tip.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/base/warpper/BaseControllerWarpper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/cache/BaseCacheFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/cache/CacheKit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/cache/EhcacheFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/cache/ICache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/cache/ILoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/config/DefaultFastjsonConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/config/DefaultMultiConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/config/DefaultProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/config/DefaultWebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/config/MultiDataSourceConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/config/SingleDataSourceConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/config/properties/DruidProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/config/properties/MutiDataSourceProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/constant/IsMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/datascope/DataScope.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/datascope/DataScopeInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/db/Db.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/exception/GunsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/exception/GunsExceptionEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/exception/ServiceExceptionEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/mutidatasource/DataSourceContextHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/mutidatasource/DynamicDataSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/mutidatasource/annotion/DataSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/mutidatasource/aop/MultiSourceExAop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/node/MenuNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/node/ZTreeNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/page/PageBT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/page/PageInfoBT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/qr/ImgQrTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/qr/MatrixToImageConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/qr/MatrixToImageWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/qr/QrImage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/support/BasicType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/support/BeanKit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/support/ClassKit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/support/CollectionKit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/support/DateTime.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/support/DateTimeKit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/support/HexKit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/support/HttpKit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/support/ObjectKit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/support/PageKit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/support/StrKit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/support/WafKit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/support/WafRequestWrapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/support/exception/ToolBoxException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/util/Convert.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/util/DateUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/util/FileUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/util/HttpSessionHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/util/IdGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/util/MD5Util.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/util/NumUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/util/PingYinUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/util/RenderUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/util/ResKit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/util/SimpleContrast.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/util/SpringContextHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/util/SqlUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/util/ToolUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/xss/XssFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/java/com/stylefeng/guns/core/xss/XssHttpServletRequestWrapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/resources/META-INF/spring.factories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/src/main/resources/default-config.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/META-INF/spring-configuration-metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/META-INF/spring.factories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/CoreFlag.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/aop/BaseControllerExceptionHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/base/controller/BaseController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/base/controller/GlobalController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/base/controller/GunsErrorView.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/base/tips/ErrorTip.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/base/tips/SuccessTip.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/base/tips/Tip.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/base/warpper/BaseControllerWarpper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/cache/BaseCacheFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/cache/CacheKit.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/cache/EhcacheFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/cache/ICache.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/cache/ILoader.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/config/DefaultFastjsonConfig$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/config/DefaultFastjsonConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/config/DefaultMultiConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/config/DefaultProperties.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/config/DefaultWebConfig$StringToDateConverter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/config/DefaultWebConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/config/MultiDataSourceConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/config/SingleDataSourceConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/config/properties/DruidProperties.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/config/properties/MutiDataSourceProperties.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/constant/IsMenu.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/datascope/DataScope.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/datascope/DataScopeInterceptor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/db/Db.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/exception/GunsException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/exception/GunsExceptionEnum.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/exception/ServiceExceptionEnum.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/mutidatasource/DataSourceContextHolder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/mutidatasource/DynamicDataSource.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/mutidatasource/annotion/DataSource.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/mutidatasource/aop/MultiSourceExAop.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/node/MenuNode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/node/ZTreeNode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/page/PageBT.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/page/PageInfoBT.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/qr/ImgQrTool.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/qr/MatrixToImageConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/qr/MatrixToImageWriter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/qr/QrImage$Builder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/qr/QrImage.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/support/BasicType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/support/BeanKit$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/support/BeanKit$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/support/BeanKit$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/support/BeanKit$CopyOptions.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/support/BeanKit$ValueProvider.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/support/BeanKit.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/support/ClassKit.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/support/CollectionKit$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/support/CollectionKit.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/support/DateTime.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/support/DateTimeKit$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/support/DateTimeKit$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/support/DateTimeKit$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/support/DateTimeKit$4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/support/DateTimeKit$Timer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/support/DateTimeKit.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/support/HexKit.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/support/HttpKit.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/support/ObjectKit.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/support/PageKit.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/support/StrKit.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/support/WafKit.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/support/WafRequestWrapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/support/exception/ToolBoxException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/util/Convert$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/util/Convert.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/util/DateUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/util/FileUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/util/HttpSessionHolder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/util/IdGenerator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/util/MD5Util.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/util/NumUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/util/PingYinUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/util/RenderUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/util/ResKit.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/util/SimpleContrast.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/util/SpringContextHolder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/util/SqlUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/util/ToolUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/xss/XssFilter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/com/stylefeng/guns/core/xss/XssHttpServletRequestWrapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/classes/default-config.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/guns-core-1.0.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-core/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/guns-gateway.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/GatewayApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/GunsRestServletInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/common/SimpleObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/common/aop/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/common/exception/BizExceptionEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/mapping/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/common/persistence/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/config/MessageConverConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/config/MybatisPlusConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/config/properties/JwtProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/config/properties/RestProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/auth/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/auth/controller/dto/AuthRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/auth/controller/dto/AuthResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/auth/converter/BaseTransferEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/auth/converter/WithSignMessageConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/auth/filter/AuthFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/auth/security/DataSecurityAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/auth/security/impl/Base64SecurityAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/auth/util/JwtTokenUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/auth/validator/IReqValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/auth/validator/dto/Credence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/auth/validator/impl/DbValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/auth/validator/impl/SimpleValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/example/ExampleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/test/java/com/stylefeng/guns/GunsRestApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/test/java/com/stylefeng/guns/fastjson/JsonTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/test/java/com/stylefeng/guns/generator/EntityGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/test/java/com/stylefeng/guns/jwt/DecryptTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/test/java/com/stylefeng/guns/jwt/JWTTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/classes/META-INF/guns-gateway.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/classes/META-INF/spring-configuration-metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/classes/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/GatewayApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/GunsRestServletInitializer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/common/SimpleObject.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/common/aop/GlobalExceptionHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/common/exception/BizExceptionEnum.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/common/persistence/dao/UserMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/common/persistence/dao/mapping/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/common/persistence/model/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/config/MessageConverConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/config/MybatisPlusConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/config/WebConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/config/properties/JwtProperties.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/config/properties/RestProperties.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/Client.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/auth/controller/AuthController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/auth/controller/dto/AuthRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/auth/controller/dto/AuthResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/auth/converter/BaseTransferEntity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/auth/converter/WithSignMessageConverter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/auth/filter/AuthFilter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/auth/security/DataSecurityAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/auth/security/impl/Base64SecurityAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/auth/util/JwtTokenUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/auth/validator/IReqValidator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/auth/validator/dto/Credence.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/auth/validator/impl/DbValidator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/auth/validator/impl/SimpleValidator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/example/ExampleController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/test-classes/com/stylefeng/guns/GunsRestApplicationTests.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/test-classes/com/stylefeng/guns/fastjson/JsonTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/test-classes/com/stylefeng/guns/generator/EntityGenerator$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/test-classes/com/stylefeng/guns/generator/EntityGenerator$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/test-classes/com/stylefeng/guns/generator/EntityGenerator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/test-classes/com/stylefeng/guns/jwt/DecryptTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/target/test-classes/com/stylefeng/guns/jwt/JWTTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/guns-generator.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/src/main/java/com/stylefeng/guns/generator/action/GunsCodeGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/src/main/java/com/stylefeng/guns/generator/action/config/AbstractGeneratorConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/src/main/java/com/stylefeng/guns/generator/action/config/GunsGeneratorConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/src/main/java/com/stylefeng/guns/generator/action/config/WebGeneratorConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/src/main/java/com/stylefeng/guns/generator/action/model/GenQo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/src/main/java/com/stylefeng/guns/generator/engine/SimpleTemplateEngine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/src/main/java/com/stylefeng/guns/generator/engine/base/AbstractTemplateEngine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/src/main/java/com/stylefeng/guns/generator/engine/base/GunsTemplateEngine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/src/main/java/com/stylefeng/guns/generator/engine/config/ContextConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/src/main/java/com/stylefeng/guns/generator/engine/config/ControllerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/src/main/java/com/stylefeng/guns/generator/engine/config/DaoConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/src/main/java/com/stylefeng/guns/generator/engine/config/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/src/main/java/com/stylefeng/guns/generator/engine/config/PageConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/src/main/java/com/stylefeng/guns/generator/engine/config/ServiceConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/src/main/java/com/stylefeng/guns/generator/engine/config/SqlConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/src/main/resources/gunsTemplate/advanced/Controller.java.btl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/src/main/resources/gunsTemplate/advanced/menu_sql.sql.btl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/src/main/resources/gunsTemplate/advanced/page.html.btl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/src/main/resources/gunsTemplate/advanced/page.js.btl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/src/main/resources/gunsTemplate/advanced/page_add.html.btl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/src/main/resources/gunsTemplate/advanced/page_edit.html.btl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/src/main/resources/gunsTemplate/advanced/page_info.js.btl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/target/classes/com/stylefeng/guns/generator/action/GunsCodeGenerator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/target/classes/com/stylefeng/guns/generator/action/config/AbstractGeneratorConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/target/classes/com/stylefeng/guns/generator/action/config/GunsGeneratorConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/target/classes/com/stylefeng/guns/generator/action/config/WebGeneratorConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/target/classes/com/stylefeng/guns/generator/action/model/GenQo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/target/classes/com/stylefeng/guns/generator/engine/SimpleTemplateEngine.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/target/classes/com/stylefeng/guns/generator/engine/base/AbstractTemplateEngine.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/target/classes/com/stylefeng/guns/generator/engine/base/GunsTemplateEngine.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/target/classes/com/stylefeng/guns/generator/engine/config/ContextConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/target/classes/com/stylefeng/guns/generator/engine/config/ControllerConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/target/classes/com/stylefeng/guns/generator/engine/config/DaoConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/target/classes/com/stylefeng/guns/generator/engine/config/Menu.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/target/classes/com/stylefeng/guns/generator/engine/config/PageConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/target/classes/com/stylefeng/guns/generator/engine/config/ServiceConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/target/classes/com/stylefeng/guns/generator/engine/config/SqlConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/target/classes/gunsTemplate/advanced/Controller.java.btl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/target/classes/gunsTemplate/advanced/menu_sql.sql.btl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/target/classes/gunsTemplate/advanced/page.html.btl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/target/classes/gunsTemplate/advanced/page.js.btl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/target/classes/gunsTemplate/advanced/page_add.html.btl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/target/classes/gunsTemplate/advanced/page_edit.html.btl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/target/classes/gunsTemplate/advanced/page_info.js.btl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/target/guns-generator-1.0.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-generator/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-parent.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest.log.2020-01-08.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/db/guns_rest.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/guns-rest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/src/main/java/com/stylefeng/guns/rest/GunsRestApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/src/main/java/com/stylefeng/guns/rest/GunsRestServletInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/src/main/java/com/stylefeng/guns/rest/common/SimpleObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/src/main/java/com/stylefeng/guns/rest/common/aop/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/src/main/java/com/stylefeng/guns/rest/common/exception/BizExceptionEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/mapping/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/src/main/java/com/stylefeng/guns/rest/common/persistence/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/src/main/java/com/stylefeng/guns/rest/config/MessageConverConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/src/main/java/com/stylefeng/guns/rest/config/MybatisPlusConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/src/main/java/com/stylefeng/guns/rest/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/src/main/java/com/stylefeng/guns/rest/config/properties/JwtProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/src/main/java/com/stylefeng/guns/rest/config/properties/RestProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/src/main/java/com/stylefeng/guns/rest/modular/auth/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/src/main/java/com/stylefeng/guns/rest/modular/auth/controller/dto/AuthRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/src/main/java/com/stylefeng/guns/rest/modular/auth/controller/dto/AuthResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/src/main/java/com/stylefeng/guns/rest/modular/auth/converter/BaseTransferEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/src/main/java/com/stylefeng/guns/rest/modular/auth/converter/WithSignMessageConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/src/main/java/com/stylefeng/guns/rest/modular/auth/filter/AuthFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/src/main/java/com/stylefeng/guns/rest/modular/auth/security/DataSecurityAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/src/main/java/com/stylefeng/guns/rest/modular/auth/security/impl/Base64SecurityAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/src/main/java/com/stylefeng/guns/rest/modular/auth/util/JwtTokenUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/src/main/java/com/stylefeng/guns/rest/modular/auth/validator/IReqValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/src/main/java/com/stylefeng/guns/rest/modular/auth/validator/dto/Credence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/src/main/java/com/stylefeng/guns/rest/modular/auth/validator/impl/DbValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/src/main/java/com/stylefeng/guns/rest/modular/auth/validator/impl/SimpleValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/src/main/java/com/stylefeng/guns/rest/modular/example/ExampleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/src/test/java/com/stylefeng/guns/GunsRestApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/src/test/java/com/stylefeng/guns/fastjson/JsonTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/src/test/java/com/stylefeng/guns/generator/EntityGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/src/test/java/com/stylefeng/guns/jwt/DecryptTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest/src/test/java/com/stylefeng/guns/jwt/JWTTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/guns-user.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/GunsRestServletInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/UserApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/common/SimpleObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/common/aop/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/common/exception/BizExceptionEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/mapping/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/common/persistence/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/config/MessageConverConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/config/MybatisPlusConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/config/properties/JwtProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/config/properties/RestProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/modular/auth/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/modular/auth/controller/dto/AuthRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/modular/auth/controller/dto/AuthResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/modular/auth/converter/BaseTransferEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/modular/auth/converter/WithSignMessageConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/modular/auth/filter/AuthFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/modular/auth/security/DataSecurityAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/modular/auth/security/impl/Base64SecurityAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/modular/auth/util/JwtTokenUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/modular/auth/validator/IReqValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/modular/auth/validator/dto/Credence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/modular/auth/validator/impl/DbValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/modular/auth/validator/impl/SimpleValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/modular/example/ExampleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/modular/user/UserImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/test/java/com/stylefeng/guns/GunsRestApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/test/java/com/stylefeng/guns/fastjson/JsonTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/test/java/com/stylefeng/guns/generator/EntityGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/test/java/com/stylefeng/guns/jwt/DecryptTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/test/java/com/stylefeng/guns/jwt/JWTTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/classes/META-INF/spring-configuration-metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/classes/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/GunsRestServletInitializer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/UserApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/common/SimpleObject.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/common/aop/GlobalExceptionHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/common/exception/BizExceptionEnum.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/common/persistence/dao/UserMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/common/persistence/dao/mapping/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/common/persistence/model/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/config/MessageConverConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/config/MybatisPlusConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/config/WebConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/config/properties/JwtProperties.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/config/properties/RestProperties.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/controller/AuthController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/controller/dto/AuthRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/controller/dto/AuthResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/converter/BaseTransferEntity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/converter/WithSignMessageConverter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/filter/AuthFilter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/security/DataSecurityAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/security/impl/Base64SecurityAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/util/JwtTokenUtil.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/validator/IReqValidator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/validator/dto/Credence.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/validator/impl/DbValidator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/validator/impl/SimpleValidator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/example/ExampleController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/user/UserImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/test-classes/com/stylefeng/guns/GunsRestApplicationTests.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/test-classes/com/stylefeng/guns/fastjson/JsonTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/test-classes/com/stylefeng/guns/generator/EntityGenerator$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/test-classes/com/stylefeng/guns/generator/EntityGenerator$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/test-classes/com/stylefeng/guns/generator/EntityGenerator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/test-classes/com/stylefeng/guns/jwt/DecryptTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/target/test-classes/com/stylefeng/guns/jwt/JWTTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
+  <component name="ProjectId" id="1W6hn3Eq2ZqTSaXRnqJ2V9o0Kim" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.runner" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.stylefeng.guns.api.user" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.GatewayApplication">
+    <configuration name="[order]" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="install" />
+                <option value="-DskipTests" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$USER_HOME$/Downloads/Google Docs/guns" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="guns-gateway" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.stylefeng.guns.rest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.stylefeng.guns.rest.GatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GunsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="guns-admin" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.stylefeng.guns.GunsApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GunsRestApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="guns-rest" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.stylefeng.guns.rest.GunsRestApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="guns-user" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.stylefeng.guns.rest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.stylefeng.guns.rest.UserApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Maven.[order]" />
+      <item itemvalue="Spring Boot.GunsApplication" />
+      <item itemvalue="Spring Boot.GunsRestApplication" />
+      <item itemvalue="Spring Boot.UserApplication" />
+      <item itemvalue="Spring Boot.GatewayApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.GatewayApplication" />
+        <item itemvalue="Spring Boot.UserApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f1fbc0fb-346e-4439-a5b6-1373b6a9e629" name="Default Changelist" comment="" />
+      <created>1578476116196</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578476116196</updated>
+      <workItem from="1578476132001" duration="5440000" />
+      <workItem from="1578494934354" duration="40000" />
+      <workItem from="1578495054645" duration="3899000" />
+      <workItem from="1578543185379" duration="8940000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Meeting update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Meeting update" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="320" y="117" key="#Inspections" timestamp="1578493411691">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="117" key="#Inspections/0.0.1440.900@0.0.1440.900" timestamp="1578493411691" />
+    <state x="182" y="117" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578543489662">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="182" y="117" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1578543489662" />
+    <state x="533" y="162" key="#com.intellij.ide.util.MemberChooser" timestamp="1578558123568">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="533" y="162" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1578558123568" />
+    <state x="293" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1578549988232">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="293" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900@0.0.1440.900" timestamp="1578549988232" />
+    <state x="458" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1578499476566">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="458" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1578499476566" />
+    <state x="230" y="23" key="CommitChangelistDialog2" timestamp="1578565959812">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="230" y="23" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1578565959812" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1578557988979">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1578557988979" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.23.1440.777@0.23.1440.777" timestamp="1578549159556" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1578557988976">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1578557988976" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.23.1440.777@0.23.1440.777" timestamp="1578549159553" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1578557988975">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1578557988975" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.23.1440.777@0.23.1440.777" timestamp="1578549159550" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1578557988978">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1578557988978" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.23.1440.777@0.23.1440.777" timestamp="1578549159555" />
+    <state width="1398" height="245" key="GridCell.Tab.1.bottom" timestamp="1578557988983">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1578557988983" />
+    <state width="1398" height="245" key="GridCell.Tab.1.bottom/0.23.1440.777@0.23.1440.777" timestamp="1578479085142" />
+    <state width="1398" height="245" key="GridCell.Tab.1.center" timestamp="1578557988982">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1578557988982" />
+    <state width="1398" height="245" key="GridCell.Tab.1.center/0.23.1440.777@0.23.1440.777" timestamp="1578479085137" />
+    <state width="1398" height="245" key="GridCell.Tab.1.left" timestamp="1578557988981">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1578557988981" />
+    <state width="1398" height="245" key="GridCell.Tab.1.left/0.23.1440.777@0.23.1440.777" timestamp="1578479085136" />
+    <state width="1398" height="245" key="GridCell.Tab.1.right" timestamp="1578557988982">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1578557988982" />
+    <state width="1398" height="245" key="GridCell.Tab.1.right/0.23.1440.777@0.23.1440.777" timestamp="1578479085141" />
+    <state x="126" y="75" width="1024" height="777" key="SettingsEditor" timestamp="1578546876223">
+      <screen x="0" y="23" width="1440" height="777" />
+    </state>
+    <state x="126" y="60" width="1024" height="777" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1578543687984" />
+    <state x="126" y="75" key="SettingsEditor/0.23.1440.777@0.23.1440.777" timestamp="1578546876223" />
+  </component>
+</project>

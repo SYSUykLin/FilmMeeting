@@ -1,0 +1,82 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.stylefeng.guns.config.properties.BeetlProperties",
+      "name": "beetl",
+      "type": "com.stylefeng.guns.config.properties.BeetlProperties"
+    },
+    {
+      "sourceType": "com.stylefeng.guns.config.properties.GunsProperties",
+      "name": "guns",
+      "type": "com.stylefeng.guns.config.properties.GunsProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.stylefeng.guns.config.properties.BeetlProperties",
+      "name": "beetl.delimiter-statement-end",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.stylefeng.guns.config.properties.BeetlProperties",
+      "name": "beetl.delimiter-statement-start",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.stylefeng.guns.config.properties.BeetlProperties",
+      "name": "beetl.properties",
+      "type": "java.util.Properties"
+    },
+    {
+      "sourceType": "com.stylefeng.guns.config.properties.BeetlProperties",
+      "name": "beetl.resource-auto-check",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.stylefeng.guns.config.properties.BeetlProperties",
+      "name": "beetl.resource-tagroot",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.stylefeng.guns.config.properties.BeetlProperties",
+      "name": "beetl.resource-tagsuffix",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.stylefeng.guns.config.properties.GunsProperties",
+      "name": "guns.file-upload-path",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.stylefeng.guns.config.properties.GunsProperties",
+      "defaultValue": false,
+      "name": "guns.kaptcha-open",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.stylefeng.guns.config.properties.GunsProperties",
+      "name": "guns.session-invalidate-time",
+      "description": "session 失效时间（默认为30分钟 单位：秒）",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.stylefeng.guns.config.properties.GunsProperties",
+      "name": "guns.session-validation-interval",
+      "description": "session 验证失效时间（默认为15分钟 单位：秒）",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.stylefeng.guns.config.properties.GunsProperties",
+      "defaultValue": false,
+      "name": "guns.spring-session-open",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.stylefeng.guns.config.properties.GunsProperties",
+      "defaultValue": false,
+      "name": "guns.swagger-open",
+      "type": "java.lang.Boolean"
+    }
+  ]
+}

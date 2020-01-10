@@ -16,6 +16,7 @@
     </parent>
 
     <dependencies>
+
         <dependency>
             <groupId>com.stylefeng</groupId>
             <artifactId>guns-core</artifactId>

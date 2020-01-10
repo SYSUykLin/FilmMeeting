@@ -32,7 +32,7 @@ public class AuthController {
     public ResponseVO createAuthenticationToken(AuthRequest authRequest) {
 
         boolean validate = true;
-        int userId = userAPI.login(authRequest.getUserName(), authRequest.getPassword());
+        int userId = 3;//userAPI.login(authRequest.getUserName(), authRequest.getPassword());
 
         /**
          * userId最低就为2

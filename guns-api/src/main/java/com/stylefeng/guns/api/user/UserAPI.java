@@ -6,7 +6,13 @@ package com.stylefeng.guns.api.user;
  * @date 2020/1/8 6:21 PM
  */
 public interface UserAPI {
-    boolean login(String userName, String password);
+    /**
+     * return user uid
+     * @param userName
+     * @param password
+     * @return
+     */
+    int login(String userName, String password);
 
     boolean register(UserModel userModel);
 

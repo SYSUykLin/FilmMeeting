@@ -2,55 +2,111 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1fbc0fb-346e-4439-a5b6-1373b6a9e629" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/guns-rest.log.2020-01-09.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/user/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest.log.2020-01-10.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/TTT/IUserTService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/TTT/UserTController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/TTT/UserTServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/UserTMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/mapping/UserTMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/common/persistence/model/UserT.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-api/target/classes/com/stylefeng/guns/api/user/UserAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/guns-api/target/classes/com/stylefeng/guns/api/user/UserAPI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-api/target/guns-api-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/guns-api/target/guns-api-1.0.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/guns-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/guns-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-gateway/guns-gateway.iml" beforeDir="false" afterPath="$PROJECT_DIR$/guns-gateway/guns-gateway.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/guns-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-admin/target/guns-admin-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/guns-admin/target/guns-admin-1.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-admin/target/guns-admin-1.0.0.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/guns-admin/target/guns-admin-1.0.0.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/user/UserInfoModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/user/UserInfoModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-api/target/classes/META-INF/spring.factories" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-api/target/classes/com/stylefeng/guns/api/user/UserAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-api/target/classes/default-config.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-api/target/guns-api-1.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-api/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-core/target/guns-core-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/guns-core/target/guns-core-1.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/auth/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/auth/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/example/ExampleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/example/ExampleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/vo/ResponseVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/vo/ResponseVO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/guns-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/guns-gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/META-INF/spring-configuration-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/guns-gateway/target/classes/META-INF/spring-configuration-metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/guns-gateway/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/config/properties/JwtProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/config/properties/JwtProperties.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/auth/controller/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/auth/controller/AuthController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/auth/filter/AuthFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/auth/filter/AuthFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/example/ExampleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/example/ExampleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-generator/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/guns-generator/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/META-INF/guns-gateway.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/META-INF/spring-configuration-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/GatewayApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/GunsRestServletInitializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/common/SimpleObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/common/aop/GlobalExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/common/exception/BizExceptionEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/common/persistence/dao/UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/common/persistence/dao/mapping/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/common/persistence/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/config/MessageConverConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/config/MybatisPlusConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/config/WebConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/config/properties/JwtProperties.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/config/properties/RestProperties.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/auth/controller/AuthController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/auth/controller/dto/AuthRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/auth/controller/dto/AuthResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/auth/converter/BaseTransferEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/auth/converter/WithSignMessageConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/auth/filter/AuthFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/auth/security/DataSecurityAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/auth/security/impl/Base64SecurityAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/auth/util/JwtTokenUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/auth/validator/IReqValidator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/auth/validator/dto/Credence.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/auth/validator/impl/DbValidator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/auth/validator/impl/SimpleValidator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/classes/com/stylefeng/guns/rest/modular/example/ExampleController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/test-classes/com/stylefeng/guns/GunsRestApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/test-classes/com/stylefeng/guns/fastjson/JsonTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/test-classes/com/stylefeng/guns/generator/EntityGenerator$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/test-classes/com/stylefeng/guns/generator/EntityGenerator$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/test-classes/com/stylefeng/guns/generator/EntityGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/test-classes/com/stylefeng/guns/jwt/DecryptTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/target/test-classes/com/stylefeng/guns/jwt/JWTTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-generator/target/guns-generator-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/guns-generator/target/guns-generator-1.0.0.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/guns-rest.log" beforeDir="false" afterPath="$PROJECT_DIR$/guns-rest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/modular/user/UserImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/modular/user/UserImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/GunsRestServletInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/GunsRestServletInitializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/UserApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/UserApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/common/SimpleObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/common/SimpleObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/common/aop/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/common/aop/GlobalExceptionHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/common/exception/BizExceptionEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/common/exception/BizExceptionEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/common/persistence/dao/mapping/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/common/persistence/dao/mapping/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/common/persistence/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/common/persistence/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/config/properties/JwtProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/config/properties/JwtProperties.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/config/properties/RestProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/config/properties/RestProperties.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/controller/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/controller/AuthController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/controller/dto/AuthRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/controller/dto/AuthRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/controller/dto/AuthResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/controller/dto/AuthResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/converter/BaseTransferEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/converter/BaseTransferEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/converter/WithSignMessageConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/converter/WithSignMessageConverter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/filter/AuthFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/filter/AuthFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/security/DataSecurityAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/security/DataSecurityAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/security/impl/Base64SecurityAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/security/impl/Base64SecurityAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/util/JwtTokenUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/util/JwtTokenUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/validator/IReqValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/validator/IReqValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/validator/impl/DbValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/validator/impl/DbValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/validator/impl/SimpleValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/validator/impl/SimpleValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/example/ExampleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/example/ExampleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/user/UserImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/user/UserImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-user/target/test-classes/com/stylefeng/guns/fastjson/JsonTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/target/test-classes/com/stylefeng/guns/fastjson/JsonTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-user/target/test-classes/com/stylefeng/guns/generator/EntityGenerator$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/target/test-classes/com/stylefeng/guns/generator/EntityGenerator$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-user/target/test-classes/com/stylefeng/guns/generator/EntityGenerator$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/target/test-classes/com/stylefeng/guns/generator/EntityGenerator$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-user/target/test-classes/com/stylefeng/guns/jwt/DecryptTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/target/test-classes/com/stylefeng/guns/jwt/DecryptTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-user/target/test-classes/com/stylefeng/guns/jwt/JWTTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/target/test-classes/com/stylefeng/guns/jwt/JWTTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/modular/user/UserImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/modular/user/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/src/test/java/com/stylefeng/guns/generator/EntityGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/src/test/java/com/stylefeng/guns/generator/EntityGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/META-INF/spring-configuration-metadata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/GunsRestServletInitializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/UserApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/common/SimpleObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/common/aop/GlobalExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/common/exception/BizExceptionEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/common/persistence/dao/UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/common/persistence/dao/mapping/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/common/persistence/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/config/MessageConverConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/config/MybatisPlusConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/config/WebConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/config/properties/JwtProperties.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/config/properties/RestProperties.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/controller/AuthController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/controller/dto/AuthRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/controller/dto/AuthResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/converter/BaseTransferEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/converter/WithSignMessageConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/filter/AuthFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/security/DataSecurityAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/security/impl/Base64SecurityAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/util/JwtTokenUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/validator/IReqValidator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/validator/dto/Credence.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/validator/impl/DbValidator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/auth/validator/impl/SimpleValidator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/example/ExampleController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/classes/com/stylefeng/guns/rest/modular/user/UserImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/test-classes/com/stylefeng/guns/GunsRestApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/test-classes/com/stylefeng/guns/fastjson/JsonTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/test-classes/com/stylefeng/guns/generator/EntityGenerator$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/test-classes/com/stylefeng/guns/generator/EntityGenerator$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/test-classes/com/stylefeng/guns/generator/EntityGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/test-classes/com/stylefeng/guns/jwt/DecryptTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/target/test-classes/com/stylefeng/guns/jwt/JWTTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,6 +182,22 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.GatewayApplication">
+    <configuration name="EntityGenerator.entityGenerator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="guns-user" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.stylefeng.guns.generator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.stylefeng.guns.generator" />
+      <option name="MAIN_CLASS_NAME" value="com.stylefeng.guns.generator.EntityGenerator" />
+      <option name="METHOD_NAME" value="entityGenerator" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="[order]" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -194,6 +266,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.EntityGenerator.entityGenerator" />
       <item itemvalue="Maven.[order]" />
       <item itemvalue="Spring Boot.GunsApplication" />
       <item itemvalue="Spring Boot.GunsRestApplication" />
@@ -204,6 +277,7 @@
       <list>
         <item itemvalue="Spring Boot.GatewayApplication" />
         <item itemvalue="Spring Boot.UserApplication" />
+        <item itemvalue="JUnit.EntityGenerator.entityGenerator" />
       </list>
     </recent_temporary>
   </component>
@@ -235,7 +309,9 @@
       <workItem from="1578543185379" duration="11879000" />
       <workItem from="1578617642680" duration="1662000" />
       <workItem from="1578620480871" duration="3971000" />
-      <workItem from="1578632068335" duration="1883000" />
+      <workItem from="1578632068335" duration="17055000" />
+      <workItem from="1578678980933" duration="1206000" />
+      <workItem from="1578680631485" duration="2379000" />
     </task>
     <task id="LOCAL-00001" summary="first update">
       <created>1578566760158</created>
@@ -273,10 +349,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="182" y="117" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1578543489662" />
-    <state x="533" y="162" key="#com.intellij.ide.util.MemberChooser" timestamp="1578628986649">
+    <state x="533" y="162" key="#com.intellij.ide.util.MemberChooser" timestamp="1578659127736">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="533" y="162" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1578628986649" />
+    <state x="533" y="162" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1578659127736" />
     <state x="293" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1578549988232">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -289,46 +365,62 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="230" y="23" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1578567226532" />
-    <state width="1398" height="263" key="GridCell.Tab.0.bottom" timestamp="1578633980026">
-      <screen x="0" y="23" width="1440" height="777" />
+    <state width="1398" height="691" key="GridCell.Tab.0.bottom" timestamp="1578683698451">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="263" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1578633954193" />
-    <state width="1398" height="263" key="GridCell.Tab.0.bottom/0.23.1440.777@0.23.1440.777" timestamp="1578633980026" />
-    <state width="1398" height="263" key="GridCell.Tab.0.center" timestamp="1578633979979">
-      <screen x="0" y="23" width="1440" height="777" />
+    <state width="1398" height="691" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1578683698451" />
+    <state width="1398" height="237" key="GridCell.Tab.0.bottom/0.23.1440.777@0.23.1440.777" timestamp="1578683257919" />
+    <state width="1398" height="691" key="GridCell.Tab.0.center" timestamp="1578683698449">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="263" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1578633954191" />
-    <state width="1398" height="263" key="GridCell.Tab.0.center/0.23.1440.777@0.23.1440.777" timestamp="1578633979979" />
-    <state width="1398" height="263" key="GridCell.Tab.0.left" timestamp="1578633979977">
-      <screen x="0" y="23" width="1440" height="777" />
+    <state width="1398" height="691" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1578683698449" />
+    <state width="1398" height="237" key="GridCell.Tab.0.center/0.23.1440.777@0.23.1440.777" timestamp="1578683257913" />
+    <state width="1398" height="691" key="GridCell.Tab.0.left" timestamp="1578683698448">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="263" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1578633954190" />
-    <state width="1398" height="263" key="GridCell.Tab.0.left/0.23.1440.777@0.23.1440.777" timestamp="1578633979977" />
-    <state width="1398" height="263" key="GridCell.Tab.0.right" timestamp="1578633979987">
-      <screen x="0" y="23" width="1440" height="777" />
+    <state width="1398" height="691" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1578683698448" />
+    <state width="1398" height="237" key="GridCell.Tab.0.left/0.23.1440.777@0.23.1440.777" timestamp="1578683257911" />
+    <state width="1398" height="691" key="GridCell.Tab.0.right" timestamp="1578683698450">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="263" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1578633954192" />
-    <state width="1398" height="263" key="GridCell.Tab.0.right/0.23.1440.777@0.23.1440.777" timestamp="1578633979987" />
-    <state width="1398" height="263" key="GridCell.Tab.1.bottom" timestamp="1578633980056">
-      <screen x="0" y="23" width="1440" height="777" />
+    <state width="1398" height="691" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1578683698450" />
+    <state width="1398" height="237" key="GridCell.Tab.0.right/0.23.1440.777@0.23.1440.777" timestamp="1578683257917" />
+    <state width="1398" height="691" key="GridCell.Tab.1.bottom" timestamp="1578683698453">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="263" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1578633954198" />
-    <state width="1398" height="263" key="GridCell.Tab.1.bottom/0.23.1440.777@0.23.1440.777" timestamp="1578633980056" />
-    <state width="1398" height="263" key="GridCell.Tab.1.center" timestamp="1578633980040">
-      <screen x="0" y="23" width="1440" height="777" />
+    <state width="1398" height="691" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1578683698453" />
+    <state width="1398" height="237" key="GridCell.Tab.1.bottom/0.23.1440.777@0.23.1440.777" timestamp="1578683257927" />
+    <state width="1398" height="691" key="GridCell.Tab.1.center" timestamp="1578683698452">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="263" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1578633954196" />
-    <state width="1398" height="263" key="GridCell.Tab.1.center/0.23.1440.777@0.23.1440.777" timestamp="1578633980040" />
-    <state width="1398" height="263" key="GridCell.Tab.1.left" timestamp="1578633980038">
-      <screen x="0" y="23" width="1440" height="777" />
+    <state width="1398" height="691" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1578683698452" />
+    <state width="1398" height="237" key="GridCell.Tab.1.center/0.23.1440.777@0.23.1440.777" timestamp="1578683257923" />
+    <state width="1398" height="691" key="GridCell.Tab.1.left" timestamp="1578683698452">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="263" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1578633954194" />
-    <state width="1398" height="263" key="GridCell.Tab.1.left/0.23.1440.777@0.23.1440.777" timestamp="1578633980038" />
-    <state width="1398" height="263" key="GridCell.Tab.1.right" timestamp="1578633980045">
-      <screen x="0" y="23" width="1440" height="777" />
+    <state width="1398" height="691" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1578683698452" />
+    <state width="1398" height="237" key="GridCell.Tab.1.left/0.23.1440.777@0.23.1440.777" timestamp="1578683257920" />
+    <state width="1398" height="691" key="GridCell.Tab.1.right" timestamp="1578683698453">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="263" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1578633954197" />
-    <state width="1398" height="263" key="GridCell.Tab.1.right/0.23.1440.777@0.23.1440.777" timestamp="1578633980045" />
+    <state width="1398" height="691" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1578683698453" />
+    <state width="1398" height="237" key="GridCell.Tab.1.right/0.23.1440.777@0.23.1440.777" timestamp="1578683257925" />
+    <state width="1398" height="303" key="GridCell.Tab.2.bottom" timestamp="1578637077773">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="303" key="GridCell.Tab.2.bottom/0.0.1440.900@0.0.1440.900" timestamp="1578637077773" />
+    <state width="1398" height="303" key="GridCell.Tab.2.center" timestamp="1578637077770">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="303" key="GridCell.Tab.2.center/0.0.1440.900@0.0.1440.900" timestamp="1578637077770" />
+    <state width="1398" height="303" key="GridCell.Tab.2.left" timestamp="1578637077769">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="303" key="GridCell.Tab.2.left/0.0.1440.900@0.0.1440.900" timestamp="1578637077769" />
+    <state width="1398" height="303" key="GridCell.Tab.2.right" timestamp="1578637077772">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="303" key="GridCell.Tab.2.right/0.0.1440.900@0.0.1440.900" timestamp="1578637077772" />
     <state x="126" y="75" width="1024" height="777" key="SettingsEditor" timestamp="1578546876223">
       <screen x="0" y="23" width="1440" height="777" />
     </state>

@@ -8,6 +8,7 @@ package com.stylefeng.guns.api.user;
  * @date 2020/1/9 7:06 PM
  */
 public class UserInfoModel {
+    private Integer uuid;
     private String username;
     private String nickname;
     private String email;
@@ -116,5 +117,13 @@ public class UserInfoModel {
 
     public void setUpdateTime(Long updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public Integer getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(Integer uuid) {
+        this.uuid = uuid;
     }
 }

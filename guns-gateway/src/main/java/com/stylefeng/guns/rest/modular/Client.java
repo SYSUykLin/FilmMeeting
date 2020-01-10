@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class Client {
-    @Reference(interfaceClass = UserAPI.class)
+    @Reference(interfaceClass = UserAPI.class, timeout = 30000)
     private UserAPI userAPI;
 
     public void run(){

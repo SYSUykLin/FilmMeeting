@@ -1,5 +1,7 @@
 package com.stylefeng.guns.api.user;
 
+import java.io.Serializable;
+
 /**
  * 用户修改个人信息使用模型，也是操作对象，这里把一些敏感数据排出去
  *
@@ -7,13 +9,13 @@ package com.stylefeng.guns.api.user;
  * @version 1.0
  * @date 2020/1/9 7:06 PM
  */
-public class UserInfoModel {
+public class UserInfoModel implements Serializable{
     private Integer uuid;
     private String username;
     private String nickname;
     private String email;
     private String phone;
-    private int sex;
+    private Integer sex;
     private String birthday;
     private String liftState;
     private String biography;
@@ -55,11 +57,11 @@ public class UserInfoModel {
         this.phone = phone;
     }
 
-    public int getSex() {
+    public Integer getSex() {
         return sex;
     }
 
-    public void setSex(int sex) {
+    public void setSex(Integer sex) {
         this.sex = sex;
     }
 

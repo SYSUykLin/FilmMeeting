@@ -23,7 +23,7 @@ public class UserController {
 
     @RequestMapping(value = "register", method = RequestMethod.POST)
     public ResponseVO register(UserModel userModel) {
-        if (userModel.getUserName() == null || userModel.getUserName().trim().length() == 0) {
+        if (userModel.getUsername() == null || userModel.getUsername().trim().length() == 0) {
             return ResponseVO.serviceFail("用户名为空！");
         }
         if (userModel.getPassword() == null || userModel.getPassword().trim().length() == 0) {
@@ -53,8 +53,8 @@ public class UserController {
         return ResponseVO.success("退出成功");
     }
 
-    @RequestMapping(name = "getUserInfo", method = RequestMethod.GET)
-    public ResponseVO getUserinfo(String username) {
+    @RequestMapping(value = "getUserInfo", method = RequestMethod.GET)
+    public ResponseVO getUserinfo() {
         String userId = CurrentUser.getCurrentUser();
         if (userId != null && userId.trim().length() > 0) {
             int uuid = Integer.parseInt(userId);

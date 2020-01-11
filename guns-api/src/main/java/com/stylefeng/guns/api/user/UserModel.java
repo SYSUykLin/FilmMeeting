@@ -10,18 +10,18 @@ import java.io.Serializable;
  * @date 2020/1/9 6:20 PM
  */
 public class UserModel implements Serializable {
-    private String userName;
+    private String username;
     private String password;
     private String email;
     private String phone;
     private String address;
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {

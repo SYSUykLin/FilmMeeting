@@ -19,7 +19,7 @@ import java.util.Date;
  * @date 2020/1/8 6:22 PM
  */
 @Component
-@Service(interfaceClass = UserAPI.class)
+@Service(interfaceClass = UserAPI.class , loadbalance = "roundrobin")
 public class UserServiceImpl implements UserAPI {
 
     @Resource
@@ -31,8 +31,8 @@ public class UserServiceImpl implements UserAPI {
         userT.setUserName(userName);
         UserT result = userTMapper.selectOne(userT);
         if (result != null && result.getUuid() > 0) {
-            String MD5Password = MD5Util.encrypt(password);
-            if (result.getUserPwd().equals(MD5Password)) {
+            String md5Password = MD5Util.encrypt(password);
+            if (result.getUserPwd().equals(md5Password)) {
                 return result.getUuid();
             }
         }
@@ -42,13 +42,13 @@ public class UserServiceImpl implements UserAPI {
     @Override
     public boolean register(UserModel userModel) {
         UserT userT = new UserT();
-        userT.setUserName(userModel.getUserName());
+        userT.setUserName(userModel.getUsername());
         userT.setEmail(userModel.getEmail());
         userT.setAddress(userModel.getAddress());
         userT.setUserPhone(userModel.getPhone());
-        Integer integer = userTMapper.insert(userT);
         String md5Password = MD5Util.encrypt(userModel.getPassword());
         userT.setUserPwd(md5Password);
+        Integer integer = userTMapper.insert(userT);
         if (integer > 0) {
             return true;
         } else
@@ -84,7 +84,7 @@ public class UserServiceImpl implements UserAPI {
         return userInfoModel;
     }
 
-    private Date time2Data(long time){
+    private Date time2Data(Long time){
         Date date = new Date(time);
         return date;
     }
@@ -104,10 +104,10 @@ public class UserServiceImpl implements UserAPI {
         userT.setLifeState(Integer.parseInt(userInfoModel.getLiftState()));
         userT.setBirthday(userInfoModel.getBirthday());
         userT.setBiography(userInfoModel.getBiography());
-        userT.setBeginTime(time2Data(userInfoModel.getBeginTime()));
+        userT.setBeginTime(null);
         userT.setHeadUrl(userInfoModel.getHeadAddress());
         userT.setEmail(userInfoModel.getEmail());
-        userT.setAddress(userInfoModel.getEmail());
+        userT.setAddress(userInfoModel.getAddress());
         userT.setUserPhone(userInfoModel.getPhone());
         userT.setUserSex(userInfoModel.getSex());
         userT.setUpdateTime(time2Data(System.currentTimeMillis()));

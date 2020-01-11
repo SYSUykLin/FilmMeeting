@@ -351,7 +351,12 @@ ThredLocal用户信息保存的方法代替把信息保存到session中，thread
 ![](https://upload-images.jianshu.io/upload_images/10624272-6add4d644524eada.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 注意区别一下目前存在的三个模型:
 ![](https://upload-images.jianshu.io/upload_images/10624272-8bbcb2fa276144d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-UserModel和UserInfoModel都是模型之间交互的，但是区别就在于UserModel只是用于注册，而UserInfoModel是用于各模块之间的交互以及修改，UserT就是guns-user自用的Dao层而已，不会跨越模块。
+UserModel和UserInfoModel都是模型之间交互的，但是区别就在于UserModel只是用于注册，而UserInfoModel是用于各模块之间的交互以及修改，UserT就是guns-user自用的Dao层而已，不会跨越模块。然后就实现各种服务了，这个很简单，没得说，注意密码不能明文存储即可。**需要注意的主要就是用户退出这个功能，一般会把用户的信息存两份，前端先存jwt，一般存7天，在这种情况下就会存在一个问题，jwt的刷新；那么这个时候后端就起着刷新作用，服务端就存储活动用户信息，一般30分钟，如果在30分钟之内能查到用户，那么就认为是活跃用户，如果没有，哪怕你有jwt也认为你需要重新登录，所以logout要做两件事，首先删除前端jwt，然后删除后端活动缓存即可。**
+接着就是测试了，遇到一个很牛逼的bug：
+![](https://upload-images.jianshu.io/upload_images/10624272-7b2ebfc66904e026.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+**这个问题吧，就是前面提到好几次的问题，我当时解决对了一半，确实是机器问题，但是不是性能超时时延的问题，而是WiFi问题，说我信息发不出去，通道关闭了，那就是链路问题，但是我ping了一下127.0.0.1，可以通，那么tcp/ip就没有问题了，ping了一下另外一台电脑，可以通，那么网卡或者说网关就没有问题了，然后看到网上很多人说WiFi问题，然后我把WiFi关了，然后就可以通了。不过打开WiFi在测试的过程中还是有某几次是可以连上的，但关闭WiFi就一定可以连上。关键是他这个错误，也就是cause：message can not be send,channal is closed.这个错误不是一下就提出来了，还是我把check=false设置了之后才出现。**接着就是测试接口了，注意一些model里面的值最好使用对象，比如使用Integer或者String对象，不要使用int这样的，因为有可能会出现null值。
+**测试完成后，基本上用户模块差不多了，但是现在还有一个小问题，就是启动的时候必须要有顺序，要不然gateway会找不到服务，其次还有负载均衡的问题。启动顺序那个就是check=false的问题，负载均衡策略dubbo有四种，Random，按权重设置随机概率，RoundRobin，按公约后的权重设置轮循比率，LeastActive，最少活跃调度数，如果活跃数相同，那么随机，不同就按照排序，ConsistentHash，相同参数就到同一个提供者，不同参数到另外一个。一般多用轮循，但是有可能受到机器影响，如果三台机器的效率并不相同，如果第三个请求到了第三台机器，但是第三台机器炸毛了，没有返回，那么就一直卡在这，因为轮循第三个request一定是到第三个，但是第三个一直不能返回，就造成了dubbo的雪崩。**
+
 
 
 

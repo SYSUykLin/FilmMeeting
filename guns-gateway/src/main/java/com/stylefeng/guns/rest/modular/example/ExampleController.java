@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * 常规控制器
+ * 测试控制器
  *
  * @author fengshuonan
  * @date 2017-08-23 16:02

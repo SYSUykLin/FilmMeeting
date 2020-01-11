@@ -2,9 +2,9 @@ package com.stylefeng.guns.rest.modular.user;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
-import com.stylefeng.guns.api.user.UserAPI;
-import com.stylefeng.guns.api.user.UserInfoModel;
-import com.stylefeng.guns.api.user.UserModel;
+import com.stylefeng.guns.api.user.user.UserAPI;
+import com.stylefeng.guns.api.user.user.vo.UserInfoModel;
+import com.stylefeng.guns.api.user.user.vo.UserModel;
 import com.stylefeng.guns.core.util.MD5Util;
 import com.stylefeng.guns.rest.common.persistence.dao.UserTMapper;
 import com.stylefeng.guns.rest.common.persistence.model.UserT;
@@ -19,7 +19,7 @@ import java.util.Date;
  * @date 2020/1/8 6:22 PM
  */
 @Component
-@Service(interfaceClass = UserAPI.class , loadbalance = "roundrobin")
+@Service(interfaceClass = UserAPI.class, loadbalance = "roundrobin")
 public class UserServiceImpl implements UserAPI {
 
     @Resource
@@ -84,7 +84,7 @@ public class UserServiceImpl implements UserAPI {
         return userInfoModel;
     }
 
-    private Date time2Data(Long time){
+    private Date time2Data(Long time) {
         Date date = new Date(time);
         return date;
     }
@@ -113,9 +113,9 @@ public class UserServiceImpl implements UserAPI {
         userT.setUpdateTime(time2Data(System.currentTimeMillis()));
 
         Integer result = userTMapper.updateById(userT);
-        if (result > 0){
+        if (result > 0) {
             return getUserInfo(userT.getUuid());
-        }else {
+        } else {
             return userInfoModel;
         }
     }

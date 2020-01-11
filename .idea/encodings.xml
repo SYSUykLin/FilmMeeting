@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/../coding-273/课程资料/影片模块建表语句/建表语句.txt" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/guns-admin/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/guns-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/guns-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/guns-film/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/guns-film/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/guns-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/guns-generator/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/guns-rest/src/main/java" charset="UTF-8" />

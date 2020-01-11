@@ -11,6 +11,7 @@
         <module name="guns-api" />
         <module name="guns-gateway" />
         <module name="guns-admin" />
+        <module name="guns-film" />
         <module name="guns-generator" />
         <module name="guns-core" />
       </profile>
@@ -19,6 +20,7 @@
       <module name="guns-admin" target="1.8" />
       <module name="guns-api" target="1.8" />
       <module name="guns-core" target="1.8" />
+      <module name="guns-film" target="1.8" />
       <module name="guns-gateway" target="1.8" />
       <module name="guns-generator" target="1.8" />
       <module name="guns-parent" target="1.8" />
@@ -31,6 +33,7 @@
       <module name="guns-admin" options="-parameters" />
       <module name="guns-api" options="-parameters" />
       <module name="guns-core" options="-parameters" />
+      <module name="guns-film" options="-parameters" />
       <module name="guns-gateway" options="-parameters" />
       <module name="guns-generator" options="-parameters" />
       <module name="guns-rest" options="-parameters" />

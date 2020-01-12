@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f1fbc0fb-346e-4439-a5b6-1373b6a9e629" name="Default Changelist" comment="" />
+    <list default="true" id="f1fbc0fb-346e-4439-a5b6-1373b6a9e629" name="Default Changelist" comment="实现按条件查询影片">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -89,7 +91,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -272,7 +274,7 @@
       <workItem from="1578756541157" duration="5007000" />
       <workItem from="1578762170366" duration="104000" />
       <workItem from="1578799562862" duration="50000" />
-      <workItem from="1578799659433" duration="16820000" />
+      <workItem from="1578799659433" duration="17562000" />
     </task>
     <task id="LOCAL-00001" summary="first update">
       <created>1578566760158</created>
@@ -288,7 +290,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578567227002</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="实现按条件查询影片">
+      <created>1578847399140</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1578847399140</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,10 +305,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
     <MESSAGE value="Meeting update" />
     <MESSAGE value="first update" />
     <MESSAGE value="update README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="update README.md" />
+    <MESSAGE value="实现按条件查询影片" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现按条件查询影片" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="117" key="#Inspections" timestamp="1578493411691">
@@ -330,14 +343,18 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1578761894276" />
-    <state x="230" y="23" key="CommitChangelistDialog2" timestamp="1578847329966">
+    <state x="230" y="23" key="CommitChangelistDialog2" timestamp="1578847948457">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="230" y="23" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1578847329966" />
-    <state x="527" y="358" key="Github.CreateGistDialog" timestamp="1578728069706">
+    <state x="230" y="23" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1578847948457" />
+    <state x="527" y="358" key="Github.CreateGistDialog" timestamp="1578848213255">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="527" y="358" key="Github.CreateGistDialog/0.0.1440.900@0.0.1440.900" timestamp="1578728069706" />
+    <state x="527" y="358" key="Github.CreateGistDialog/0.0.1440.900@0.0.1440.900" timestamp="1578848213255" />
+    <state x="583" y="355" key="Github.ShareDialog" timestamp="1578848247203">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="583" y="355" key="Github.ShareDialog/0.0.1440.900@0.0.1440.900" timestamp="1578848247203" />
     <state width="1398" height="273" key="GridCell.Tab.0.bottom" timestamp="1578844882937">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -398,15 +415,15 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="234" height="498" key="HiddenNamespacesPopup/0.0.1440.900@0.0.1440.900" timestamp="1578761527430" />
-    <state x="197" y="56" width="1024" height="777" key="SettingsEditor" timestamp="1578800970664">
+    <state x="197" y="56" width="1024" height="777" key="SettingsEditor" timestamp="1578848133109">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="197" y="56" width="1024" height="777" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1578800970664" />
+    <state x="197" y="56" width="1024" height="777" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1578848133109" />
     <state x="126" y="75" key="SettingsEditor/0.23.1440.777@0.23.1440.777" timestamp="1578546876223" />
-    <state x="320" y="191" key="Vcs.Push.Dialog.v2" timestamp="1578567234022">
+    <state x="320" y="191" key="Vcs.Push.Dialog.v2" timestamp="1578847416771">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="191" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1578567234022" />
+    <state x="320" y="191" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1578847416771" />
     <state x="383" y="214" width="673" height="472" key="find.popup" timestamp="1578760904590">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

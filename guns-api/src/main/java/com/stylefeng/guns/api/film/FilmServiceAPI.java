@@ -1,8 +1,7 @@
-package com.stylefeng.guns.api.user.film;
+package com.stylefeng.guns.api.film;
 
-import com.stylefeng.guns.api.user.film.vo.BannerVO;
-import com.stylefeng.guns.api.user.film.vo.FilmInfo;
-import com.stylefeng.guns.api.user.film.vo.FilmVO;
+import com.stylefeng.guns.api.film.vo.*;
+
 import java.util.*;
 
 /**
@@ -12,7 +11,7 @@ import java.util.*;
  */
 public interface FilmServiceAPI {
     //get banners info
-    BannerVO getBanners();
+    List<BannerVO> getBanners();
     //get hot films
     FilmVO getHotFilms(boolean isLimit, Integer nums);
     //get films displayed soon
@@ -20,8 +19,14 @@ public interface FilmServiceAPI {
     //get boxRanking
     List<FilmInfo> getBoxRanking();
     //population Ranking
-    List<FilmInfo> expectRanking();
+    List<FilmInfo> getExpectRanking();
     //get top
     List<FilmInfo> getTop();
+
+    List<CatVO> getCats();
+
+    List<SourceVO> getSources();
+
+    List<YearVO> getYears();
 
 }

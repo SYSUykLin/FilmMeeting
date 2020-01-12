@@ -1,7 +1,7 @@
-package com.stylefeng.guns.api.user.user;
+package com.stylefeng.guns.api.user;
 
-import com.stylefeng.guns.api.user.user.vo.UserInfoModel;
-import com.stylefeng.guns.api.user.user.vo.UserModel;
+import com.stylefeng.guns.api.user.vo.UserInfoModel;
+import com.stylefeng.guns.api.user.vo.UserModel;
 
 /**
  * @author greenArrow

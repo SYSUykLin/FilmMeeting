@@ -1,30 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f1fbc0fb-346e-4439-a5b6-1373b6a9e629" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/film/vo/CatVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/film/vo/SourceVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/film/vo/YearVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-film/film.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/film/vo/FilmConditionVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/user/film/FilmServiceAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/film/FilmServiceAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/user/film/vo/BannerVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/film/vo/BannerVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/user/film/vo/FilmInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/film/vo/FilmInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/user/film/vo/FilmVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/film/vo/FilmVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/user/user/UserAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/user/UserAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/user/user/vo/UserInfoModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/user/vo/UserInfoModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/user/user/vo/UserModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/user/vo/UserModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-film/src/main/java/com/stylefeng/guns/rest/modular/film/service/DefaultFilmServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-film/src/main/java/com/stylefeng/guns/rest/modular/film/service/DefaultFilmServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/auth/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/auth/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/film/FilmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/film/FilmController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/film/vo/FilmindexVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/film/vo/FilmindexVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/user/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/vo/ResponseVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/vo/ResponseVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/guns-gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/modular/user/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/src/main/java/com/stylefeng/guns/rest/modular/user/UserServiceImpl.java" afterDir="false" />
-    </list>
+    <list default="true" id="f1fbc0fb-346e-4439-a5b6-1373b6a9e629" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -295,7 +272,7 @@
       <workItem from="1578756541157" duration="5007000" />
       <workItem from="1578762170366" duration="104000" />
       <workItem from="1578799562862" duration="50000" />
-      <workItem from="1578799659433" duration="16556000" />
+      <workItem from="1578799659433" duration="16820000" />
     </task>
     <task id="LOCAL-00001" summary="first update">
       <created>1578566760158</created>
@@ -353,10 +330,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1578761894276" />
-    <state x="230" y="23" key="CommitChangelistDialog2" timestamp="1578567226532">
+    <state x="230" y="23" key="CommitChangelistDialog2" timestamp="1578847329966">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="230" y="23" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1578567226532" />
+    <state x="230" y="23" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1578847329966" />
     <state x="527" y="358" key="Github.CreateGistDialog" timestamp="1578728069706">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

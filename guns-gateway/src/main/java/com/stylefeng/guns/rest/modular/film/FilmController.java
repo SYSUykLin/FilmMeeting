@@ -2,10 +2,7 @@ package com.stylefeng.guns.rest.modular.film;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.stylefeng.guns.api.film.FilmServiceAPI;
-import com.stylefeng.guns.api.film.vo.CatVO;
-import com.stylefeng.guns.api.film.vo.FilmVO;
-import com.stylefeng.guns.api.film.vo.SourceVO;
-import com.stylefeng.guns.api.film.vo.YearVO;
+import com.stylefeng.guns.api.film.vo.*;
 import com.stylefeng.guns.rest.modular.film.vo.FilmConditionVO;
 import com.stylefeng.guns.rest.modular.film.vo.FilmRequestVO;
 import com.stylefeng.guns.rest.modular.film.vo.FilmindexVO;
@@ -187,7 +184,7 @@ public class FilmController {
     @RequestMapping(value = "films/{searchParam}", method = RequestMethod.GET)
     public ResponseVO films(@PathVariable("searchParam") String searchParam,
                             int searchType) {
-
+        FilmDetailVO filmDetail = filmServiceAPI.getFilmDetail(searchType, searchParam);
         return null;
     }
 

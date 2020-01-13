@@ -1,4 +1,4 @@
-package com.stylefeng.guns.fastjson;
+package com.stylefeng.guns.rest.fastjson;
 
 import com.alibaba.fastjson.JSON;
 import com.stylefeng.guns.core.util.MD5Util;

@@ -1,4 +1,4 @@
-package com.stylefeng.guns.jwt;
+package com.stylefeng.guns.rest.jwt;
 
 import com.stylefeng.guns.core.util.IdGenerator;
 import io.jsonwebtoken.*;

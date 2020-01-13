@@ -1,4 +1,4 @@
-package com.stylefeng.guns.generator;
+package com.stylefeng.guns.rest.generator;
 
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.InjectionConfig;

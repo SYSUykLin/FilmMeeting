@@ -80,7 +80,7 @@ public class DefaultFilmServiceImpl implements FilmServiceAPI {
             filmVO.setFilmInfo(filmInfos);
         } else {
             Page<FilmT> page = null;
-            switch (sortId){
+            switch (sortId) {
                 case 1:
                     page = new Page<>(nowPage, nums, "film_box_office");
                     break;
@@ -135,7 +135,7 @@ public class DefaultFilmServiceImpl implements FilmServiceAPI {
             filmVO.setFilmInfo(filmInfos);
         } else {
             Page<FilmT> page = null;
-            switch (sortId){
+            switch (sortId) {
                 case 1:
                     page = new Page<>(nowPage, nums, "film_preSaleNum");
                     break;
@@ -181,7 +181,7 @@ public class DefaultFilmServiceImpl implements FilmServiceAPI {
         EntityWrapper<FilmT> entityWrapper = new EntityWrapper<>();
         entityWrapper.eq("film_status", "3");
         Page<FilmT> page = null;
-        switch (sortId){
+        switch (sortId) {
             case 1:
                 page = new Page<>(nowPage, nums, "film_box_office");
                 break;
@@ -287,5 +287,17 @@ public class DefaultFilmServiceImpl implements FilmServiceAPI {
             years.add(yearVO);
         }
         return years;
+    }
+
+    @Override
+    public FilmDetailVO getFilmDetail(Integer searchType, String searchParam) {
+        FilmDetailVO filmDetailVO = null;
+        if (searchType == 1) {
+            filmDetailVO = filmTMapper.getFilmDetailByName(searchParam);
+        }else {
+            filmDetailVO = filmTMapper.getFilmDetailById(searchParam);
+        }
+        return filmDetailVO;
+
     }
 }

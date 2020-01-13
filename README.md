@@ -670,10 +670,7 @@ where film.UUID = info.film_id
 接下来就是后面的拼接：
 ![](https://upload-images.jianshu.io/upload_images/10624272-49a4870d4e3b64d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![](https://upload-images.jianshu.io/upload_images/10624272-8860c2f61db12e6d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
 这玩意有点吓人，讲道理，还没写过这么长的，如果把那些分类全部放程序里面的话有不好改，不灵活。
-
-
 
 
 

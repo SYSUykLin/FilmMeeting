@@ -523,6 +523,8 @@ public interface FilmServiceAPI {
 ```
 有点复杂，先遍历一次，遇到99了先存下来，如果没有匹配到的，说明传回来的就是99，那么把99全选传回去就好了。没有用到什么特别的算法，如果想快点用上二分可能好点。测试结果：
 ![](https://upload-images.jianshu.io/upload_images/10624272-5d2f5bd2b6cf81fc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
 这样就测试成功了。**（WiFi断掉才能练上这个问题还是存在，WiFi连着，可能可以找到服务，WiFi断开是一定可以找到服务，问题还是message can not send，channel is closed.）**
 
 

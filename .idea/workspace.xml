@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1fbc0fb-346e-4439-a5b6-1373b6a9e629" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/film/vo/FilmDetailVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-rest.log.2020-01-13.0.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/film/FilmServiceAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/film/FilmServiceAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-film/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/FilmTMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-film/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/FilmTMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-film/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/mapping/FilmTMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/guns-film/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/mapping/FilmTMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-film/src/main/java/com/stylefeng/guns/rest/modular/film/service/DefaultFilmServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-film/src/main/java/com/stylefeng/guns/rest/modular/film/service/DefaultFilmServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-film/src/test/java/com/stylefeng/guns/GunsRestApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-film/src/test/java/com/stylefeng/guns/rest/GunsRestApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-film/src/test/java/com/stylefeng/guns/fastjson/JsonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-film/src/test/java/com/stylefeng/guns/rest/fastjson/JsonTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-film/src/test/java/com/stylefeng/guns/generator/EntityGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-film/src/test/java/com/stylefeng/guns/rest/generator/EntityGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-film/src/test/java/com/stylefeng/guns/jwt/DecryptTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-film/src/test/java/com/stylefeng/guns/rest/jwt/DecryptTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-film/src/test/java/com/stylefeng/guns/jwt/JWTTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-film/src/test/java/com/stylefeng/guns/rest/jwt/JWTTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/film/FilmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/film/FilmController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,6 +229,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="guns-user" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.stylefeng.guns.rest.UserApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="JUnit.EntityGenerator" />
       <item itemvalue="Maven.[order]" />
@@ -249,6 +245,7 @@
       <item itemvalue="Spring Boot.FilmApplication" />
       <item itemvalue="JUnit.GunsRestApplicationTests.contextLoads" />
       <item itemvalue="JUnit.GunsRestApplicationTests" />
+      <item itemvalue="Spring Boot.UserApplication" />
     </list>
     <recent_temporary>
       <list>
@@ -315,7 +312,7 @@
       <workItem from="1578799659433" duration="18389000" />
       <workItem from="1578881898670" duration="9648000" />
       <workItem from="1578906558332" duration="948000" />
-      <workItem from="1578908828932" duration="11041000" />
+      <workItem from="1578908828932" duration="11471000" />
     </task>
     <task id="LOCAL-00001" summary="first update">
       <created>1578566760158</created>
@@ -380,7 +377,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578908526501</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="update the Mapper">
+      <created>1578933862794</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1578933862797</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -407,7 +411,8 @@
     <MESSAGE value="update README.md" />
     <MESSAGE value="添加注释" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="update the Mapper" />
+    <option name="LAST_COMMIT_MESSAGE" value="update the Mapper" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="117" key="#Inspections" timestamp="1578493411691">
@@ -438,10 +443,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1578761894276" />
-    <state x="230" y="23" key="CommitChangelistDialog2" timestamp="1578908525685">
+    <state x="28" y="23" key="CommitChangelistDialog2" timestamp="1578933862103">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="230" y="23" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1578908525685" />
+    <state x="28" y="23" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1578933862103" />
     <state x="527" y="358" key="Github.CreateGistDialog" timestamp="1578848213255">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -515,14 +520,14 @@
     </state>
     <state x="197" y="56" width="1024" height="777" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1578848133109" />
     <state x="126" y="75" key="SettingsEditor/0.23.1440.777@0.23.1440.777" timestamp="1578546876223" />
-    <state x="320" y="191" key="Vcs.Push.Dialog.v2" timestamp="1578908528989">
+    <state x="320" y="191" key="Vcs.Push.Dialog.v2" timestamp="1578933865305">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="191" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1578908528989" />
-    <state x="509" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578933830781">
+    <state x="320" y="191" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1578933865305" />
+    <state x="509" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578934318775">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="509" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1578933830781" />
+    <state x="509" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1578934318775" />
     <state x="383" y="214" width="673" height="472" key="find.popup" timestamp="1578760904590">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

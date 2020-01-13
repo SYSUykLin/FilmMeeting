@@ -3,15 +3,14 @@ package com.stylefeng.guns.rest.modular.film;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.stylefeng.guns.api.film.FilmServiceAPI;
 import com.stylefeng.guns.api.film.vo.CatVO;
+import com.stylefeng.guns.api.film.vo.FilmVO;
 import com.stylefeng.guns.api.film.vo.SourceVO;
 import com.stylefeng.guns.api.film.vo.YearVO;
 import com.stylefeng.guns.rest.modular.film.vo.FilmConditionVO;
+import com.stylefeng.guns.rest.modular.film.vo.FilmRequestVO;
 import com.stylefeng.guns.rest.modular.film.vo.FilmindexVO;
 import com.stylefeng.guns.rest.modular.vo.ResponseVO;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,8 +43,8 @@ public class FilmController {
 
         FilmindexVO filmindexVO = new FilmindexVO();
         filmindexVO.setBanners(filmServiceAPI.getBanners());
-        filmindexVO.setHotFilms(filmServiceAPI.getHotFilms(true, 8));
-        filmindexVO.setSoonFilms(filmServiceAPI.getSoonFilms(true, 8));
+        filmindexVO.setHotFilms(filmServiceAPI.getHotFilms(true, 8, 1, 1, 99, 99, 99));
+        filmindexVO.setSoonFilms(filmServiceAPI.getSoonFilms(true, 8, 1, 1, 99, 99, 99));
         filmindexVO.setBoxRanking(filmServiceAPI.getBoxRanking());
         filmindexVO.setExpectRanking(filmServiceAPI.getExpectRanking());
         filmindexVO.setTop100(filmServiceAPI.getTop());
@@ -144,6 +143,52 @@ public class FilmController {
         filmConditionVO.setYearInfo(yearResult);
 
         return ResponseVO.success(filmConditionVO);
+    }
+
+    @RequestMapping(value = "getFilms", method = RequestMethod.GET)
+    public ResponseVO getFilms(FilmRequestVO filmRequestVO) {
+
+        String img_pre = "http://img.meetingshop.cn/";
+
+        FilmVO filmVO = null;
+        switch (filmRequestVO.getShowType()) {
+            case 1:
+                filmVO = filmServiceAPI.getHotFilms(false,
+                        filmRequestVO.getPageSize(),
+                        filmRequestVO.getNowPage(),
+                        filmRequestVO.getSortId(),
+                        filmRequestVO.getSourceId(),
+                        filmRequestVO.getYearId(),
+                        filmRequestVO.getCatId());
+                break;
+            case 2:
+                filmVO = filmServiceAPI.getSoonFilms(false,
+                        filmRequestVO.getPageSize(),
+                        filmRequestVO.getNowPage(),
+                        filmRequestVO.getSortId(),
+                        filmRequestVO.getSourceId(),
+                        filmRequestVO.getYearId(),
+                        filmRequestVO.getCatId());
+                break;
+            case 3:
+                filmVO = filmServiceAPI.getClassicFilms(
+                        filmRequestVO.getPageSize(),
+                        filmRequestVO.getNowPage(),
+                        filmRequestVO.getSortId(),
+                        filmRequestVO.getSourceId(),
+                        filmRequestVO.getYearId(),
+                        filmRequestVO.getCatId());
+                break;
+        }
+        return ResponseVO.success(filmVO.getNowPage(), filmVO.getTotalPage(), img_pre, filmVO.getFilmInfo());
+    }
+
+
+    @RequestMapping(value = "films/{searchParam}", method = RequestMethod.GET)
+    public ResponseVO films(@PathVariable("searchParam") String searchParam,
+                            int searchType) {
+
+        return null;
     }
 
 }

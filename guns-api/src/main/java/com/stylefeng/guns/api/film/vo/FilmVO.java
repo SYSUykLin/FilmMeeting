@@ -1,9 +1,9 @@
 package com.stylefeng.guns.api.film.vo;
 
-import java.util.*;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * @author greenArrow
@@ -12,6 +12,8 @@ import java.io.Serializable;
  */
 @Data
 public class FilmVO implements Serializable {
-    private Integer filmNum;
+    private int filmNum;
+    private int nowPage;
+    private int totalPage;
     private List<FilmInfo> filmInfo;
 }

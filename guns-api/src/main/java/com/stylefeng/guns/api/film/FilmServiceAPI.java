@@ -2,7 +2,7 @@ package com.stylefeng.guns.api.film;
 
 import com.stylefeng.guns.api.film.vo.*;
 
-import java.util.*;
+import java.util.List;
 
 /**
  * @author greenArrow
@@ -12,14 +12,21 @@ import java.util.*;
 public interface FilmServiceAPI {
     //get banners info
     List<BannerVO> getBanners();
+
     //get hot films
-    FilmVO getHotFilms(boolean isLimit, Integer nums);
+    FilmVO getHotFilms(boolean isLimit, Integer nums, Integer nowPage, Integer sortId, Integer sourceId, Integer yearId, Integer catId);
+
     //get films displayed soon
-    FilmVO getSoonFilms(boolean isLimit, Integer nums);
+    FilmVO getSoonFilms(boolean isLimit, Integer nums, Integer nowPage, Integer sortId, Integer sourceId, Integer yearId, Integer catId);
+
+    FilmVO getClassicFilms(Integer nums, Integer nowPage, Integer sortId, Integer sourceId, Integer yearId, Integer catId);
+
     //get boxRanking
     List<FilmInfo> getBoxRanking();
+
     //population Ranking
     List<FilmInfo> getExpectRanking();
+
     //get top
     List<FilmInfo> getTop();
 

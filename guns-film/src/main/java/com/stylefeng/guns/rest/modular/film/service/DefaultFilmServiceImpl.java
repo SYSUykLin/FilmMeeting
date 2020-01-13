@@ -67,7 +67,7 @@ public class DefaultFilmServiceImpl implements FilmServiceAPI {
     }
 
     @Override
-    public FilmVO getHotFilms(boolean isLimit, Integer nums) {
+    public FilmVO getHotFilms(boolean isLimit, Integer nums, Integer nowPage, Integer sortId, Integer sourceId, Integer yearId, Integer catId) {
         FilmVO filmVO = new FilmVO();
         List<FilmInfo> filmInfos = new ArrayList<>();
         EntityWrapper<FilmT> entityWrapper = new EntityWrapper<>();
@@ -79,13 +79,50 @@ public class DefaultFilmServiceImpl implements FilmServiceAPI {
             filmVO.setFilmNum(films.size());
             filmVO.setFilmInfo(filmInfos);
         } else {
+            Page<FilmT> page = null;
+            switch (sortId){
+                case 1:
+                    page = new Page<>(nowPage, nums, "film_box_office");
+                    break;
+                case 2:
+                    page = new Page<>(nowPage, nums, "film_time");
+                    break;
+                case 3:
+                    page = new Page<>(nowPage, nums, "film_score");
+                    break;
+                default:
+                    page = new Page<>(nowPage, nums, "film_box_office");
+                    break;
 
+
+            }
+            if (sourceId != 99) {
+                entityWrapper.eq("film_source", sourceId);
+            }
+            if (yearId != 99) {
+                entityWrapper.eq("film_date", yearId);
+            }
+            if (catId != 99) {
+                String catStr = "%#" + catId + "#%";
+                entityWrapper.like("film_cats", catStr);
+            }
+            List<FilmT> films = filmTMapper.selectPage(page, entityWrapper);
+            filmInfos = getFilmInfo(films);
+            filmVO.setFilmNum(films.size());
+
+            int totalCounts = filmTMapper.selectCount(entityWrapper);
+            int totalPages = (totalCounts / nums) + 1;
+
+
+            filmVO.setFilmInfo(filmInfos);
+            filmVO.setTotalPage(totalPages);
+            filmVO.setNowPage(nowPage);
         }
         return filmVO;
     }
 
     @Override
-    public FilmVO getSoonFilms(boolean isLimit, Integer nums) {
+    public FilmVO getSoonFilms(boolean isLimit, Integer nums, Integer nowPage, Integer sortId, Integer sourceId, Integer yearId, Integer catId) {
         FilmVO filmVO = new FilmVO();
         List<FilmInfo> filmInfos = new ArrayList<>();
         EntityWrapper<FilmT> entityWrapper = new EntityWrapper<>();
@@ -97,8 +134,89 @@ public class DefaultFilmServiceImpl implements FilmServiceAPI {
             filmVO.setFilmNum(films.size());
             filmVO.setFilmInfo(filmInfos);
         } else {
+            Page<FilmT> page = null;
+            switch (sortId){
+                case 1:
+                    page = new Page<>(nowPage, nums, "film_preSaleNum");
+                    break;
+                case 2:
+                    page = new Page<>(nowPage, nums, "film_preSaleNum");
+                    break;
+                case 3:
+                    page = new Page<>(nowPage, nums, "film_score");
+                    break;
+                default:
+                    page = new Page<>(nowPage, nums, "film_preSaleNum");
+                    break;
+            }
+            if (sourceId != 99) {
+                entityWrapper.eq("film_source", sourceId);
+            }
+            if (yearId != 99) {
+                entityWrapper.eq("film_date", yearId);
+            }
+            if (catId != 99) {
+                String catStr = "%#" + catId + "#%";
+                entityWrapper.like("film_cats", catStr);
+            }
+            List<FilmT> films = filmTMapper.selectPage(page, entityWrapper);
+            filmInfos = getFilmInfo(films);
+            filmVO.setFilmNum(films.size());
 
+            int totalCounts = filmTMapper.selectCount(entityWrapper);
+            int totalPages = (totalCounts / nums) + 1;
+
+
+            filmVO.setFilmInfo(filmInfos);
+            filmVO.setTotalPage(totalPages);
+            filmVO.setNowPage(nowPage);
         }
+        return filmVO;
+    }
+
+    @Override
+    public FilmVO getClassicFilms(Integer nums, Integer nowPage, Integer sortId, Integer sourceId, Integer yearId, Integer catId) {
+        FilmVO filmVO = new FilmVO();
+        List<FilmInfo> filmInfos = new ArrayList<>();
+        EntityWrapper<FilmT> entityWrapper = new EntityWrapper<>();
+        entityWrapper.eq("film_status", "3");
+        Page<FilmT> page = null;
+        switch (sortId){
+            case 1:
+                page = new Page<>(nowPage, nums, "film_box_office");
+                break;
+            case 2:
+                page = new Page<>(nowPage, nums, "film_time");
+                break;
+            case 3:
+                page = new Page<>(nowPage, nums, "film_score");
+                break;
+            default:
+                page = new Page<>(nowPage, nums, "film_box_office");
+                break;
+        }
+        if (sourceId != 99) {
+            entityWrapper.eq("film_source", sourceId);
+        }
+        if (yearId != 99) {
+            entityWrapper.eq("film_date", yearId);
+        }
+        if (catId != 99) {
+            String catStr = "%#" + catId + "#%";
+            entityWrapper.like("film_cats", catStr);
+        }
+        List<FilmT> films = filmTMapper.selectPage(page, entityWrapper);
+        filmInfos = getFilmInfo(films);
+        filmVO.setFilmNum(films.size());
+
+        int totalCounts = filmTMapper.selectCount(entityWrapper);
+        int totalPages = (totalCounts / nums) + 1;
+
+
+        filmVO.setFilmInfo(filmInfos);
+        filmVO.setTotalPage(totalPages);
+        filmVO.setNowPage(nowPage);
+
         return filmVO;
     }
 

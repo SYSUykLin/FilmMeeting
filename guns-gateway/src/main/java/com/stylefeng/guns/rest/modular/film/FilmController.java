@@ -1,6 +1,8 @@
 package com.stylefeng.guns.rest.modular.film;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.alibaba.dubbo.rpc.RpcContext;
+import com.stylefeng.guns.api.film.FilmAsyncServiceAPI;
 import com.stylefeng.guns.api.film.FilmServiceAPI;
 import com.stylefeng.guns.api.film.vo.*;
 import com.stylefeng.guns.rest.modular.film.vo.FilmConditionVO;
@@ -11,6 +13,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 /**
  * @author greenArrow
@@ -25,6 +29,9 @@ public class FilmController {
 
     @Reference(interfaceClass = FilmServiceAPI.class)
     private FilmServiceAPI filmServiceAPI;
+
+    @Reference(interfaceClass = FilmAsyncServiceAPI.class, async = true)
+    private FilmAsyncServiceAPI filmAsyncServiceAPI;
 
     @RequestMapping(value = "getIndex", method = RequestMethod.GET)
     public ResponseVO getIndex() {
@@ -183,9 +190,44 @@ public class FilmController {
 
     @RequestMapping(value = "films/{searchParam}", method = RequestMethod.GET)
     public ResponseVO films(@PathVariable("searchParam") String searchParam,
-                            int searchType) {
+                            int searchType) throws ExecutionException, InterruptedException {
         FilmDetailVO filmDetail = filmServiceAPI.getFilmDetail(searchType, searchParam);
-        return null;
+
+        if (filmDetail == null) {
+            return ResponseVO.serviceFail("没有可查询影片");
+        } else if (filmDetail.getFilmId() == null || filmDetail.getFilmId().trim().length() == 0) {
+            return ResponseVO.serviceFail("没有可查询影片");
+
+        }
+
+        String filmId = filmDetail.getFilmId();
+
+
+        filmAsyncServiceAPI.getFilmDesc(filmId);
+        Future<FilmDescVO> filmDescVOFuture = RpcContext.getContext().getFuture();
+
+        filmAsyncServiceAPI.getImgs(filmId);
+        Future<ImgVO> imgVOFuture = RpcContext.getContext().getFuture();
+
+        filmAsyncServiceAPI.getDectInfo(filmId);
+        Future<ActorVO> directorVOFuture = RpcContext.getContext().getFuture();
+
+        filmAsyncServiceAPI.getActors(filmId);
+        Future<List<ActorVO>> actorVOFuture = RpcContext.getContext().getFuture();
+
+        InfoRequestVO infoRequestVO = new InfoRequestVO();
+
+        ActorRequestVO actorRequestVO = new ActorRequestVO();
+        actorRequestVO.setActors(actorVOFuture.get());
+        actorRequestVO.setDirector(directorVOFuture.get());
+
+        infoRequestVO.setActors(actorRequestVO);
+        infoRequestVO.setBiography(filmDescVOFuture.get().getBiography());
+        infoRequestVO.setFilmId(filmId);
+        infoRequestVO.setImgVO(imgVOFuture.get());
+
+        filmDetail.setInfo04(infoRequestVO);
+        return ResponseVO.success("http://img.meetingshop.cn/", filmDetail);
     }
 
 }

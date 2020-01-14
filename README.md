@@ -524,7 +524,7 @@ public interface FilmServiceAPI {
 有点复杂，先遍历一次，遇到99了先存下来，如果没有匹配到的，说明传回来的就是99，那么把99全选传回去就好了。没有用到什么特别的算法，如果想快点用上二分可能好点。测试结果：
 ![](https://upload-images.jianshu.io/upload_images/10624272-5d2f5bd2b6cf81fc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 这样就测试成功了。**（WiFi断掉才能练上这个问题还是存在，WiFi连着，可能可以找到服务，WiFi断开是一定可以找到服务，问题还是message can not send，channel is closed.）**
-#### 影片查询接口
+####  影片查询接口
 影片查询接口顺便实现一次重构， 比如说在首页的时候：
 ![](https://upload-images.jianshu.io/upload_images/10624272-092048257a45eb94.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 islimit = true，即为首页，islimit为false则为列表，但是这样是完全不能满足功能需求的。影片查询需要7个参数，影片类型，排序方式，来源，分类，年份，当前第几页，总页数，如果使用参数直接散开传到控制器是可以的，但是很麻烦，所以使用一个模型来接收。那么控制器主要做几个事情：首先是根据showType判断类型，接着根据sortID排序，然后添加各种查询条件，判断当前是第几页。之前有实现过geHotFilms等等类似功能的函数，重构这些函数，改成可用的，先修改API：
@@ -669,8 +669,110 @@ where film.UUID = info.film_id
 ```
 接下来就是后面的拼接：
 ![](https://upload-images.jianshu.io/upload_images/10624272-49a4870d4e3b64d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 ![](https://upload-images.jianshu.io/upload_images/10624272-8860c2f61db12e6d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-这玩意有点吓人，讲道理，还没写过这么长的，如果把那些分类全部放程序里面的话有不好改，不灵活。
+这玩意有点吓人，讲道理，还没写过这么长的，如果把那些分类全部放程序里面的话有不好改，不灵活。接下来就是补充基本的控制器即可，但是这上面完成的只是电影基本信息，电影的介绍，演员表，截图等等还没有完成。接下来就是电影的演员，电影与演员的对应关系是一对多的关系，如果直接写不太好些，所以用一个演员映射表来实现:
+```
+CREATE TABLE mooc_film_actor_t(
+  UUID INT PRIMARY KEY AUTO_INCREMENT COMMENT '主键编号',
+  film_id INT COMMENT '影片编号,对应mooc_film_t',
+  actor_id INT COMMENT '演员编号,对应mooc_actor_t',
+  role_name VARCHAR(100) COMMENT '角色名称'
+) COMMENT '影片与演员映射表' ENGINE = INNODB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
+
+
+```
+role_name不是演员名字，是角色，比如在电影里面的导演还是演员，这里也需要联合查询：
+```
+
+select actor.actor_name as directorName, actor_img as imgAddress, rela.role_name as roleName
+from actor_t actor,
+     film_actor_t rela
+where actor.UUID = rela.actor_id
+  and rela.film_id = 2;
+```
+这个查询比上面的要简单多了，联合几个表，也不需要嵌套查询。这里要返回的json串：
+![](https://upload-images.jianshu.io/upload_images/10624272-45c9ee2969dd4052.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+这整个json作为一个对象FilmRequestVO，这个FilmRequestVO又包含几个对象，status和imgPre都是原来Respose就有的，只需要把剩下的加上就好，data那块是一个对象，而data里面info04又做成一个对象，director和actor又是一个对象，以此类推，贼多。
+![](https://upload-images.jianshu.io/upload_images/10624272-44584331cfb7ab1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+接下来就是控制器访问的问题了：
+![](https://upload-images.jianshu.io/upload_images/10624272-ace568472b9bfdac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+ignore_url里面直接加film/films是不行的，因为在Authfilter里面是equal，相等在能匹配，只需要把Authfilter里面改成startwith即可：
+![](https://upload-images.jianshu.io/upload_images/10624272-8432bc4fb890fc4e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/10624272-a22030c750431c61.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+调试成功。现在还有一个小小的问题，目前这种情况很快，数据量小一下子就出来了，假设每个接口都是200ms，那么这个请求接口一共就演示1秒了，真是很大的延迟。而dubbo与一个特性，即异步调用。
+# 异步调用
+dubbo的异步调用特性基于NIO的非阻塞实现并进行调用，客户端是不需要启动多线程。![](https://upload-images.jianshu.io/upload_images/10624272-241ba99a9d16703f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+首先用户线程调用服务，进入IOThread，IOthread请求服务器获取返回，然后不等待服务器返回，立刻设置一个future对象，future对象标识一个可能还没有完成的任务结果，等到完成了在通知future，然后接受返回。原本是发出请求，等待执行完成后返回，现在是已发出请求就返回，用future来接受，立刻返回后就跑去执行其他的，这就做到异步了。
+比如启动异步调用之后，执行方法：
+```
+fooService.findFoo(fooId);
+```
+这个方法直接返回一个null，因为不等待结果了，接着dubbo会自动生成一个funture对象，因为需要用future对象存储返回数据，所以需要获取到Future：
+```
+Future<Foo> fooFuture = RpcContext.getContext().getFuture();
+```
+再从这个future对象获取信息：
+```
+Foo foo = fooFuture.get();
+```
+明白原理之后就要把异步调用用到业务上了。刚刚返回电影信息详细可以使用
+```
+    @Reference(interfaceClass = FilmServiceAPI.class, async = true)
+    private FilmServiceAPI filmServiceAPI;
+
+```
+如果这样使用，那么但凡是跟future没有关系的都会报错，比如在刚刚获取详细信息过程中：
+```
+        FilmDetailVO filmDetail = filmServiceAPI.getFilmDetail(searchType, searchParam);
+
+        if (filmDetail == null) {
+            return ResponseVO.serviceFail("没有可查询影片");
+        } else if (filmDetail.getFilmId() == null || filmDetail.getFilmId().trim().length() == 0) {
+            return ResponseVO.serviceFail("没有可查询影片");
+
+        }
+
+        String filmId = filmDetail.getFilmId();
+
+```
+前面这部分是获取ID的，后面都是根据ID去查找其他的信息，那么如果异步处理后面的ID可能null值了。把需要异步的方法全部封装成另外一个API进行处理，剩下的方法留着。
+```
+    @Reference(interfaceClass = FilmServiceAPI.class)
+    private FilmServiceAPI filmServiceAPI;
+
+    @Reference(interfaceClass = FilmAsyncServiceAPI.class, async = true)
+    private FilmAsyncServiceAPI filmAsyncServiceAPI;
+```
+异步调用需要加上async = true。
+```
+
+
+        filmAsyncServiceAPI.getFilmDesc(filmId);
+        Future<FilmDescVO> filmDescVOFuture = RpcContext.getContext().getFuture();
+
+        filmAsyncServiceAPI.getImgs(filmId);
+        Future<ImgVO> imgVOFuture = RpcContext.getContext().getFuture();
+
+        filmAsyncServiceAPI.getDectInfo(filmId);
+        Future<ActorVO> directorVOFuture = RpcContext.getContext().getFuture();
+
+        filmAsyncServiceAPI.getActors(filmId);
+        Future<List<ActorVO>> actorVOFuture = RpcContext.getContext().getFuture();
+
+        InfoRequestVO infoRequestVO = new InfoRequestVO();
+
+        ActorRequestVO actorRequestVO = new ActorRequestVO();
+        actorRequestVO.setActors(actorVOFuture.get());
+        actorRequestVO.setDirector(directorVOFuture.get());
+
+        infoRequestVO.setActors(actorRequestVO);
+        infoRequestVO.setBiography(filmDescVOFuture.get().getBiography());
+        infoRequestVO.setFilmId(filmId);
+        infoRequestVO.setImgVO(imgVOFuture.get());
+
+```
+需要用future对象来接收数据。和示例一样，注意异步需要手动开启，在启动类加上@EnableAsync，调通了之后影片模块基本就完成了。影片模块这里相对复杂一点，光是返回model就有8个，而且层层叠加，很容易混，首页也使用到了服务聚合，确实很方便，只需要暴露一个接口可以访问所有的数据，还有dubbo的异步特性，虽然现在还看不出，但是确实挺好用的。
 
 
 

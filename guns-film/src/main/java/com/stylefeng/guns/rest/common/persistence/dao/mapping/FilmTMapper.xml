@@ -21,7 +21,9 @@
 
     <select id="getFilmDetailByName" parameterType="java.lang.String"
             resultType="com.stylefeng.guns.api.film.vo.FilmDetailVO">
-        select film.film_name                                        as filmName,
+        select
+        film.UUID                                             as filmId,
+        film.film_name                                        as filmName,
        info.film_en_name                                     as filmEnName,
        film.img_address                                      as imgAddress,
        info.film_score                                       as score,
@@ -30,7 +32,7 @@
        (select group_concat(show_name separator ',')
         from cat_dict_t
         where find_in_set(cat_dict_t.UUID, (select replace(trim(both '#' from film_cats), '#', ',') from film_t where film_t.UUID = film.UUID)))
-                                                             as info1,
+                                                             as info01,
        concat((select show_name from source_dict_t where source_dict_t.UUID = film.UUID ), '/', info.film_length, '分钟') as info02,
        concat(film.film_time, (select show_name from source_dict_t where film_source = source_dict_t.UUID), '上映')        as info03
 from film_t film,
@@ -40,7 +42,9 @@ where film.UUID = info.film_id
     </select>
     <select id="getFilmDetailById" parameterType="java.lang.String"
             resultType="com.stylefeng.guns.api.film.vo.FilmDetailVO">
-        select film.film_name                                        as filmName,
+        select
+        film.UUID                                             as filmId,
+        film.film_name                                        as filmName,
        info.film_en_name                                     as filmEnName,
        film.img_address                                      as imgAddress,
        info.film_score                                       as score,
@@ -49,7 +53,7 @@ where film.UUID = info.film_id
        (select group_concat(show_name separator ',')
         from cat_dict_t
         where find_in_set(cat_dict_t.UUID, (select replace(trim(both '#' from film_cats), '#', ',') from film_t where film_t.UUID = film.UUID)))
-                                                             as info1,
+                                                             as info01,
        concat((select show_name from source_dict_t where source_dict_t.UUID = film.UUID ), '/', info.film_length, '分钟') as info02,
        concat(film.film_time, (select show_name from source_dict_t where film_source = source_dict_t.UUID), '上映')        as info03
 from film_t film,

@@ -7,19 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="guns-rest" />
+        <module name="guns-gateway" />
         <module name="guns-user" />
         <module name="guns-cinema" />
-        <module name="guns-gateway" />
         <module name="guns-admin" />
+        <module name="guns-film" />
         <module name="guns-api" />
         <module name="guns-generator" />
         <module name="guns-core" />
-      </profile>
-      <profile name="Annotation profile for guns-parent" enabled="true">
-        <sourceOutputDir name="../guns-cinema/target/generated-sources/annotations" />
-        <sourceTestOutputDir name="../guns-cinema/target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="guns-film" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

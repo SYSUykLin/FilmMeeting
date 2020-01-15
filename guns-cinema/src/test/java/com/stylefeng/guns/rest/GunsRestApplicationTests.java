@@ -1,6 +1,5 @@
 package com.stylefeng.guns.rest;
 
-import com.stylefeng.guns.rest.common.persistence.dao.FilmTMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;

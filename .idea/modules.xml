@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/guns-admin/guns-admin.iml" filepath="$PROJECT_DIR$/guns-admin/guns-admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/guns-api/guns-api.iml" filepath="$PROJECT_DIR$/guns-api/guns-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/guns-cinema/guns-cinema.iml" filepath="$PROJECT_DIR$/guns-cinema/guns-cinema.iml" />
       <module fileurl="file://$PROJECT_DIR$/guns-core/guns-core.iml" filepath="$PROJECT_DIR$/guns-core/guns-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/guns-film/guns-film.iml" filepath="$PROJECT_DIR$/guns-film/guns-film.iml" />
       <module fileurl="file://$PROJECT_DIR$/guns-gateway/guns-gateway.iml" filepath="$PROJECT_DIR$/guns-gateway/guns-gateway.iml" />

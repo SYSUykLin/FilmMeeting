@@ -1,58 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f1fbc0fb-346e-4439-a5b6-1373b6a9e629" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/cinema/CinemaServiceAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/cinema/vo/AreaVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/cinema/vo/BrandVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/cinema/vo/CinemaInfoVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/cinema/vo/CinemaQueryVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/cinema/vo/CinemaVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/cinema/vo/FilmFieldVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/cinema/vo/FilmInfoVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/cinema/vo/HallInfoVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/cinema/vo/HallTypeVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/AreaDictTMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/BrandDictTMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/CinemaTMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/FieldTMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/HallDictTMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/HallFilmInfoTMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/mapping/CinemaTMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/model/AreaDictT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/model/BrandDictT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/model/CinemaT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/model/FieldT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/model/HallDictT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/model/HallFilmInfoT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/modular/cinema/service/DefaultCinemaServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/cinema/CinemaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-api/guns-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/guns-api/guns-api.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/guns-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/GunsRestServletInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/GunsRestServletInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/ActorTMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/BannerTMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/CatDictTMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/FilmActorTMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/FilmInfoTMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/FilmTMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/SourceDictTMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/YearDictTMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/mapping/ActorTMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/mapping/BannerTMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/mapping/CatDictTMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/mapping/AreaDictTMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/mapping/FilmActorTMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/mapping/FieldTMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/mapping/FilmInfoTMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/mapping/HallFilmInfoTMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/mapping/FilmTMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/mapping/SourceDictTMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/mapping/HallDictTMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/mapping/YearDictTMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/mapping/BrandDictTMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-cinema/src/test/java/com/stylefeng/guns/rest/GunsRestApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-cinema/src/test/java/com/stylefeng/guns/rest/GunsRestApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-cinema/src/test/java/com/stylefeng/guns/rest/generator/EntityGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-cinema/src/test/java/com/stylefeng/guns/rest/generator/EntityGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-film/guns-film.iml" beforeDir="false" afterPath="$PROJECT_DIR$/guns-film/guns-film.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f1fbc0fb-346e-4439-a5b6-1373b6a9e629" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -347,7 +296,7 @@
       <workItem from="1579010047899" duration="151000" />
       <workItem from="1579010968169" duration="721000" />
       <workItem from="1579012032061" duration="2177000" />
-      <workItem from="1579058991198" duration="11469000" />
+      <workItem from="1579058991198" duration="12137000" />
     </task>
     <task id="LOCAL-00001" summary="first update">
       <created>1578566760158</created>
@@ -447,7 +396,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579059526813</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="CinemaServiceAPI implement is woring......">
+      <created>1579107252332</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1579107252333</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -477,7 +433,8 @@
     <MESSAGE value="update README.md" />
     <MESSAGE value="complete film model and update README.md" />
     <MESSAGE value="create cinema model" />
-    <option name="LAST_COMMIT_MESSAGE" value="create cinema model" />
+    <MESSAGE value="CinemaServiceAPI implement is woring......" />
+    <option name="LAST_COMMIT_MESSAGE" value="CinemaServiceAPI implement is woring......" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="117" key="#Inspections" timestamp="1578493411691">
@@ -508,10 +465,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1579102927805" />
-    <state x="28" y="23" width="948" height="777" key="CommitChangelistDialog2" timestamp="1579059526078">
-      <screen x="0" y="23" width="1440" height="777" />
+    <state x="28" y="23" width="948" height="777" key="CommitChangelistDialog2" timestamp="1579107251527">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="28" y="23" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1578934466711" />
+    <state x="28" y="23" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1579107251527" />
     <state x="28" y="23" width="948" height="777" key="CommitChangelistDialog2/0.23.1440.777@0.23.1440.777" timestamp="1579059526078" />
     <state x="527" y="358" key="Github.CreateGistDialog" timestamp="1578848213255">
       <screen x="0" y="0" width="1440" height="900" />
@@ -586,10 +543,10 @@
     </state>
     <state x="197" y="56" width="1024" height="777" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1579018227616" />
     <state x="126" y="75" key="SettingsEditor/0.23.1440.777@0.23.1440.777" timestamp="1578546876223" />
-    <state x="320" y="188" key="Vcs.Push.Dialog.v2" timestamp="1579059530592">
-      <screen x="0" y="23" width="1440" height="777" />
+    <state x="320" y="191" key="Vcs.Push.Dialog.v2" timestamp="1579107255137">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="191" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1579011476577" />
+    <state x="320" y="191" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1579107255137" />
     <state x="320" y="188" key="Vcs.Push.Dialog.v2/0.23.1440.777@0.23.1440.777" timestamp="1579059530591" />
     <state x="496" y="331" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1578985176113">
       <screen x="0" y="0" width="1440" height="900" />

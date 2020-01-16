@@ -21,9 +21,9 @@ public interface CinemaServiceAPI {
 
     CinemaInfoVO getCinemaInfoById(Integer cinemaId);
 
-    FilmInfoVO getFilmInfoByCinemaId(Integer cinemaId);
+    List<FilmInfoVO> getFilmInfoByCinemaId(Integer cinemaId);
 
-    FilmFieldVO getFilmFieldInfo(Integer fieldId);
+    HallInfoVO getFilmFieldInfo(Integer fieldId);
 
     FilmInfoVO getFilmInfoByFieldId(Integer fieldId);
 }

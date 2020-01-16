@@ -6,7 +6,10 @@ import com.baomidou.mybatisplus.plugins.Page;
 import com.stylefeng.guns.api.cinema.CinemaServiceAPI;
 import com.stylefeng.guns.api.cinema.vo.*;
 import com.stylefeng.guns.rest.common.persistence.dao.*;
+import com.stylefeng.guns.rest.common.persistence.model.AreaDictT;
+import com.stylefeng.guns.rest.common.persistence.model.BrandDictT;
 import com.stylefeng.guns.rest.common.persistence.model.CinemaT;
+import com.stylefeng.guns.rest.common.persistence.model.HallDictT;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -76,36 +79,130 @@ public class DefaultCinemaServiceImpl implements CinemaServiceAPI {
 
     @Override
     public List<BrandVO> getBrands(Integer brandId) {
-        return null;
+
+        List<BrandVO> brandVOS = new ArrayList<>();
+        boolean flag = false;
+        BrandDictT brandDictT = brandDictTMapper.selectById(brandId);
+        if (brandId == 99 || brandDictT == null || brandDictT.getUuid() == null) {
+            flag = true;
+        }
+
+        List<BrandDictT> brandDictTS = brandDictTMapper.selectList(null);
+        for (BrandDictT brand : brandDictTS) {
+            BrandVO brandVO = new BrandVO();
+            brandVO.setBrandName(brand.getShowName());
+            brandVO.setBrandId(brand.getUuid() + "");
+            if (flag) {
+                if (brand.getUuid() == 99) {
+                    brandVO.setActive(true);
+                } else {
+                    brandVO.setActive(false);
+                }
+            } else {
+                if (brand.getUuid() == brandId) {
+                    brandVO.setActive(false);
+                } else {
+                    brandVO.setActive(false);
+                }
+            }
+            brandVOS.add(brandVO);
+        }
+        return brandVOS;
     }
 
     @Override
     public List<AreaVO> getAreas(Integer areaId) {
-        return null;
+
+        List<AreaVO> areaVOS = new ArrayList<>();
+        boolean flag = false;
+        AreaDictT areaDictT = areaDictTMapper.selectById(areaId);
+        if (areaId == 99 || areaDictT == null || areaDictT.getUuid() == null) {
+            flag = true;
+        }
+
+        List<AreaDictT> areaDictTS = areaDictTMapper.selectList(null);
+        for (AreaDictT area : areaDictTS) {
+            AreaVO areaVO = new AreaVO();
+            areaVO.setAreaName(area.getShowName());
+            areaVO.setAreaId(area.getUuid() + "");
+            if (flag) {
+                if (area.getUuid() == 99) {
+                    areaVO.setActive(true);
+                } else {
+                    areaVO.setActive(false);
+                }
+            } else {
+                if (area.getUuid() == areaId) {
+                    areaVO.setActive(false);
+                } else {
+                    areaVO.setActive(false);
+                }
+            }
+            areaVOS.add(areaVO);
+        }
+        return areaVOS;
     }
 
     @Override
     public List<HallTypeVO> getHallTypes(Integer hallType) {
-        return null;
+
+        List<HallTypeVO> hallTypeVOS = new ArrayList<>();
+        boolean flag = false;
+        HallDictT hallDictT = hallDictTMapper.selectById(hallType);
+        if (hallType == 99 || hallDictT == null || hallDictT.getUuid() == null) {
+            flag = true;
+        }
+
+        List<HallDictT> hallDictTS = hallDictTMapper.selectList(null);
+        for (HallDictT hall : hallDictTS) {
+            HallTypeVO hallVO = new HallTypeVO();
+            hallVO.setHalltypeName(hall.getShowName());
+            hallVO.setHalltypeId(hall.getUuid() + "");
+            if (flag) {
+                if (hall.getUuid() == 99) {
+                    hallVO.setActive(true);
+                } else {
+                    hallVO.setActive(false);
+                }
+            } else {
+                if (hall.getUuid() == hallType) {
+                    hallVO.setActive(false);
+                } else {
+                    hallVO.setActive(false);
+                }
+            }
+            hallTypeVOS.add(hallVO);
+        }
+        return hallTypeVOS;
     }
 
     @Override
     public CinemaInfoVO getCinemaInfoById(Integer cinemaId) {
-        return null;
+        CinemaT cinemaT = cinemaTMapper.selectById(cinemaId);
+        CinemaInfoVO cinemaInfoVO = new CinemaInfoVO();
+        cinemaInfoVO.setCinemaAddress(cinemaT.getCinemaAddress());
+        cinemaInfoVO.setImgUrl(cinemaT.getImgAddress());
+        cinemaInfoVO.setCinemaPhone(cinemaT.getCinemaPhone());
+        cinemaInfoVO.setCinemaId(cinemaT.getUuid() + "");
+        cinemaInfoVO.setCinemaName(cinemaT.getCinemaName());
+        return cinemaInfoVO;
     }
 
     @Override
-    public FilmInfoVO getFilmInfoByCinemaId(Integer cinemaId) {
-        return null;
+    public List<FilmInfoVO> getFilmInfoByCinemaId(Integer cinemaId) {
+        List<FilmInfoVO> filmInfos = fieldTMapper.getFilmInfos(cinemaId);
+        return filmInfos;
     }
 
     @Override
-    public FilmFieldVO getFilmFieldInfo(Integer fieldId) {
-        return null;
+    public HallInfoVO getFilmFieldInfo(Integer fieldId) {
+        HallInfoVO hallInfoVO = fieldTMapper.getHallInfo(fieldId);
+        return hallInfoVO;
     }
 
     @Override
     public FilmInfoVO getFilmInfoByFieldId(Integer fieldId) {
-        return null;
+        FilmInfoVO filmInfoVO = fieldTMapper.getFilmInfoById(fieldId);
+        return filmInfoVO;
     }
 }

@@ -8,7 +8,7 @@ jwt:
   expiration: 604800      #7天 单位:秒
   auth-path: auth         #认证请求的路径
   md5-key: randomKey      #md5加密混淆key
-  ignore-url: /user/register,/user/check,/film/getIndex,/film/getConditionList,/film/getFilms,/film/films  #忽略列表
+  ignore-url: /user/register,/user/check,/film/getIndex,/film/getConditionList,/film/getFilms,/film/films,/cinema/getCinemas,/cinema/getCondition,/cinema/getFields,/cinema/getFieldInfo  #忽略列表
 
 server:
   port: 80 #项目端口
@@ -38,10 +38,10 @@ spring:
       check: false
       timeout: 50000
   datasource:
-      url: jdbc:mysql://127.0.0.1:3306/guns_rest?autoReconnect=true&useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
-      username: root
-      password: qazwsxedc
-      filters: log4j,wall,mergeStat
+    url: jdbc:mysql://127.0.0.1:3306/guns_rest?autoReconnect=true&useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
+    username: root
+    password: qazwsxedc
+    filters: log4j,wall,mergeStat
 
 logging:
   level.root: info

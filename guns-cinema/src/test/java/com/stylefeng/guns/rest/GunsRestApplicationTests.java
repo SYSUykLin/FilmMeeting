@@ -10,12 +10,9 @@ import javax.annotation.Resource;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class GunsRestApplicationTests {
-	@Resource
-	private FilmTMapper filmTMapper;
 
 	@Test
 	public void contextLoads() {
-		System.out.println(filmTMapper.getFilmDetailById("2"));
 	}
 
 }

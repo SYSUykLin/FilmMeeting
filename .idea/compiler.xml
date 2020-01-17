@@ -7,12 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="guns-rest" />
-        <module name="guns-gateway" />
         <module name="guns-user" />
-        <module name="guns-cinema" />
-        <module name="guns-admin" />
-        <module name="guns-film" />
         <module name="guns-api" />
+        <module name="guns-film" />
+        <module name="guns-gateway" />
+        <module name="guns-admin" />
+        <module name="guns-order" />
+        <module name="guns-cinema" />
         <module name="guns-generator" />
         <module name="guns-core" />
       </profile>
@@ -25,6 +26,7 @@
       <module name="guns-film" target="1.8" />
       <module name="guns-gateway" target="1.8" />
       <module name="guns-generator" target="1.8" />
+      <module name="guns-order" target="1.8" />
       <module name="guns-parent" target="1.8" />
       <module name="guns-rest" target="1.8" />
       <module name="guns-user" target="1.8" />
@@ -39,6 +41,7 @@
       <module name="guns-film" options="-parameters" />
       <module name="guns-gateway" options="-parameters" />
       <module name="guns-generator" options="-parameters" />
+      <module name="guns-order" options="-parameters" />
       <module name="guns-rest" options="-parameters" />
       <module name="guns-user" options="-parameters" />
     </option>

@@ -2,18 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1fbc0fb-346e-4439-a5b6-1373b6a9e629" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/guns-cinema.log.2020-01-15.0.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/cinema/vo/CinemaConditionResponseVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/cinema/vo/CinemaFieldResponseVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/cinema/vo/CinemaFieldsResponseVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/order/OrderServiceAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/order/vo/OrderVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/order/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/order.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/src/main/java/com/stylefeng/guns/rest/GunsRestServletInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/src/main/java/com/stylefeng/guns/rest/OrderApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/src/main/java/com/stylefeng/guns/rest/common/SimpleObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/src/main/java/com/stylefeng/guns/rest/common/aop/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/src/main/java/com/stylefeng/guns/rest/common/exception/BizExceptionEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/OrderTMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/mapping/OrderTMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/src/main/java/com/stylefeng/guns/rest/common/persistence/model/OrderT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/src/main/java/com/stylefeng/guns/rest/config/MessageConverConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/src/main/java/com/stylefeng/guns/rest/config/MybatisPlusConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/src/main/java/com/stylefeng/guns/rest/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/src/main/java/com/stylefeng/guns/rest/config/properties/JwtProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/src/main/java/com/stylefeng/guns/rest/config/properties/RestProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/src/main/java/com/stylefeng/guns/rest/modular/auth/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/src/main/java/com/stylefeng/guns/rest/modular/auth/controller/dto/AuthRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/src/main/java/com/stylefeng/guns/rest/modular/auth/controller/dto/AuthResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/src/main/java/com/stylefeng/guns/rest/modular/auth/converter/BaseTransferEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/src/main/java/com/stylefeng/guns/rest/modular/auth/converter/WithSignMessageConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/src/main/java/com/stylefeng/guns/rest/modular/auth/filter/AuthFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/src/main/java/com/stylefeng/guns/rest/modular/auth/security/DataSecurityAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/src/main/java/com/stylefeng/guns/rest/modular/auth/security/impl/Base64SecurityAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/src/main/java/com/stylefeng/guns/rest/modular/auth/util/JwtTokenUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/src/main/java/com/stylefeng/guns/rest/modular/auth/validator/IReqValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/src/main/java/com/stylefeng/guns/rest/modular/auth/validator/dto/Credence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/src/main/java/com/stylefeng/guns/rest/modular/auth/validator/impl/SimpleValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/src/main/java/com/stylefeng/guns/rest/modular/order/service/DefaultOrderServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/src/test/java/com/stylefeng/guns/rest/GunsRestApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/src/test/java/com/stylefeng/guns/rest/fastjson/JsonTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/src/test/java/com/stylefeng/guns/rest/generator/EntityGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/src/test/java/com/stylefeng/guns/rest/jwt/DecryptTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order/src/test/java/com/stylefeng/guns/rest/jwt/JWTTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e5002b80-7306-4889-a4ea-00ad1b1cc009.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e5002b80-7306-4889-a4ea-00ad1b1cc009.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/cinema/CinemaServiceAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/cinema/CinemaServiceAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/FieldTMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/FieldTMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/mapping/FieldTMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/mapping/FieldTMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/modular/cinema/service/DefaultCinemaServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-cinema/src/main/java/com/stylefeng/guns/rest/modular/cinema/service/DefaultCinemaServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-cinema/src/test/java/com/stylefeng/guns/rest/GunsRestApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-cinema/src/test/java/com/stylefeng/guns/rest/GunsRestApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/cinema/CinemaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/cinema/CinemaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/guns-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,19 +79,13 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="guns_rest: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="guns_rest@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="guns_rest: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="hall_film_info_t: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
     </expand>
     <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -106,8 +132,9 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/guns-film" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/user/user" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.stylefeng.guns.rest.modular.film.service" />
@@ -116,12 +143,26 @@
       <recent name="com.stylefeng.guns.rest.modular.film.vo" />
       <recent name="com.stylefeng.guns.api.user" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/user/user" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/guns-film" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.GatewayApplication">
+  <component name="RunManager" selected="JUnit.EntityGenerator (1)">
+    <configuration name="EntityGenerator (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="guns-order" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.stylefeng.guns.rest.generator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.stylefeng.guns.rest.generator" />
+      <option name="MAIN_CLASS_NAME" value="com.stylefeng.guns.rest.generator.EntityGenerator" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="EntityGenerator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="guns-cinema" />
       <extension name="coverage">
@@ -137,24 +178,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EntityGenerator.entityGenerator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="guns-film" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.stylefeng.guns.rest.generator.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.stylefeng.guns.rest.generator" />
-      <option name="MAIN_CLASS_NAME" value="com.stylefeng.guns.rest.generator.EntityGenerator" />
-      <option name="METHOD_NAME" value="entityGenerator" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GunsRestApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="guns-film" />
+    <configuration name="GunsRestApplicationTests (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="guns-order" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.stylefeng.guns.rest.*" />
@@ -242,6 +267,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="OrderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="guns-order" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.stylefeng.guns.rest.OrderApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="guns-user" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.stylefeng.guns.rest.UserApplication" />
@@ -250,8 +282,6 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.GunsRestApplicationTests" />
-      <item itemvalue="JUnit.EntityGenerator.entityGenerator" />
       <item itemvalue="JUnit.EntityGenerator" />
       <item itemvalue="Maven.[order]" />
       <item itemvalue="Spring Boot.GunsApplication" />
@@ -260,14 +290,17 @@
       <item itemvalue="Spring Boot.CinemaApplication" />
       <item itemvalue="Spring Boot.GatewayApplication" />
       <item itemvalue="Spring Boot.FilmApplication" />
+      <item itemvalue="JUnit.GunsRestApplicationTests (1)" />
+      <item itemvalue="JUnit.EntityGenerator (1)" />
+      <item itemvalue="Spring Boot.OrderApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.EntityGenerator (1)" />
+        <item itemvalue="JUnit.GunsRestApplicationTests (1)" />
         <item itemvalue="Spring Boot.GatewayApplication" />
         <item itemvalue="JUnit.EntityGenerator" />
         <item itemvalue="Spring Boot.FilmApplication" />
-        <item itemvalue="JUnit.EntityGenerator.entityGenerator" />
-        <item itemvalue="JUnit.GunsRestApplicationTests" />
       </list>
     </recent_temporary>
   </component>
@@ -276,7 +309,17 @@
       <list>
         <serviceView>
           <treeState>
-            <expand />
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:guns_rest@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:guns_rest@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@1444bcbd" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+            </expand>
             <select />
           </treeState>
         </serviceView>
@@ -319,7 +362,9 @@
       <workItem from="1579058991198" duration="12160000" />
       <workItem from="1579137952608" duration="10139000" />
       <workItem from="1579160243074" duration="217000" />
-      <workItem from="1579160926865" duration="7566000" />
+      <workItem from="1579160926865" duration="7871000" />
+      <workItem from="1579189811571" duration="238000" />
+      <workItem from="1579236269194" duration="8019000" />
     </task>
     <task id="LOCAL-00001" summary="first update">
       <created>1578566760158</created>
@@ -433,7 +478,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579107938453</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="complete the cinema model and test">
+      <created>1579188616534</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1579188616534</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -465,17 +517,18 @@
     <MESSAGE value="create cinema model" />
     <MESSAGE value="CinemaServiceAPI implement is woring......" />
     <MESSAGE value="CinemaServiceAPI implement is working......" />
-    <option name="LAST_COMMIT_MESSAGE" value="CinemaServiceAPI implement is working......" />
+    <MESSAGE value="complete the cinema model and test" />
+    <option name="LAST_COMMIT_MESSAGE" value="complete the cinema model and test" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="117" key="#Inspections" timestamp="1578493411691">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="320" y="117" key="#Inspections/0.0.1440.900@0.0.1440.900" timestamp="1578493411691" />
-    <state x="320" y="117" key="#SQL_Dialects" timestamp="1579018055567">
+    <state x="320" y="117" key="#SQL_Dialects" timestamp="1579245596749">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="117" key="#SQL_Dialects/0.0.1440.900@0.0.1440.900" timestamp="1579018055567" />
+    <state x="320" y="117" key="#SQL_Dialects/0.0.1440.900@0.0.1440.900" timestamp="1579245596749" />
     <state x="182" y="117" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578761521391">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -484,22 +537,22 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="465" y="260" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1578758376004" />
-    <state x="533" y="162" key="#com.intellij.ide.util.MemberChooser" timestamp="1579092624763">
+    <state x="533" y="162" key="#com.intellij.ide.util.MemberChooser" timestamp="1579258840552">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="533" y="162" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1579092624763" />
+    <state x="533" y="162" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1579258840552" />
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1579166939748">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900@0.0.1440.900" timestamp="1579166939748" />
-    <state x="458" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1579102927805">
+    <state x="458" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1579245683192">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="458" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1579102927805" />
-    <state x="28" y="23" width="948" height="777" key="CommitChangelistDialog2" timestamp="1579107937962">
+    <state x="458" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1579245683192" />
+    <state x="28" y="23" width="987" height="777" key="CommitChangelistDialog2" timestamp="1579188615773">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="28" y="23" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1579107937962" />
+    <state x="28" y="23" width="987" height="777" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1579188615773" />
     <state x="28" y="23" width="948" height="777" key="CommitChangelistDialog2/0.23.1440.777@0.23.1440.777" timestamp="1579059526078" />
     <state x="527" y="358" key="Github.CreateGistDialog" timestamp="1578848213255">
       <screen x="0" y="0" width="1440" height="900" />
@@ -509,45 +562,45 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="583" y="355" key="Github.ShareDialog/0.0.1440.900@0.0.1440.900" timestamp="1578848247203" />
-    <state width="1398" height="322" key="GridCell.Tab.0.bottom" timestamp="1579182672786">
+    <state width="958" height="245" key="GridCell.Tab.0.bottom" timestamp="1579260891174">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="322" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1579182672786" />
+    <state width="958" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1579260891174" />
     <state width="1398" height="322" key="GridCell.Tab.0.bottom/0.23.1440.777@0.23.1440.777" timestamp="1579012337635" />
-    <state width="1398" height="322" key="GridCell.Tab.0.center" timestamp="1579182672784">
+    <state width="958" height="245" key="GridCell.Tab.0.center" timestamp="1579260891172">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="322" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1579182672784" />
+    <state width="958" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1579260891172" />
     <state width="1398" height="322" key="GridCell.Tab.0.center/0.23.1440.777@0.23.1440.777" timestamp="1579012337632" />
-    <state width="1398" height="322" key="GridCell.Tab.0.left" timestamp="1579182672782">
+    <state width="958" height="245" key="GridCell.Tab.0.left" timestamp="1579260891170">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="322" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1579182672782" />
+    <state width="958" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1579260891170" />
     <state width="1398" height="322" key="GridCell.Tab.0.left/0.23.1440.777@0.23.1440.777" timestamp="1579012337630" />
-    <state width="1398" height="322" key="GridCell.Tab.0.right" timestamp="1579182672785">
+    <state width="958" height="245" key="GridCell.Tab.0.right" timestamp="1579260891173">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="322" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1579182672785" />
+    <state width="958" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1579260891173" />
     <state width="1398" height="322" key="GridCell.Tab.0.right/0.23.1440.777@0.23.1440.777" timestamp="1579012337634" />
-    <state width="1398" height="322" key="GridCell.Tab.1.bottom" timestamp="1579182672788">
+    <state width="1398" height="322" key="GridCell.Tab.1.bottom" timestamp="1579189062462">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="322" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1579182672788" />
+    <state width="1398" height="322" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1579189062462" />
     <state width="1398" height="322" key="GridCell.Tab.1.bottom/0.23.1440.777@0.23.1440.777" timestamp="1579012337640" />
-    <state width="1398" height="322" key="GridCell.Tab.1.center" timestamp="1579182672787">
+    <state width="1398" height="322" key="GridCell.Tab.1.center" timestamp="1579189062461">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="322" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1579182672787" />
+    <state width="1398" height="322" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1579189062461" />
     <state width="1398" height="322" key="GridCell.Tab.1.center/0.23.1440.777@0.23.1440.777" timestamp="1579012337638" />
-    <state width="1398" height="322" key="GridCell.Tab.1.left" timestamp="1579182672786">
+    <state width="1398" height="322" key="GridCell.Tab.1.left" timestamp="1579189062460">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="322" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1579182672786" />
+    <state width="1398" height="322" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1579189062460" />
     <state width="1398" height="322" key="GridCell.Tab.1.left/0.23.1440.777@0.23.1440.777" timestamp="1579012337637" />
-    <state width="1398" height="322" key="GridCell.Tab.1.right" timestamp="1579182672787">
+    <state width="1398" height="322" key="GridCell.Tab.1.right" timestamp="1579189062461">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="322" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1579182672787" />
+    <state width="1398" height="322" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1579189062461" />
     <state width="1398" height="322" key="GridCell.Tab.1.right/0.23.1440.777@0.23.1440.777" timestamp="1579012337639" />
     <state width="1398" height="303" key="GridCell.Tab.2.bottom" timestamp="1578637077773">
       <screen x="0" y="0" width="1440" height="900" />
@@ -569,24 +622,24 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="234" height="498" key="HiddenNamespacesPopup/0.0.1440.900@0.0.1440.900" timestamp="1578761527430" />
-    <state x="197" y="56" width="1024" height="777" key="SettingsEditor" timestamp="1579018227616">
+    <state x="215" y="56" width="1024" height="777" key="SettingsEditor" timestamp="1579245559407">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="197" y="56" width="1024" height="777" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1579018227616" />
+    <state x="215" y="56" width="1024" height="777" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1579245559407" />
     <state x="126" y="75" key="SettingsEditor/0.23.1440.777@0.23.1440.777" timestamp="1578546876223" />
-    <state x="320" y="191" key="Vcs.Push.Dialog.v2" timestamp="1579107940364">
+    <state x="320" y="191" key="Vcs.Push.Dialog.v2" timestamp="1579188619895">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="191" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1579107940364" />
+    <state x="320" y="191" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1579188619895" />
     <state x="320" y="188" key="Vcs.Push.Dialog.v2/0.23.1440.777@0.23.1440.777" timestamp="1579059530591" />
     <state x="496" y="331" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1578985176113">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="496" y="331" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1440.900@0.0.1440.900" timestamp="1578985176113" />
-    <state x="509" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1579183394553">
+    <state x="509" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1579265044586">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="509" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1579183394553" />
+    <state x="509" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1579265044586" />
     <state x="383" y="214" width="673" height="472" key="find.popup" timestamp="1578760904590">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

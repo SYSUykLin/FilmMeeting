@@ -10,6 +10,8 @@
     <file url="file://$PROJECT_DIR$/guns-film/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/guns-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/guns-generator/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/guns-order/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/guns-order/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/guns-rest/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/guns-user/src/main/java" charset="UTF-8" />
   </component>

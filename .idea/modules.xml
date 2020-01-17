@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/guns-film/guns-film.iml" filepath="$PROJECT_DIR$/guns-film/guns-film.iml" />
       <module fileurl="file://$PROJECT_DIR$/guns-gateway/guns-gateway.iml" filepath="$PROJECT_DIR$/guns-gateway/guns-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/guns-generator/guns-generator.iml" filepath="$PROJECT_DIR$/guns-generator/guns-generator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/guns-order/guns-order.iml" filepath="$PROJECT_DIR$/guns-order/guns-order.iml" />
       <module fileurl="file://$PROJECT_DIR$/guns-parent.iml" filepath="$PROJECT_DIR$/guns-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/guns-rest/guns-rest.iml" filepath="$PROJECT_DIR$/guns-rest/guns-rest.iml" />
       <module fileurl="file://$PROJECT_DIR$/guns-user/guns-user.iml" filepath="$PROJECT_DIR$/guns-user/guns-user.iml" />

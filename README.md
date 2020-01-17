@@ -1,11 +1,11 @@
 # 传统业务
 传统业务应用基本把所有的东西都集合在一起，传统应用带来的问题，**单一业务的开发和迭代困难**，这个时候牵扯到两个部分，第一是有可能只是针对用户模块增加了许多需求，其他模块没有变更，这种情况下，第一不谈开发难度，我们把所以的用户模块的内容都开发完了，在测试的时候有两种测试，一种是冒烟测试，一种是回归测试，除了要测试用户还要测试其他的。这样问他来了，如果用户有一点要修改，那么其他的测试也工作量也很大。而且用户模块修改也有可能修改公共类了。第三当我们有一种新的技术准备应用的时候，比如发现数据库是瓶颈了，想要提升系统，这个时候就可能要用到缓存了，这个时候就要用原有代码进行全量修改了，在调整一个模块的时候可能会与其他的包进行冲突。其次，**扩容困难**，现在有一个业务系统，这个业务系统包含了我们的其他模块，比如影院模块，订单模块等等，这种情况下，用户模块的并发量不大，影院的也不大，但是订单模块就不一定了，比如说内容可能是256G，订单模块不够了，要512G，但是要知道，传统业务他的内存是统一分配的，在部署一台256G内存机器，那么订单可能就只有一点点内存，所以这个时候扩容可能要1T才有可能达到要求。  **部署和回滚**，传统在部署是，比如用户模块要ES，影院模块要redis，那么部署的时候就要全部都部署上才能跑的起来，回滚就很简单了，比如现在针对订单模块的一修改，这种情况下订单模块出问题，其他模块没有问题，这个时候全部做回滚。
-# 微服务发展历程
+#微服务发展历程
 很久以前就有提出过面向服务开发——SOA，在EJB的时代就提出了，然后到微服务开发。SOA，原先可能有一个大的系统，现在拆了他，拆成权限系统和用户系统，现在他们需要通信，可以用webservice，当然这个技术是很老的技术了。微服务和soa最主要就差在微字，**首先，微服务是一种将业务系统进一步拆分的架构风格，将业务系统进一步拆分的架构风格，微服务强调每一个单一业务都独立运行，比如原来有一个系统，有登录，退出等等一系列业务，这个用户底下有很多个业务模块，每一个业务模块占用一个进程，或者说一个JVM，这样就做了一个资源拆分，这个业务就是一个应用，这就是微服务强调的，资源独立，业务独立，这就有点像进程进化到线程一样，共享相同资源，但是又有自己独立的栈地址；同时每一个单一服务都应该使用更轻量级的机制保持通信。在微服务里面一般会使用更轻量级的协议而不是像webservice这样这么沉重的。而且每一个服务不强调环境，可以用不同语言或数据源，只是要求提供好的服务即可。**
-# 微服务核心概念
+#微服务核心概念
 Provider：服务提供者，提供服务实现。Consumer：服务调用者，调用Provider提供服务的人。  **同一个服务可以既是Provider也可以是Consumer。** 
-# 环境搭建
-#### Spring + dubbo
+#环境搭建
+####Spring + dubbo
 在idea选择quickstart，只是服务之间的调用，完全可以满足了。
 ![](https://upload-images.jianshu.io/upload_images/10624272-7f40fe6815716684.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 接下来还要两个子工程，一个Provider，一个Consumer，  至少一个吧。按照相同的方法建立两个子工程。在src下面建立resource文件夹，设置成resource root文件。然后把依赖引进了，依赖这两个Provider和Consumer都需要用，所以直接引近父工程的即可，由于是spring，不是springboot，还要application.xml配置文件，所以引入application-hello.xml：
@@ -70,7 +70,7 @@ public class ConsumerClient {
 
 ```
 启动的时候两个都要启动。运行的时候遇到一个问题：会发现dubbo://localhost:20880找不到，显示这个服务已经关闭，调了好久，然后重启一下idea，完了好了，啥事都没有。![](https://upload-images.jianshu.io/upload_images/10624272-e819f5554c88748d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)为什么会出现这个问题，看到网上大多数问题都是ZX没有注册或者是内外网的问题，所以不了了之了。其实整个流程是这样：Consumer先在xml里面配置得到了Provider的bean，quickstart，然后用Provider的这个服务给自己返回了一个消息，再输出。
-#### SpringBoot + dubbo
+####SpringBoot + dubbo
 这个就比较简单了，idea就自带了spring initial，直接建立即可，不需要任何依赖。![](https://upload-images.jianshu.io/upload_images/10624272-06fc9a66192e6f48.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)这就是基本目录。和spring是一样的，只不过把大部分配置变成了注解。接口按照spring的一样，但是实现类需要把配置文件的信息变成注解：
 ![](https://upload-images.jianshu.io/upload_images/10624272-2764bdcd1008a186.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 注意Service不要倒错包。然后在Provider启动类加上另外一个注解：
@@ -83,7 +83,7 @@ public class ConsumerClient {
 结果：
 ![](https://upload-images.jianshu.io/upload_images/10624272-efb7370568925a3c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 **还是出现是配置spring+dubbo的问题，超时问题，这个问题是不定时出现的，上一次的配置是重启了idea就好了，这次是重启电脑好的。怀疑的电脑配置问题导致的超时问题，因为dubbo默认是1000ms就会报超时，于是把他调到了50000ms，可能与内存电脑配置有关，具体原因尚未知。**
-# Zookeeper
+#Zookeeper
 上面这种就是直连提供者了，要求Consumer知道Provider的服务地址，直接找到服务，这种方式太固定了，不利于扩展。所以延伸出了用一个注册中心来注册所有的服务，zookeeper就是这样一个注册中心。
 ![](https://upload-images.jianshu.io/upload_images/10624272-291952d78eaa0908.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 invoke就所用的直连提供者。安装zookeeper还是很简单的，下载下来解压即可，然后进入bin，./zkServer.sh start运行即可。![](https://upload-images.jianshu.io/upload_images/10624272-5330a0fa127cedb6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -123,12 +123,12 @@ application在Provider下面，那么它只会扫描和她同级的包和Provide
 
 ```
 就会从dubbo这个包下面开始扫描。
-# 构建业务环境
-##### API网关
+#构建业务环境
+#####API网关
 首先**介绍**一下API网关，API网关有点像设计模式中的Facade模式，比如现在有很多个服务，用户服务，产品服务，订单服务，如果一个网站，想要访问产品服务，这个时候可能就要检查是不是登录了，或者权限等等，那么就要先访问用户服务看看你登录了没有，登录了，才访问产品，但是这样会带来问题，因为客户端本身不安全，所以微服务这块对外相当于是暴露了，都知道是什么参数了，对外来说相当于是透明，所以安全比较难做；其次，在提交订单的时候要做三步操作，检查登录，产品是否足够，下订单，其实是在点击下订单的时候，这三个步骤要一起完成，而这三个操作是三个不同的微服务，有顺序性的了，所以时间长。打个比方，现在想看新闻，一会儿想看搜狐新闻，一会儿想看头条新闻，每次都要输入就很麻烦，那么这个时候就会出现一个公共网站，比如hao123，这些网站，既可以看到搜狐，也可以看到头条新闻，其他的新闻网站对于我们老师都是透明的，甚至有时候新闻来源都是不知道的。介于这种情况，就会出现一个网关的东西，gateway，这东西就相当于后台服务与前端客户端的一个接口，那么至于怎么访问，异步同步等等前端都不需要管。都只需要面向一个接口，其他都只是后端的，**所以API网关就相当于是微服务中的一个门面。**
 ![](https://upload-images.jianshu.io/upload_images/10624272-9db1a79035c5156e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 API网关**作用**：既然已经充当门面了，首要就是需要验证你身份合不合格了，就相当于一个防火墙；审查与监察，网关有一个比较特殊的作用，类似于之前的拦截器，审查和分发，回来还要经过网关，再返回。这种情况下，就可以把边缘信息统计一下，比如执行时间，调用了啥服务，响应时间等等。其次还可以做动态路由，dubbo做好了，但是springcloud没有，springcloud需要处理。压力测试也有可能，一般是接替测试，负载均衡，静态响应分离。整个业务结构大概就是**客户端访问API网关（服务聚合，熔断降级，身份安全），然后网关再把请求分发下去。**
-# guns环境搭建
+#guns环境搭建
 guns这里使用还是v3.1，现在已经到了v6了，很早之前就下载过3.1版本，懒得换了。直接启动会有一些错误：
 ![](https://upload-images.jianshu.io/upload_images/10624272-4e34cef3022d1b00.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 首先是log4j问题，下一个包就好了。
@@ -145,7 +145,7 @@ admin是主要操作，也是主要业务，core是核心实现，generator是�
 就表示成功了。接下来就是配置dubbo环境了，和springboot一样，加依赖即可，使用guns-rest作为后端模板往常网关，所以直接复制一个就好了，对于zookeeper这些和原来的一样，启动之后./zkServer.sh start，./zkCli.sh打开客户端查看zookeeper注册符号：
 ![](https://upload-images.jianshu.io/upload_images/10624272-242c12750be0515b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 可以看到当前服务已经注册进去了。那么环境基本就是这样了，剩下就是业务开发了。 
-# 抽离业务接口
+#抽离业务接口
 就我们现在的工程，每一个模块一个实现类就一个接口，在微服务中这些接口各个工程都要有，就如前面实现的spring/springboot+dubbo直连一样，serviceAPI各个工程都要有，provide要有，Consumer也要有，很麻烦。如果是这样的话，为什么不可以把这些接口全部独立出来，做成一个工程呢？然后把实现类也扔到一个子工程里面，然后就当成是一个依赖一样引入pom.xml文件中即可。所以复制一份guns-core改名，在project structure改名，可能会出现can not contain source root这些错误，这个时候要把原来的module的重复source root删除：
 ![](https://upload-images.jianshu.io/upload_images/10624272-7e85fb623d261497.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 复制完成后右边那一列（Add Content Root）会出现两个source root 删除一个即可change name了。之前测试使用的UserAPI移到这里。
@@ -165,15 +165,15 @@ public class UserImpl implements UserAPI {
 这里的UserAPI导入guns-api里面即可。
 ![](https://upload-images.jianshu.io/upload_images/10624272-933947dbe759efa0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 可以看到，这个时候注册的又是guns.api.user.UserAPI的接口了。
-# Dubbo调用流程
+#Dubbo调用流程
 dubbo有两种调用方式，直连提供者和注册中心，两种都在刚刚的环境搭建中就简单测试过了。**首先是直连提供者：在开发和测试环境，常常是需要绕过注册中心，直接指定提供者是谁，其实就是点对点直连，类似数据链路层吧，如果需要动态扩容，每一个地址都要让Consumer知道，缺点就是全写在代码里面了，写的好点的可以扔在配置文件，但是都要重新启动，所以这种方式仅仅用于开发和测试，如果使用注册中心，就简单许多了。基于注册中心：首先先要有Provider，dubbo提供了一个容器，用这个容器来装载Provider，当启动系统时，这个Provider就会在注册中心留下地址，其实就是发现服务的过程，也叫register；而Consumer也会subscribe一下注册中心，把服务地址下载下来，同时注册中心一有变化就notify Consumer，Consumer又更新一次，dubbo本身就有moniter，用于监控检测等等**
-# dubbo多协议
+#dubbo多协议
 dubbo默认支持阿里开源的dubbo协议，同时也支持rmi，hessian等等协议。**Dubbo协议特点： 传入传出参数数据包较小（建议小于100K），消费者比提供者个数多，单一消费者无法压满提供者，尽量不要用dubbo协议传输大文件或超大字符串，基于以上描述，我们一般建议Dubbo用于小数据量大并发的服务调用，以及服务消费者机器数远大于服务提供者机器数的情况。
 RMI协议特点： 传入传出参数数据包大小混合，消费者与提供者个数差不多，可传文件。基于以上描述，我们一般对传输管道和效率没有那么高的要求，同时又有传输文件这一类的要求时，可以尝试采用RMI协议。
 Hessian协议特点： 传入传出参数数据包大小混合，提供者比消费者个数多，可用浏览器查看，可用表单或URL传入参数，暂不支持传文件。比较适用于需同时给应用程序和浏览器JS使用的服务，Hessian协议的相关内容与HTTP基本差不多，这里就不再赘述了。
 WebService协议特点： 基于CXF的frontend-simple和transports-http实现，适用于系统集成，跨语言调用。 不过如非必要，强烈不推荐使用这个方式，WebService是一个相对比较重的协议传输类型，无论从性能、效率和安全性上都不太能满足微服务的需要，如果确实存在异构系统的调用，建议可以采用其他的形式。http协议也支持。**
-# 用户模块开发
-##### JWT验证
+#用户模块开发
+#####JWT验证
 远离Java太久了，之前使用的方式都是使用cookie+session，或者用上sso单点登录吧，jwt有点不一样，不需要存储session，用户从客户端输入账号密码访问服务器，服务器给他个token，结构如下图所示：
 ![](https://upload-images.jianshu.io/upload_images/10624272-39f0baacef256887.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 header是加密方式，就是用什么方式加密把，payload就是承载信息了，用户还是管理员等等，签名就是利用前面两个信息进行两次哈希加密得到的。然后每一次客户端就带着这个token，服务器只需要验证这个token是不是正确的就好了。
@@ -201,7 +201,7 @@ public class UserImpl implements UserAPI {
 在gateway的auth的controller加上测试。
 ![](https://upload-images.jianshu.io/upload_images/10624272-1fb8387752a72b65.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 注意，打印是打印在UserApplication里面，因为这个服务是在user模块完成的。出现打印那么说明互相调用就OK了。
-# 配置可以忽略的URL
+#配置可以忽略的URL
 有些URL是可以忽略的，比如注册，/user/register，登录，/user/login，这些很明显是不需要的，所以还是需要配置一下。首先理解一下guns的jwt：
 ![](https://upload-images.jianshu.io/upload_images/10624272-2f69b84c0b7dcfcd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 gateway里面的配置文件有一项就是jwt，在springboot中有一项就是要把其内容全部读进去。![](https://upload-images.jianshu.io/upload_images/10624272-d2f5dca707aa4835.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -211,7 +211,7 @@ gateway里面的配置文件有一项就是jwt，在springboot中有一项就是
 这里的chain.doFilter是按照链式过滤的意思，如果多个filter，那么按照filter1->filter2->filter3......以此类推，但是下面没有其他的filter了，所以直接返回页面，所以这里也代表着直接通过的意思。那么仿照它把ignore-url路径加上：
 ![](https://upload-images.jianshu.io/upload_images/10624272-ee3a19dad54862d6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 这样就配置好。
-# 用户模块API以及相应的类
+#用户模块API以及相应的类
 用户模块api肯定是添加在guns-api这块，在添加两个类，一个类是UserModel，这是用户注册的类，这个类是不能被修改的，仅仅作为注册使用，因为注册的内容有一些敏感内容，所以需要一个新类，也就是UserInfoModel作为真正的可以被修改的类：
 ```
 public class UserInfoModel {
@@ -332,7 +332,7 @@ public class UserInfoModel {
 修改api中的返回数据，然后让其返回用户的uid，因为返回的token使用的就是用户的UID来构建，构建一个返回model，泛型使用M，因为这里的data是其他类型：
 ![](https://upload-images.jianshu.io/upload_images/10624272-9dd911bb5f60c734.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 然后在AuthController修改一下返回类型和内容即可。
-# 用户信息保存
+#用户信息保存
 ThredLocal用户信息保存的方法代替把信息保存到session中，threadlocal每一个线程分开使用，不同线程的threadlocal不一样，好比线程之间的栈地址不可共享，同一个进程的线程资源与空间可以共享。可以使用threadlocal直接保存用户信息，也可以只保存UID或者某些关键信息，这里使用保存UID的方法：
 ![](https://upload-images.jianshu.io/upload_images/10624272-02e6ed1ab531ed48.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 有了方法还得维护他，每一次登陆或者是注册完之后，都会发放一个jwt，每一次客户端进入页面带来点jwt中也有uid，也要把UID拿出来放在threadlocal中，也就是再filter那里，在登陆进来，访问URL进来的时候都需要进过的一个过滤器，在AuthFilter里面修改：
@@ -359,7 +359,7 @@ UserModel和UserInfoModel都是模型之间交互的，但是区别就在于User
 ![](https://upload-images.jianshu.io/upload_images/10624272-a34cca7f1b24dc11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 客户端端配置意思是访问服务提供者是一种什么形式，而服务端服务是所有的客户端访问这个服务的访问形式是什么样的，简单点说，就是客户端级别就是当前这个客户端访问是怎么来的，其他客户端没有影响，而服务端是影响到了所有客户端，所以在Impl配上roundrobin就好了。
 **dubbo的多协议之前提到过，简单再提一下，dubbo支持多协议中，最主要的区别就是链接方式，dubbo协议建立的是长链接，一旦建立就会建立一个管道，不需要每一次都要进行建立，类似HTTP的长短链接，但是dubbo本身不是一种协议，只是封装了TCP，然后在TCP的基础上变成了dubbo这个协议，那么dubbo的传输协议就是TCP了，另外，dubbo用到是NIO的异步传输。**
-# 影片模块
+#影片模块
 影片模块有点复杂，数据库设计也有点多，首页内容比较多，首页每一个人都是一样的，所以直接搞了一个数据库表给他，这样直接取出来就好了，首页需要实现：
 ![](https://upload-images.jianshu.io/upload_images/10624272-124bac32f352b2bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 这么多功能需要用一个功能完成，这就是网关的**功能聚合**，前端只调用一次接口，全部加载出来，不需要这么多次HTTP请求。
@@ -772,7 +772,211 @@ Foo foo = fooFuture.get();
         infoRequestVO.setImgVO(imgVOFuture.get());
 
 ```
-需要用future对象来接收数据。和示例一样，注意异步需要手动开启，在启动类加上@EnableAsync，调通了之后影片模块基本就完成了。影片模块这里相对复杂一点，光是返回model就有8个，而且层层叠加，很容易混，首页也使用到了服务聚合，确实很方便，只需要暴露一个接口可以访问所有的数据，还有dubbo的异步特性，虽然现在还看不出，但是确实挺好用的。
+需要用future对象来接收数据。和示例一样，注意异步需要手动开启，在启动类加上@EnableAsync 
+# 影院模块
+影院这块相对简单一些，6张表，品牌字典表，其实就是类似于map这样的映射表，地域字典表，影厅字典表，影院主表，影院的详细信息，在热映电影字典表，放映场次信息表。热映电影表其实是不需要的，但是为了减少数据查询的负荷，还是以空间换时间，数据库往往是系统的瓶颈。
+首先先给出接口大致框架：
+```
+@RestController
+@RequestMapping("/cinema/")
+public class CinemaController {
+    @Reference(interfaceClass = CinemaServiceAPI.class, check = false)
+    private CinemaServiceAPI cinemaServiceAPI;
+
+    @RequestMapping(value = "getCinemas", method = RequestMethod.GET)
+    public ResponseVO getCinemas(CinemaQueryVO cinemaQueryVO) {
+        return null;
+    }
+
+    @RequestMapping(value = "getCondition", method = RequestMethod.GET)
+    public ResponseVO getCondition(CinemaQueryVO cinemaQueryVO) {
+        return null;
+    }
+
+    @RequestMapping(value = "getFields")
+    public ResponseVO getFields(Integer cinemaId) {
+        return null;
+    }
+
+    @RequestMapping(value = "getFieldInfo", method = RequestMethod.POST)
+    public ResponseVO getFieldInfo(Integer cinemaId, Integer fieldId) {
+        return null;
+    }
+
+}
+
+
+```
+接着还按照返回报文建立响应的数据结构。需要注意的就是已售座位这里，只有下了订单之后才能填上已售座位，所以只能先写死，等到订单完成后在回来补齐。下面先分析一下所需要的接口，首先第一个接口getCinemas接口，就是入参出参即可，按照五个条件进行帅选，判断是否有满足条件的影院，出现异常应该怎么处理。**入口参数：CinemaQueryVO，出参就是cinemaVO对象；然后是getCondition按照条件查询，1.需要获取品牌列表，也就是影院是哪个公司的，2.所在区域，3.影厅又是什么类型；getFields根据影院变化获取影院信息，获取所有电影信息和对应的场次信息，影院编号。接下来就是获取场次详细信息，根据编号获取场次详细信息，根据反映场次ID获取反映信息，根据反映场次查询播放电影，根据电影编号获取电影信息，还有一个售卖座位的信息是需要通过订单实现的，所以待实现。**
+列出实现接口：
+```
+public interface CinemaServiceAPI {
+    Page<CinemaVO> getCinemas(CinemaQueryVO cinemaQueryVO);
+
+    List<BrandVO> getBrands(Integer brandId);
+
+    List<AreaVO> getAreas(Integer areaId);
+
+    List<HallTypeVO> getHallTypes(Integer hallType);
+
+    CinemaInfoVO getCinemaInfoById(Integer cinemaId);
+
+    FilmInfoVO getFilmInfoByCinemaId(Integer cinemaId);
+
+    FilmFieldVO getFilmFieldInfo(Integer fieldId);
+
+    FilmInfoVO getFilmInfoByFieldId(Integer fieldId);
+}
+
+```
+这里吗有点复杂的其实就是getFilmInfoByCinemaId()；首先要根据影院ID去field_t表把这个影院的场次全部查出，还要去hall_film_t表把对于电影名字给出并筛选。这里可能有些困难的是hall_film_info_t和field_t的关系，hall_film_info_t是影厅播放的电影，而field是场次信息，一个hall_film_t会对应多个field，这个时候如果用联合查询只能查出一个，查不出整个集合，所以只能用联合查询了：
+```
+select info.film_id,
+       info.film_name,
+       info.film_length,
+       info.film_language,
+       info.film_cats,
+       info.actors,
+       info.img_address,
+       f.UUID,
+       f.begin_time,
+       f.begin_time,
+       f.hall_name,
+       f.price
+from hall_film_info_t info
+         left join field_t f
+                   on f.film_id = info.film_id
+                       and f.cinema_id = '1';
+
+
+```
+但是问题来了：
+```
+@Data
+public class FilmInfoVO implements Serializable {
+    private String filmId;
+    private String filmName;
+    private String filmLength;
+    private String filmType;
+    private String filmCats;
+    private String actors;
+    private String imgAddress;
+    private List<FilmFieldVO> filmFields;
+}
+
+```
+最后一个是一个集合对象，怎么返回？只能使用mybatis SQL自定义来处理了，首先mapper设置一个接口，在mapper的xml文件里面进行实现即可。
+```
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.stylefeng.guns.rest.common.persistence.model.FieldT">
+        <id column="UUID" property="uuid"/>
+        <result column="cinema_id" property="cinemaId"/>
+        <result column="film_id" property="filmId"/>
+        <result column="begin_time" property="beginTime"/>
+        <result column="end_time" property="endTime"/>
+        <result column="hall_id" property="hallId"/>
+        <result column="hall_name" property="hallName"/>
+        <result column="price" property="price"/>
+    </resultMap>
+
+    <resultMap id="getFilmInfoMap" type="com.stylefeng.guns.api.cinema.vo.FilmInfoVO">
+        <result column="film_id" property="filmId"></result>
+        <result column="film_name" property="filmName"></result>
+        <result column="film_length" property="filmLength"></result>
+        <result column="film_language" property="filmType"></result>
+        <result column="film_cats" property="filmCats"></result>
+        <result column="actors" property="actors"></result>
+        <result column="img_address" property="imgAddress"></result>
+        <collection property="filmFields" ofType="com.stylefeng.guns.api.cinema.vo.FilmFieldVO">
+            <result column="UUID" property="fieldId"></result>
+            <result column="begin_time" property="beginTime"></result>
+            <result column="end_time" property="endTime"></result>
+            <result column="film_language" property="language"></result>
+            <result column="hall_name" property="hallName"></result>
+            <result column="price" property="price"></result>
+        </collection>
+    </resultMap>
+    <select id="getFilmInfos" parameterType="java.lang.Integer" resultMap="getFilmInfoMap">
+select info.film_id,
+       info.film_name,
+       info.film_length,
+       info.film_language,
+       info.film_cats,
+       info.actors,
+       info.img_address,
+       f.UUID,
+       f.begin_time,
+       f.end_time,
+       f.hall_name,
+       f.price
+from hall_film_info_t info
+         left join field_t f
+                   on f.film_id = info.film_id
+                       and f.cinema_id = #{cinemaId}
+    </select>
+</mapper>
+
+```
+resultMap定义自定义对象，这样就可以返回自定义类型了。接着实现业务层什么的都很简单。简要提一下lombok做日志，平时做日志都是要private Logger log......，可以加上@SLf4j注释，就可以省略掉上述的过程。然后就是测试了。
+# dubbo结果缓存
+对于getCondition这个方法，一般是热点数据，这个数据会被频繁的使用，这种热点数据一般处理都很简单，就是放到缓存，对于dubbo提供的结果缓存，是针对已经存在的大量频繁访问的数据，存储在本地缓存中，存在当前是jvm里面，所以可能会存有多份缓存，访问也更快。缓存类型有三种，lru缓存，和os的页面置换类似，最近最少使用缓存，threadlocal当前线程缓存，还有一种是jcache，这种比较少见，基本都是前面两种，但是注意threadlocal不适合大量数据。配置其实很简单，在接口加上配置即可：
+```
+    @Reference(interfaceClass = CinemaServiceAPI.class, check = false, cache = "lru")
+    private CinemaServiceAPI cinemaServiceAPI;
+
+```
+#### 并发连接控制
+同时，dubbo可以对并发和连接数量进行控制，可以在配置文件设置并发控制数量等等。首先明确，如果并发与连接数量超出了，并不会等待，会以错误的形式进行返回，dubbo本身虽然有服务降级，但服务降级这个东西实现的并没有特别好，其次，dubbo本身是有服务守恒的问题，但是在以前dubbo防止雪崩是通过控制并发与连接数量来控制的，尤其是连接。雪崩：目前3个服务，其中一个服务不知道为什么原因并发量非常大，超出了他本身所能承受的力度，然后这个服务就只能被冲崩了，然后这些请求又全部被送到了二号，二号又雪崩了以此类推。所以就叫雪崩。以往对于这种控制是用控制连接与并发数。
+# 订单模块
+订单模块这玩意，之前都没有碰过，订单模块主要是涉及一些dubbo特性或者是服务配置的问题，订单本身的业务很简单，就两个，下订单，查看订单，没了，服务配置比如限流，服务降级，熔断等等，dubbo本身有熔断，但是这个实现不太好，所以使用其他的熔断器来进行处理。首先是安装ftp，10.13版本前的ISO是自带的，Mac往后版本是没有的了，我的恰好是10.14的，ftp没有带上自带了sftp，sftp是ftp的变体，FTP另外一种是TFTP，FTP，TFTP，SFTP都是三种文件传输，区别就在于，FTP是需要在可信赖网络上传输，他没有很高的安全加密，SFTP有，如果信息很铭感，那就需要用SFTP了，增加了安全层进行信息加密，TFTP即是简单文件传输，基本适用于局域网，而且与其他两种协议不同就在于，FTP和SFTP使用TCP协议，而TFTP使用UDP协议，既然自带了那就使用sftp充当FTP吧。
+首先对于购票业务，后端要有一个原则，永远都不能相信前端给你的东西，因为是可以通过前端进行更改的，所以要验证是否为真。影院列表是使用json文件，判断座位id是不是正确，判断在订单里面有没有座位id，既然售出自然不能再买了，验证完这些后才能创建订单信息。对于订单业务，获取当前登录信息，获取订单即可。由于座位信息是通过json文件传输，需要从ftp服务器获取，但是我的Mac没有ftp，就去阿里云找了一个。**使用FileZilla用户root发现登录成功，但是获取目录失败了，密码也没有错，错误原因有可能就是端口了，但是21  22端口开了，21传输命令，22端口传输文件。这里的问题确实实在端口，但是是在ftp的传输方式上，ftp有两种传输方式，一种是主动，一种是被动，主动：服务端来找客户端，通过21传输命令，通过22传输数据；被动方式：客户端找服务端，命令还是用21端口，但是文件使用1025-65535随机一个，而FileZilla默认使用passive mode，自然要开启全部了。所以当输入账户密码的时候，即是命令登录，使用21，没有问题，但是文件目录是使用随机端口了，所以出现问题。408历年真题有一个选项就是这玩意，ftp任何情况下传输文件使用22端口，错误的，主动才是。**
+然后就是配置阿里云服务器了，配置很简单，读取信息的那些stream可能有点烦：
+```
+
+    public String getFileStrByAddress(String fileAddress) {
+        initFTPClient();
+        BufferedReader bufferedReader = null;
+        try {
+            bufferedReader = new BufferedReader(new InputStreamReader(ftpClient.retrieveFileStream(fileAddress)));
+            StringBuffer stringBuffer = new StringBuffer();
+            while (true) {
+                String lnStr = bufferedReader.readLine();
+                if (lnStr == null) {
+                    break;
+                }
+                stringBuffer.append(lnStr);
+            }
+            ftpClient.logout();
+            return stringBuffer.toString();
+        } catch (Exception e) {
+            log.error("获取文件选项失败");
+        } finally {
+            try {
+                bufferedReader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

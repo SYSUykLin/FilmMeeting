@@ -8,9 +8,13 @@ jwt:
   expiration: 604800      #7天 单位:秒
   auth-path: auth         #认证请求的路径
   md5-key: randomKey      #md5加密混淆key
-
+ftp:
+  host-name: 47.99.100.174
+  port: 21
+  user-name: root
+  password: 199821130365Lyk
 server:
-  port: 8085 #项目端口
+  port: 8086 #项目端口
 
 mybatis-plus:
   mapper-locations: classpath*:com/stylefeng/guns/rest/**/mapping/*.xml
@@ -35,7 +39,7 @@ spring:
     registry: zookeeper://127.0.0.1:2181
     protocol:
       name: dubbo
-      port: 20885
+      port: 20886
     provider:
       timeout: 50000
   datasource:

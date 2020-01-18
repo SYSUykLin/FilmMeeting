@@ -26,4 +26,6 @@ public interface CinemaServiceAPI {
     HallInfoVO getFilmFieldInfo(Integer fieldId);
 
     FilmInfoVO getFilmInfoByFieldId(Integer fieldId);
+
+    OrderQueryVO getOrderNeeds(Integer fieldId);
 }

@@ -960,8 +960,37 @@ resultMap定义自定义对象，这样就可以返回自定义类型了。接�
         return null;
     }
 ```
+测试通过之后，把ftp的相关信息配置到application.yml，如果出现-u会自动转换成大写。
+##### 订单模块业务实现
+业务实现这块下单有点复杂，存储没有什么问题，返回的时候需要多个表的信息，影院名称，电影名称，电影价格，订单总价等等信息，但是还是很好写。因为通常购买完成之后，需要返回已经插入的订单：
+![](https://upload-images.jianshu.io/upload_images/10624272-49039f1365b7e5d9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+fieldTime的组织有点麻烦，首先要把orderTimestamp变成格式化拼接，然后加上今天即可:
+```
+select o.UUID                                                                as orderId,
+       h.film_name                                                           as filmName,
+       concat('今天 ', DATE_FORMAT(o.order_time, '%m月%d日'), ' ', f.begin_time) as fieldTime,
+       c.cinema_name                                                         as cinemaName,
+       o.seats_name                                                          as seatsName,
+       o.order_price                                                         as orderPrice,
+       UNIX_TIMESTAMP(o.order_time)                                                          as orderTimestamp
+from order_t o,
+     field_t f,
+     hall_film_info_t h,
+     cinema_t c
+where o.cinema_id = c.UUID
+  and o.field_id = f.UUID
+  and o.film_id = h.film_id
+  and o.UUID = "415sdf58ew12ds5fe1";
+	
 
+```
+业务层的实现都很简单，没有什么问题。然后是实现得到已售出的座位，concat和group_concat的区别，concat的实现对象是字符串，group_concat是可以在分组或不同表时间实现的，可以和group by和起来使用。注意之前哎cinema模块也要把原来没有实现的已售出座位修改一下。
+```
+            hallFieldInfo.setSoldSeats(orderServiceAPI.getSoldSeatsByFieldId(fieldId));
 
+```
+cinema这块信息加上，postman测试一下：
+![](https://upload-images.jianshu.io/upload_images/10624272-922844a3ce8eb8b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 

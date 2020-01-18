@@ -1,7 +1,10 @@
 package com.stylefeng.guns.rest.common.util;
 
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.net.ftp.FTPClient;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,11 +16,14 @@ import java.io.InputStreamReader;
  * @date 2020/1/18 1:12 AM
  */
 @Slf4j
+@Data
+@Configuration
+@ConfigurationProperties(prefix = "ftp")
 public class FTPUtil {
-    private String hostName = "47.99.100.174";
-    private Integer port = 21;
-    private String username = "root";
-    private String password = "199821130365Lyk";
+    private String hostName;
+    private Integer port;
+    private String userName;
+    private String password;
     private FTPClient ftpClient = null;
 
     private void initFTPClient() {
@@ -25,7 +31,7 @@ public class FTPUtil {
             ftpClient = new FTPClient();
             ftpClient.setControlEncoding("utf-8");
             ftpClient.connect(hostName, port);
-            ftpClient.login(username, password);
+            ftpClient.login(userName, password);
         } catch (Exception e) {
             log.error("初始化ftp失败");
         }
@@ -56,11 +62,6 @@ public class FTPUtil {
             }
         }
         return null;
-    }
-
-    public static void main(String[] args) {
-        FTPUtil ftpUtil = new FTPUtil();
-        System.out.println(ftpUtil.getFileStrByAddress("seats/cgs.json"));
     }
 
 }

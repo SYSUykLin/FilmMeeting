@@ -1,5 +1,6 @@
 package com.stylefeng.guns.api.order;
 
+import com.baomidou.mybatisplus.plugins.Page;
 import com.stylefeng.guns.api.order.vo.OrderVO;
 import java.util.*;
 /**
@@ -14,7 +15,7 @@ public interface OrderServiceAPI {
 
     OrderVO saveOrderInfo(Integer field, String soldSeats, String seatsName, Integer userId);
 
-    List<OrderVO> getOrderByUserId(Integer userId);
+    Page<OrderVO> getOrderByUserId(Integer userId, Page<OrderVO> page);
 
     String getSoldSeatsByFieldId(Integer fieldId);
 }

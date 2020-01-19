@@ -4,6 +4,7 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.baomidou.mybatisplus.plugins.Page;
 import com.stylefeng.guns.api.cinema.CinemaServiceAPI;
 import com.stylefeng.guns.api.cinema.vo.FilmInfoVO;
 import com.stylefeng.guns.api.cinema.vo.OrderQueryVO;
@@ -16,10 +17,10 @@ import com.stylefeng.guns.rest.common.util.FTPUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import javax.annotation.Resource;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -84,7 +85,7 @@ public class DefaultOrderServiceImpl implements OrderServiceAPI {
         OrderQueryVO orderQueryVO = cinemaServiceAPI.getOrderNeeds(fieldId);
         Integer cinemaId = Integer.parseInt(orderQueryVO.getCinemaId());
         double filmPrice = Double.parseDouble(orderQueryVO.getFilmPrice());
-
+        System.out.println();
         int solds = soldSeats.split(",").length;
         double totalPrice = getTotalPrice(solds, filmPrice);
         OrderT orderT = new OrderT();
@@ -94,8 +95,9 @@ public class DefaultOrderServiceImpl implements OrderServiceAPI {
         orderT.setOrderUser(userId);
         orderT.setOrderPrice(totalPrice);
         orderT.setFilmPrice(filmPrice);
-        orderT.setFieldId(filmId);
+        orderT.setFieldId(fieldId);
         orderT.setCinemaId(cinemaId);
+        orderT.setFilmId(filmId);
         Integer insert = orderTMapper.insert(orderT);
         if (insert > 0) {
             OrderVO orderVO = orderTMapper.getOrderInfoById(uuid);
@@ -120,16 +122,24 @@ public class DefaultOrderServiceImpl implements OrderServiceAPI {
     }
 
     @Override
-    public List<OrderVO> getOrderByUserId(Integer userId) {
+    public Page<OrderVO> getOrderByUserId(Integer userId, Page<OrderVO> page) {
+        Page<OrderVO> result = new Page<>();
         if (userId == null) {
             log.error("编号获取失败");
             return null;
         } else {
-            List<OrderVO> orderInfoByUserId = orderTMapper.getOrderInfoByUserId(userId);
+            List<OrderVO> orderInfoByUserId = orderTMapper.getOrderInfoByUserId(userId, page);
             if (orderInfoByUserId == null && orderInfoByUserId.size() == 0) {
-                return null;
+                result.setTotal(0);
+                result.setRecords(new ArrayList<>());
+                return result;
             } else {
-                return orderInfoByUserId;
+                EntityWrapper<OrderT> entityWrapper = new EntityWrapper<>();
+                entityWrapper.eq("order_user", userId);
+                Integer count = orderTMapper.selectCount(entityWrapper);
+                result.setTotal(count);
+                result.setRecords(orderInfoByUserId);
+                return result;
             }
         }
     }

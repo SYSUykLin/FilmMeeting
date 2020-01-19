@@ -991,6 +991,146 @@ where o.cinema_id = c.UUID
 ```
 cinema这块信息加上，postman测试一下：
 ![](https://upload-images.jianshu.io/upload_images/10624272-922844a3ce8eb8b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+**对于WiFi打开就连接不上的问题，初步怀疑是虚拟ip的原因，因为在网上有人是因为电脑有两张网卡，一张有线以太网网卡，一张是无线网卡，结果接到无线网卡去了，但是我的Mac又没有以太网网卡，设置里面也查看了确实是802.11无线局域网，使用CSMA/CA协议，应该是连接WiFi导致是ip发生变化。**
+测试完成后基本上业务这块就完成了，但是订单模块的拓展还是比较多的。首先，一般来说在订单这块，业务量是比较大的，每一部电影的订单量是很大的，比如战狼2卖了50多个亿，在这种情况下，订单不会再数据库用一张表存，这就涉及到了**订单模块的横向和纵向的拆分；**其次，还有**服务限流**，服务限流不仅仅是局限于订单系统，其他的也有可能包含，就比如LOL比赛的观看人数等等都需要限流。还有**熔断和降级**，这类主要解决服务器雪崩的情况。
+# 订单横向纵向拆分
+比如像京东天猫，天猫一开始是卖小商品为主，那么运行十年之后，有一部分是服装，有一部分是家电，这些在订单表里面是混淆在一起的，一亿条订单表里面7000条服装，3000条小商品，如果混在一起，对于分析查找都是不方便的，这个时候就会引入横向拆分，比如家电表，比如小商品表，纵向拆分就是按照时间拆分，比如2017年一张表，2018年一张表等等。但是这样拆分，业务也会复杂，比如现在有两张表，order_2017_t，order_2018_t两张表。这里涉及到一个dubbo的特性，**服务分组，**当一个  接口有几个实现，可以用group来区分，**分组聚合，**从每一个group中调用返回结果，并合并返回结果。group关键字进行分组，merge关键子进行合并，合并也需要注意，只有返回了list或者collection一类的才能合并，但是当前使用的dubbo并不支持，所以要合并也只能手动合并。但是如果这样分组和并就要改业务了，所以知道怎么回事，但是就不改了。
+# 服务限流
+首先服务限流是系统高可用的一种手段，对于业务上面没有任何帮助，完全是为了高并发。dubbo也有并发和控制连接数来限流控制。主要是用于服务之间的限流，限流算法有两种，**漏桶法和令牌桶法**。
+漏桶法：![](https://upload-images.jianshu.io/upload_images/10624272-35c48ab5d8bbe67c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+水龙头的请求，下面的整个是业务系统，无论来多少请求都会先装载这个桶里面然后然后再处理。所有的请求进来都会被排列成一个队列，然后按照相同的速度进行处理。
+令牌桶算法：
+![](https://upload-images.jianshu.io/upload_images/10624272-72a7ac1da48484a2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+arrival即请求，在请求进入的同时还有一个保护现场，这个保护线程拥有令牌，线程进入之后只有拿到令牌才能被处理，否则会被丢弃或返回，他与漏桶算法的最大区别就在于这玩意的**业务请求峰值是有一定承载能力的**，比如桶里面有1000个令牌，1000个业务进来可以并发全部执行完，但是对于漏桶算法无论还有多少内存或者是挤压空间，处理速度都还是这么快。另外，令牌桶算法可以通过改变添加令牌的速度来控制请求的处理，防止业务崩掉。
+简单实现一下令牌桶算法：
+首先需要准备桶的数量：
+```
+    private int bucketNums = 100;
+    private int rate = 1;
+    private int nowTokens = 0;
+    private long timestamp = getNowTime();
+
+```
+按照每毫秒添加一个令牌的速度进行业务请求控制。
+```
+
+    public boolean getToken() {
+        long nowTime = getNowTime();
+        nowTokens = nowTokens + (int) ((nowTime - timestamp) * rate);
+        nowTokens = min(nowTokens);
+        setTimestamp(nowTime);
+        System.out.println("当前令牌数：" + nowTokens);
+        if (nowTokens < 1) {
+            return false;
+        } else {
+            nowTokens--;
+            return true;
+        }
+    }
+
+```
+每一次请求看看时间离上一次申请令牌过去了多久，按照毫秒把令牌数补上，如果令牌数是大于0的，允许运行，然后减一。
+![](https://upload-images.jianshu.io/upload_images/10624272-1c14ba79202a5f17.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+这样就实现了，加入到工程里面。在订单系统里面，getOrderInfo这个频率不太高，主要是下单的频率很高，在下单处增加：
+![](https://upload-images.jianshu.io/upload_images/10624272-b0a52b1cf83bc148.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+# 熔断降级
+服务的稳定是公司可持续发展的重要基石，随着业务量的快速发展，一些平时正常运行的服务，会出现各种突发状况，而且在分布式系统中，每个服务本身又存在很多不可控的因素，比如线程池处理缓慢，导致请求超时，资源不足，导致请求被拒绝，又甚至直接服务不可用、宕机、数据库挂了、缓存挂了、消息系统挂了...对于一些非核心服务，如果出现大量的异常，可以通过技术手段，对服务进行降级并提供有损服务，保证服务的柔性可用，避免引起雪崩效应。实时监控接口的健康值，在达到熔断条件时，自动开启熔断，开启熔断之后，如何实现自动恢复？每隔一段时间，释放一个请求到服务端进行探测，如果后端服务已经恢复，则自动恢复。比如，如果ServiceA调用ServiceD一直失败，或者失败率很高，就可以采用“一种机制”确保后续请求不会调用ServiceD，而是执行降级逻辑。
+使用Hystrix作为熔断降级工具，Hystrix主要有两种命令模式：
+![](https://upload-images.jianshu.io/upload_images/10624272-848b725559d19274.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+hystrix command模式有主要是单线程进行，而Observable Command可以使用线程池等等。请求从command进入。
+![](https://upload-images.jianshu.io/upload_images/10624272-d2be02192d562988.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+经过toObservable之后进入第三步，判断目前的结果是不是在缓存里，不在的话继续往下做，判断断路器是否开启（第四步）。本来的业务线是A调用B，这是一条通路，熔断就是把A到B切断，熔断器开启的意思就是是不是把这条路切断了，切断了那就简单了，直接走返回。接下来判断线程池状态，如果都是OK，那么继续往下走，到达第六步，如果执行成功了，啥事没有，失败了或者是超时了，注意在熔断器机制下，不仅仅是执行失败的，超时也算是失败的。到达第8步，是失败调用的，这一步就叫降级返回，也叫服务降级。服务熔断是判断要不要把这条路干掉，一旦出现业务异常，就调用服务降级，把业务返回。比如之前是A调用B，降级就是不调用B，使用一种折中的方法返回，比如今天想打游戏，电脑宕机了，不会直接告诉你我炸机了，hystrix会返回电脑没电了，游戏倒闭了等等比较折中的方案。
+首先导包了：
+```
+	  <dependency>
+		    <groupId>org.springframework.cloud</groupId>
+		    <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+		    <version>2.0.0.RELEASE</version>
+		</dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
+    <dependency>
+		    <groupId>org.springframework.cloud</groupId>
+		    <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+		    <version>2.0.0.RELEASE</version>
+		</dependency>
+```
+接着设置注解开启熔断器：
+```
+	@EnableHystrixDashboard
+	@EnableCircuitBreaker
+	@EnableHystrix
+```
+在需要熔断的方法上加上注解：
+```
+@HystrixCommand(fallbackMethod = "error", commandProperties = {
+@HystrixProperty(name="execution.isolation.strategy", value = "THREAD"),
+@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value
+= "4000"),//超时时间
+@HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "10"),//出现10次例外
+@HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "50")
+}, threadPoolProperties = {
+@HystrixProperty(name = "coreSize", value = "1"),
+@HystrixProperty(name = "maxQueueSize", value = "10"),
+@HystrixProperty(name = "keepAliveTimeMinutes", value = "1000"),
+@HystrixProperty(name = "queueSizeRejectionThreshold", value = "8"),
+@HystrixProperty(name = "metrics.rollingStats.numBuckets", value = "12"),
+@HystrixProperty(name = "metrics.rollingStats.timeInMilliseconds", value = "1500")
+})
+```
+加上熔断器之后需要右一个一模一样参数返回值的方法，对应fallbackMethod即可。注解上的配置名字都很明显了，没有上面需要解释的，超过4秒即为超时，10次例外就开启你熔断机制等等。
+**添加了Hystrix注解之后，会发现Threadlocal用不了了，这是因为Hystrix本身有线程隔离，线程池保护和信号量机制，所以会切换线程，这个时候ThreadLocal就有用了，那就找一个可以缓存之前信息的，就是InheritableThreadLocal。**
+```
+public class CurrentUser {
+    private static final InheritableThreadLocal<String> threadlocal = new InheritableThreadLocal<>();
+
+    public static void saveUserId(String userId) {
+        threadlocal.set(userId);
+    }
+
+    public static String getCurrentUser() {
+        return threadlocal.get();
+    }
+
+}
+
+```
+这样就可以保存之前的信息。忘记开WiFi了：
+![](https://upload-images.jianshu.io/upload_images/10624272-18b3d4abf3fd547b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+服务降级成功了。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

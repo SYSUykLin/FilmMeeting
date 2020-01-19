@@ -58,6 +58,7 @@ public class FTPUtil {
             try {
                 bufferedReader.close();
             } catch (IOException e) {
+                log.error("关闭流失败，FTP读取文件失败");
                 e.printStackTrace();
             }
         }

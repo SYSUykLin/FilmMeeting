@@ -21,7 +21,7 @@ select seat_address as seatAddress
 from field_t f,
      hall_dict_t d
 where f.hall_id = d.UUID
-  and f.UUID = #{fieldId};
+  and f.UUID = #{fieldId}
     </select>
 
 
@@ -40,7 +40,7 @@ from order_t o,
 where o.cinema_id = c.UUID
   and o.field_id = f.UUID
   and o.film_id = h.film_id
-  and o.UUID = #{orderId};
+  and o.UUID = #{orderId}
     </select>
 
     <select id="getOrderInfoByUserId" parameterType="java.lang.Integer"
@@ -59,7 +59,7 @@ from order_t o,
 where o.cinema_id = c.UUID
   and o.field_id = f.UUID
   and o.film_id = h.film_id
-  and o.order_user = #{userId};
+  and o.order_user = #{userId}
     </select>
 
     <select id="getSoldSeatsByFieldId" parameterType="java.lang.Integer" resultType="java.lang.String">

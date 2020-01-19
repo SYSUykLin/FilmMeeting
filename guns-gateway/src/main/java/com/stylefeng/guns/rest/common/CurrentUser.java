@@ -6,7 +6,7 @@ package com.stylefeng.guns.rest.common;
  * @date 2020/1/10 11:17 AM
  */
 public class CurrentUser {
-    private static final ThreadLocal<String> threadlocal = new ThreadLocal<>();
+    private static final InheritableThreadLocal<String> threadlocal = new InheritableThreadLocal<>();
 
     public static void saveUserId(String userId) {
         threadlocal.set(userId);

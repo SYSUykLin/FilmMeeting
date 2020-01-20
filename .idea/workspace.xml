@@ -2,8 +2,95 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1fbc0fb-346e-4439-a5b6-1373b6a9e629" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/guns-alipay/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/AlipayApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/GunsRestServletInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/common/SimpleObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/common/aop/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/common/exception/BizExceptionEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/common/util/FTPUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/config/MessageConverConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/config/MybatisPlusConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/config/properties/JwtProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/config/properties/RestProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/config/Configs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/config/Constants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/model/ExtendParams.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/model/GoodsDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/model/TradeStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/model/builder/AlipayHeartbeatSynRequestBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/model/builder/AlipayTradeCancelRequestBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/model/builder/AlipayTradePayRequestBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/model/builder/AlipayTradePrecreateRequestBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/model/builder/AlipayTradeQueryRequestBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/model/builder/AlipayTradeRefundRequestBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/model/builder/RequestBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/model/hb/EquipStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/model/hb/EquipStatusAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/model/hb/ExceptionInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/model/hb/ExceptionInfoAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/model/hb/HbStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/model/hb/PosTradeInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/model/hb/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/model/hb/SysTradeInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/model/hb/TradeInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/model/hb/TradeInfoAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/model/hb/Type.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/model/result/AlipayF2FPayResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/model/result/AlipayF2FPrecreateResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/model/result/AlipayF2FQueryResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/model/result/AlipayF2FRefundResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/model/result/Result.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/service/AlipayMonitorService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/service/AlipayTradeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/service/impl/AbsAlipayService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/service/impl/AbsAlipayTradeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/service/impl/AlipayMonitorServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/service/impl/AlipayTradeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/service/impl/AlipayTradeWithHBServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/service/impl/hb/AbsHbRunner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/service/impl/hb/HbListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/service/impl/hb/HbQueue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/service/impl/hb/TradeListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/utils/GsonFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/utils/Utils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/utils/ZxingUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/auth/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/auth/controller/dto/AuthRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/auth/controller/dto/AuthResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/auth/converter/BaseTransferEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/auth/converter/WithSignMessageConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/auth/filter/AuthFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/auth/security/DataSecurityAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/auth/security/impl/Base64SecurityAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/auth/util/JwtTokenUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/auth/validator/IReqValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/auth/validator/dto/Credence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/auth/validator/impl/SimpleValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/service/DefaultAlipayServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/main/resources/zfbinfo.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/test/java/com/stylefeng/guns/rest/GunsRestApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/test/java/com/stylefeng/guns/rest/fastjson/JsonTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/test/java/com/stylefeng/guns/rest/generator/EntityGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/test/java/com/stylefeng/guns/rest/jwt/DecryptTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-alipay/src/test/java/com/stylefeng/guns/rest/jwt/JWTTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/alipay/AliPayServiceAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/alipay/vo/AliPayInfoVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/alipay/vo/AliPayResultVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/order/OrderServiceAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/order/OrderServiceAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/order/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/order/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/guns-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-order/src/main/java/com/stylefeng/guns/rest/modular/order/service/DefaultOrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-order/src/main/java/com/stylefeng/guns/rest/modular/order/service/DefaultOrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-user/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/guns-user/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +131,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Python Script" />
         <option value="Class" />
       </list>
     </option>
@@ -81,7 +169,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -90,8 +178,11 @@
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/guns-film" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay" />
+      <recent name="$PROJECT_DIR$/guns-alipay/src/main/resources" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/user/user" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.stylefeng.guns.core.util" />
@@ -100,9 +191,8 @@
       <recent name="com.stylefeng.guns.api.film.vo" />
       <recent name="com.stylefeng.guns.rest.modular.film.vo" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/user/user" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/guns-film" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.GatewayApplication">
@@ -134,7 +224,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GunsRestApplicationTests (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GunsRestApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="guns-order" />
       <extension name="coverage">
         <pattern>
@@ -192,9 +282,23 @@
       </MavenSettings>
       <method v="2" />
     </configuration>
+    <configuration name="AlipayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="guns-alipay" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.stylefeng.guns.rest.AlipayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CinemaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="guns-cinema" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.stylefeng.guns.rest.CinemaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FilmApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="guns-film" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.stylefeng.guns.rest.FilmApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -252,6 +356,8 @@
       <item itemvalue="Spring Boot.CinemaApplication" />
       <item itemvalue="Spring Boot.OrderApplication" />
       <item itemvalue="Spring Boot.GatewayApplication" />
+      <item itemvalue="Spring Boot.FilmApplication" />
+      <item itemvalue="Spring Boot.AlipayApplication" />
     </list>
     <recent_temporary>
       <list>
@@ -324,7 +430,7 @@
       <workItem from="1579405778086" duration="13322000" />
       <workItem from="1579439514948" duration="228000" />
       <workItem from="1579452241268" duration="3231000" />
-      <workItem from="1579489930421" duration="1420000" />
+      <workItem from="1579489930421" duration="12713000" />
     </task>
     <task id="LOCAL-00001" summary="first update">
       <created>1578566760158</created>
@@ -473,7 +579,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579457625834</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="update README.md">
+      <created>1579513944154</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1579513944154</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -513,7 +626,6 @@
     <MESSAGE value="添加注释" />
     <MESSAGE value="update" />
     <MESSAGE value="update the Mapper" />
-    <MESSAGE value="update README.md" />
     <MESSAGE value="complete film model and update README.md" />
     <MESSAGE value="create cinema model" />
     <MESSAGE value="CinemaServiceAPI implement is woring......" />
@@ -523,7 +635,8 @@
     <MESSAGE value="promote order model,apply a aliyun server,create ftp server and test success." />
     <MESSAGE value="update order model" />
     <MESSAGE value="complete the order model and dispose Hystrix,update README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="complete the order model and dispose Hystrix,update README.md" />
+    <MESSAGE value="update README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="update README.md" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="117" key="#Inspections" timestamp="1578493411691">
@@ -542,22 +655,22 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="465" y="260" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1578758376004" />
-    <state x="533" y="162" key="#com.intellij.ide.util.MemberChooser" timestamp="1579452312369">
+    <state x="533" y="162" key="#com.intellij.ide.util.MemberChooser" timestamp="1579529307900">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="533" y="162" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1579452312369" />
+    <state x="533" y="162" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1579529307900" />
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1579166939748">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900@0.0.1440.900" timestamp="1579166939748" />
-    <state x="458" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1579245683192">
+    <state x="458" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1579519392622">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="458" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1579245683192" />
-    <state x="28" y="23" width="987" height="777" key="CommitChangelistDialog2" timestamp="1579457625078">
+    <state x="458" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1579519392622" />
+    <state x="28" y="23" width="987" height="777" key="CommitChangelistDialog2" timestamp="1579513943414">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="28" y="23" width="987" height="777" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1579457625078" />
+    <state x="28" y="23" width="987" height="777" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1579513943414" />
     <state x="28" y="23" width="948" height="777" key="CommitChangelistDialog2/0.23.1440.777@0.23.1440.777" timestamp="1579059526078" />
     <state x="100" y="100" width="1240" height="700" key="DiffContextDialog" timestamp="1579453494083">
       <screen x="0" y="23" width="1440" height="777" />
@@ -571,47 +684,47 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="583" y="355" key="Github.ShareDialog/0.0.1440.900@0.0.1440.900" timestamp="1578848247203" />
-    <state width="1398" height="313" key="GridCell.Tab.0.bottom" timestamp="1579457669095">
+    <state width="1398" height="300" key="GridCell.Tab.0.bottom" timestamp="1579541152856">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="313" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1579457669095" />
-    <state width="1398" height="313" key="GridCell.Tab.0.bottom/0.23.1440.777@0.23.1440.777" timestamp="1579456849678" />
-    <state width="1398" height="313" key="GridCell.Tab.0.center" timestamp="1579457669093">
+    <state width="1398" height="300" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1579541152856" />
+    <state width="1398" height="300" key="GridCell.Tab.0.bottom/0.23.1440.777@0.23.1440.777" timestamp="1579540641634" />
+    <state width="1398" height="300" key="GridCell.Tab.0.center" timestamp="1579541152853">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="313" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1579457669093" />
-    <state width="1398" height="313" key="GridCell.Tab.0.center/0.23.1440.777@0.23.1440.777" timestamp="1579456849675" />
-    <state width="1398" height="313" key="GridCell.Tab.0.left" timestamp="1579457669093">
+    <state width="1398" height="300" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1579541152853" />
+    <state width="1398" height="300" key="GridCell.Tab.0.center/0.23.1440.777@0.23.1440.777" timestamp="1579540641624" />
+    <state width="1398" height="300" key="GridCell.Tab.0.left" timestamp="1579541152851">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="313" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1579457669093" />
+    <state width="1398" height="300" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1579541152851" />
     <state width="1398" height="313" key="GridCell.Tab.0.left/0.0.1440.900@0.23.1440.777" timestamp="1579425461160" />
-    <state width="1398" height="313" key="GridCell.Tab.0.left/0.23.1440.777@0.23.1440.777" timestamp="1579456849671" />
-    <state width="1398" height="313" key="GridCell.Tab.0.right" timestamp="1579457669094">
+    <state width="1398" height="300" key="GridCell.Tab.0.left/0.23.1440.777@0.23.1440.777" timestamp="1579540641611" />
+    <state width="1398" height="300" key="GridCell.Tab.0.right" timestamp="1579541152855">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="313" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1579457669094" />
-    <state width="1398" height="313" key="GridCell.Tab.0.right/0.23.1440.777@0.23.1440.777" timestamp="1579456849676" />
-    <state width="1398" height="313" key="GridCell.Tab.1.bottom" timestamp="1579457669097">
+    <state width="1398" height="300" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1579541152855" />
+    <state width="1398" height="300" key="GridCell.Tab.0.right/0.23.1440.777@0.23.1440.777" timestamp="1579540641627" />
+    <state width="1398" height="300" key="GridCell.Tab.1.bottom" timestamp="1579541152861">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="313" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1579457669097" />
-    <state width="1398" height="313" key="GridCell.Tab.1.bottom/0.23.1440.777@0.23.1440.777" timestamp="1579456849686" />
-    <state width="1398" height="313" key="GridCell.Tab.1.center" timestamp="1579457669096">
+    <state width="1398" height="300" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1579541152861" />
+    <state width="1398" height="300" key="GridCell.Tab.1.bottom/0.23.1440.777@0.23.1440.777" timestamp="1579540641644" />
+    <state width="1398" height="300" key="GridCell.Tab.1.center" timestamp="1579541152859">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="313" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1579457669096" />
-    <state width="1398" height="313" key="GridCell.Tab.1.center/0.23.1440.777@0.23.1440.777" timestamp="1579456849683" />
-    <state width="1398" height="313" key="GridCell.Tab.1.left" timestamp="1579457669095">
+    <state width="1398" height="300" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1579541152859" />
+    <state width="1398" height="300" key="GridCell.Tab.1.center/0.23.1440.777@0.23.1440.777" timestamp="1579540641640" />
+    <state width="1398" height="300" key="GridCell.Tab.1.left" timestamp="1579541152857">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="313" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1579457669095" />
-    <state width="1398" height="313" key="GridCell.Tab.1.left/0.23.1440.777@0.23.1440.777" timestamp="1579456849680" />
-    <state width="1398" height="313" key="GridCell.Tab.1.right" timestamp="1579457669096">
+    <state width="1398" height="300" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1579541152857" />
+    <state width="1398" height="300" key="GridCell.Tab.1.left/0.23.1440.777@0.23.1440.777" timestamp="1579540641638" />
+    <state width="1398" height="300" key="GridCell.Tab.1.right" timestamp="1579541152860">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="313" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1579457669096" />
-    <state width="1398" height="313" key="GridCell.Tab.1.right/0.23.1440.777@0.23.1440.777" timestamp="1579456849684" />
+    <state width="1398" height="300" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1579541152860" />
+    <state width="1398" height="300" key="GridCell.Tab.1.right/0.23.1440.777@0.23.1440.777" timestamp="1579540641643" />
     <state width="1398" height="303" key="GridCell.Tab.2.bottom" timestamp="1578637077773">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -632,24 +745,24 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="234" height="498" key="HiddenNamespacesPopup/0.0.1440.900@0.0.1440.900" timestamp="1578761527430" />
-    <state x="215" y="56" width="1024" height="777" key="SettingsEditor" timestamp="1579365056855">
+    <state x="215" y="56" width="1024" height="777" key="SettingsEditor" timestamp="1579519235294">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="215" y="56" width="1024" height="777" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1579365056854" />
-    <state x="126" y="75" key="SettingsEditor/0.23.1440.777@0.23.1440.777" timestamp="1578546876223" />
-    <state x="320" y="191" key="Vcs.Push.Dialog.v2" timestamp="1579457628311">
+    <state x="215" y="56" width="1024" height="777" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1579519235294" />
+    <state x="126" y="23" key="SettingsEditor/0.23.1440.777@0.23.1440.777" timestamp="1579519193398" />
+    <state x="320" y="191" key="Vcs.Push.Dialog.v2" timestamp="1579513947152">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="191" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1579457628311" />
+    <state x="320" y="191" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1579513947152" />
     <state x="320" y="188" key="Vcs.Push.Dialog.v2/0.23.1440.777@0.23.1440.777" timestamp="1579059530591" />
     <state x="496" y="331" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1578985176113">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="496" y="331" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1440.900@0.0.1440.900" timestamp="1578985176113" />
-    <state x="509" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1579457409149">
+    <state x="509" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1579541669195">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="509" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1579457409149" />
+    <state x="509" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1579541669195" />
     <state x="383" y="214" width="673" height="472" key="find.popup" timestamp="1578760904590">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

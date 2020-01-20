@@ -7,19 +7,21 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="guns-rest" />
+        <module name="guns-cinema" />
+        <module name="guns-alipay" />
         <module name="guns-user" />
-        <module name="guns-api" />
-        <module name="guns-film" />
         <module name="guns-gateway" />
         <module name="guns-admin" />
-        <module name="guns-order" />
-        <module name="guns-cinema" />
-        <module name="guns-generator" />
+        <module name="guns-film" />
         <module name="guns-core" />
+        <module name="guns-api" />
+        <module name="guns-generator" />
+        <module name="guns-order" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="guns-admin" target="1.8" />
+      <module name="guns-alipay" target="1.8" />
       <module name="guns-api" target="1.8" />
       <module name="guns-cinema" target="1.8" />
       <module name="guns-core" target="1.8" />
@@ -35,6 +37,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="guns-admin" options="-parameters" />
+      <module name="guns-alipay" options="-parameters" />
       <module name="guns-api" options="-parameters" />
       <module name="guns-cinema" options="-parameters" />
       <module name="guns-core" options="-parameters" />

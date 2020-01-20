@@ -17,6 +17,7 @@ import com.stylefeng.guns.rest.common.util.FTPUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
 import javax.annotation.Resource;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -153,5 +154,29 @@ public class DefaultOrderServiceImpl implements OrderServiceAPI {
             String soldSeatsByFieldId = orderTMapper.getSoldSeatsByFieldId(fieldId);
             return soldSeatsByFieldId;
         }
+    }
+
+    @Override
+    public OrderVO getOrderInfoById(String orderId) {
+        OrderVO orderInfoById = orderTMapper.getOrderInfoById(orderId);
+        return orderInfoById;
+    }
+
+    @Override
+    public boolean paySuccess(String orderId) {
+        OrderT orderT = new OrderT();
+        orderT.setUuid(orderId);
+        orderT.setOrderStatus(1);
+        Integer integer = orderTMapper.updateById(orderT);
+        return integer >= 1;
+    }
+
+    @Override
+    public boolean payFail(String orderId) {
+        OrderT orderT = new OrderT();
+        orderT.setUuid(orderId);
+        orderT.setOrderStatus(2);
+        Integer integer = orderTMapper.updateById(orderT);
+        return integer >= 1;
     }
 }

@@ -90,4 +90,15 @@ public class OrderController {
             return ResponseVO.serviceFail("用户未登录");
         }
     }
+
+    @RequestMapping(value = "getPayInfo", method = RequestMethod.POST)
+    public ResponseVO getPayInfo(@RequestParam("orderId") String orderId) {
+        return null;
+    }
+
+    @RequestMapping(value = "getPayResult", method = RequestMethod.POST)
+    public ResponseVO getPayResult(@RequestParam("orderId") String orderId,
+                                   @RequestParam("tryNums") String tryNums) {
+        return null;
+    }
 }

@@ -33,7 +33,8 @@ spring:
   dubbo:
     timeout: 50000
     server: true
-    registry: zookeeper://127.0.0.1:2181
+    registry:
+      address: zookeeper://127.0.0.1:2181
     consumer:
       check: false
       timeout: 50000

@@ -1104,12 +1104,14 @@ public class CurrentUser {
 支付模块做简单点，对接支付宝即可。**支付流程：首先要获取二维码，用户扫描支付二维码之后，系统后台是不知道，只能等支付宝回调，然后修改订单状态，最后还需要定期对账。**但是等待支付宝回调有点麻烦，现在还没有一个公网的地址，所以只能启动另外一个流程，首先Consumer是服务端消费，客户端就是前端操作系统，Consumer获取二维码送到前端客户端上，前端进行扫描支付，这个时候后端会启用请求调用来查询前端支付状态，同时修改数据库，把订单修改成已支付，当然了，支付流程不够严谨，但是已经能够完成了。简单看一下开发文档，本身支付宝是需要身份验证，营业执照等等，这里肯定没有了，所以只能用沙箱版的支付宝，也就是沙箱环境做测试，全部都是假的。然后配置一下沙箱环境，按照文档：
 ![](https://upload-images.jianshu.io/upload_images/10624272-eab5be5fa7b81047.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 填写配置文件信息。properties里面有公钥和私钥。**现在有两个环境，一个是商户，一个是支付宝，相互都持有一个公钥，这个公钥是以明文传输，没有安全性，比如近代战争通信进程会有一个秘密本，按照密码本来进行加密，这个密码本就是公钥，商户还有一个私钥，根据私钥决定怎么读密码本，这个公钥和私钥是一对的，接着如果有数据，那么就用私钥把数据加密，当然是根据公钥加密了，而支付宝也会有一个私钥，私钥是一样的，那么支付宝也会用私钥来找公钥，进行解密即可。**
-============ &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;============                      
-|------ 商户------| &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;|-----支付宝------|
-|------**公钥**-------|   ————&ensp;|-----**公钥**---------|
-|------**私钥**-------|  ———》&ensp;|-----**私钥**---------|                  
-============&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;=============
-
+![](https://upload-images.jianshu.io/upload_images/10624272-29975e42eebaffc9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+简单弄一个demo玩一下，首先要下载一个沙箱app，把蚂蚁金服上面给的demo搞下来，把包全部导入，使用阿里云提供公钥生成：
+![](https://upload-images.jianshu.io/upload_images/10624272-21a10042744a015d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+有两种秘钥的验证方式，RSA和RSA2，代码里面默认选用了RSA2，那么把对应的秘钥填写上去。
+![](https://upload-images.jianshu.io/upload_images/10624272-1fb86d19fe97b13d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/10624272-43a0aab58bc6b4a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+这句不去掉注释是没有图片生成的。然后运行就可以了。
+接下来就是业务环境搭建，把SDK复制过来改好包。支付模块的业务其实很简单，获取二维码，存在FTP服务器，返回前端，获取支付结果。
 
 
 

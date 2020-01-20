@@ -2,7 +2,7 @@ package com.stylefeng.guns.api.order;
 
 import com.baomidou.mybatisplus.plugins.Page;
 import com.stylefeng.guns.api.order.vo.OrderVO;
-import java.util.*;
+
 /**
  * @author greenArrow
  * @version 1.0
@@ -18,4 +18,10 @@ public interface OrderServiceAPI {
     Page<OrderVO> getOrderByUserId(Integer userId, Page<OrderVO> page);
 
     String getSoldSeatsByFieldId(Integer fieldId);
+
+    OrderVO getOrderInfoById(String orderId);
+
+    boolean paySuccess(String orderId);
+
+    boolean payFail(String orderId);
 }

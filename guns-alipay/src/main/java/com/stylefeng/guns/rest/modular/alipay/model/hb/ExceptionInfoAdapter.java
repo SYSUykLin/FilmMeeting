@@ -1,10 +1,10 @@
 package com.stylefeng.guns.rest.modular.alipay.model.hb;
 
-import com.alipay.demo.trade.utils.Utils;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonPrimitive;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
+import com.stylefeng.guns.rest.modular.alipay.utils.Utils;
 import org.apache.commons.lang.StringUtils;
 
 import java.lang.reflect.Type;

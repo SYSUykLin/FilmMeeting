@@ -1111,7 +1111,20 @@ public class CurrentUser {
 ![](https://upload-images.jianshu.io/upload_images/10624272-1fb86d19fe97b13d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![](https://upload-images.jianshu.io/upload_images/10624272-43a0aab58bc6b4a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 这句不去掉注释是没有图片生成的。然后运行就可以了。
-接下来就是业务环境搭建，把SDK复制过来改好包。支付模块的业务其实很简单，获取二维码，存在FTP服务器，返回前端，获取支付结果。
+接下来就是业务环境搭建，把SDK复制过来改好包。支付模块的业务其实很简单，获取二维码，存在FTP服务器，返回前端，获取支付结果。**现在整个流程测试一下，首先是登录，获取jwt，然后使用jwt进行购票操作，发现居然触发了熔断器，但是这也发现熔断器设置的一个不足，没有配置是error日志的打印，但是项目赶工在即，后面高可用或者项目维护再说其他的吧。这个错误显示**
+![](https://upload-images.jianshu.io/upload_images/10624272-5482f9b0845aee18.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+**updateById这个方法出现异常，mybatis plus的update更新这里是用自带的，默认会根据主键来进行更新，然而order表忘记建立主键了，所以找不到主键自然也就不存在什么根据主键更新了，更新表结构为带主键方式，更新mapper文件。更新完成之后还是出现异常**
+![](https://upload-images.jianshu.io/upload_images/10624272-58b10685f31ce3f5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+**这条语句异常，这条语句是插入了之后再从database读出来，查阅数据库发现，插入的uuid是null，也就是说主键是没有被插入的，查看log打印的日志，insert里面没有插入uuid，我使用insert默认提供的插入方法，orderT里面哪个字段不是null就插入进去，但是很明显uuid有的，问题就出现在配置文件mapper或者是orderT自己生成的模型中，orderT可能性不大，mapper文件查阅后发现确实没有上面问题，百度发现问题在orderT生成的模型上面**
+![](https://upload-images.jianshu.io/upload_images/10624272-f73b89730b7e0be9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+**主键不添加策略，默认是auto自增方式，但是String又不能自增，就填不进去了，加上type，变成手动input方式，这样理论上应该是OK的了，然而还是触发了熔断器，去掉熔断器发现是没有问题的，那么就是熔断器的时间了，算了一下，至少要10s，一个请求10秒有点过分了，所以后面改进可能要进行分布式或者异步改进，因为这个请求涉及到了FTP的数据传送，但是总算还是OK了。**
+![](https://upload-images.jianshu.io/upload_images/10624272-3e09393cc7a886be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+**然后就是生成订单二维码了**
+![](https://upload-images.jianshu.io/upload_images/10624272-40d99f5121a3d4db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+**用sandbox版的支付宝支付一下**
+![](https://upload-images.jianshu.io/upload_images/10624272-5d2c49bc5a42bef9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+**显示支付成功，那么这样这个下单支付的后台基本没有问题了，下面就是要把二维码上传到FTP上去了，这个时候生成二维码服务可能会更加慢。另外打开WiFi就找不到服务的问题，今天突然可以了，这也是为什么今晚测试这么快的原因。练着WiFi能找到服务可能是因为我去了家里另外一处房子，那里的WiFi突然就可以了；以往这个bug得到的结论是WiFi的开关和Provider能否被Consumer找到互相有因果关系，现在原因可能会与WiFi路由器的不同相关，仍在观查——2020.1.23  2:12分凌晨**
+
 
 
 

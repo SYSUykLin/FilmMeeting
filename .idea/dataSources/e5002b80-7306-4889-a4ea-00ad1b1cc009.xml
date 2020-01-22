@@ -1457,6 +1457,7 @@
       <Position>1</Position>
       <Comment>主键编号</Comment>
       <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="326" parent="242" name="cinema_id">
@@ -1522,7 +1523,12 @@
       <DefaultExpression>0</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="336" parent="243" name="UUID">
+    <key id="336" parent="242" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>UUID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="337" parent="243" name="UUID">
       <Position>1</Position>
       <Comment>主键编号</Comment>
       <DataType>int(11)|0s</DataType>
@@ -1530,18 +1536,18 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="337" parent="243" name="show_name">
+    <column id="338" parent="243" name="show_name">
       <Position>2</Position>
       <Comment>显示名称</Comment>
       <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="338" parent="243" name="PRIMARY">
+    <key id="339" parent="243" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>UUID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="339" parent="244" name="UUID">
+    <column id="340" parent="244" name="UUID">
       <Position>1</Position>
       <Comment>主键编号</Comment>
       <DataType>int(11)|0s</DataType>
@@ -1549,73 +1555,73 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="340" parent="244" name="user_name">
+    <column id="341" parent="244" name="user_name">
       <Position>2</Position>
       <Comment>用户账号</Comment>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="341" parent="244" name="user_pwd">
+    <column id="342" parent="244" name="user_pwd">
       <Position>3</Position>
       <Comment>用户密码</Comment>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="342" parent="244" name="nick_name">
+    <column id="343" parent="244" name="nick_name">
       <Position>4</Position>
       <Comment>用户昵称</Comment>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="343" parent="244" name="user_sex">
+    <column id="344" parent="244" name="user_sex">
       <Position>5</Position>
       <Comment>用户性别 0-男，1-女</Comment>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="344" parent="244" name="birthday">
+    <column id="345" parent="244" name="birthday">
       <Position>6</Position>
       <Comment>出生日期</Comment>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="345" parent="244" name="email">
+    <column id="346" parent="244" name="email">
       <Position>7</Position>
       <Comment>用户邮箱</Comment>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="346" parent="244" name="user_phone">
+    <column id="347" parent="244" name="user_phone">
       <Position>8</Position>
       <Comment>用户手机号</Comment>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="347" parent="244" name="address">
+    <column id="348" parent="244" name="address">
       <Position>9</Position>
       <Comment>用户住址</Comment>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="348" parent="244" name="head_url">
+    <column id="349" parent="244" name="head_url">
       <Position>10</Position>
       <Comment>头像URL</Comment>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="349" parent="244" name="biography">
+    <column id="350" parent="244" name="biography">
       <Position>11</Position>
       <Comment>个人介绍</Comment>
       <DataType>varchar(200)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="350" parent="244" name="life_state">
+    <column id="351" parent="244" name="life_state">
       <Position>12</Position>
       <Comment>生活状态 0-单身，1-热恋中，2-已婚，3-为人父母</Comment>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="351" parent="244" name="begin_time">
+    <column id="352" parent="244" name="begin_time">
       <Position>13</Position>
       <Comment>创建时间</Comment>
       <DataType>timestamp|0s</DataType>
@@ -1623,7 +1629,7 @@
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="352" parent="244" name="update_time">
+    <column id="353" parent="244" name="update_time">
       <Position>14</Position>
       <Comment>修改时间</Comment>
       <DataType>timestamp|0s</DataType>
@@ -1632,12 +1638,12 @@
       <ColumnKind>normal</ColumnKind>
       <OnUpdate>CURRENT_TIMESTAMP</OnUpdate>
     </column>
-    <key id="353" parent="244" name="PRIMARY">
+    <key id="354" parent="244" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>UUID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="354" parent="245" name="UUID">
+    <column id="355" parent="245" name="UUID">
       <Position>1</Position>
       <Comment>主键编号</Comment>
       <DataType>int(11)|0s</DataType>
@@ -1645,13 +1651,13 @@
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="355" parent="245" name="show_name">
+    <column id="356" parent="245" name="show_name">
       <Position>2</Position>
       <Comment>显示名称</Comment>
       <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="356" parent="245" name="PRIMARY">
+    <key id="357" parent="245" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>UUID</ColNames>
       <Primary>1</Primary>

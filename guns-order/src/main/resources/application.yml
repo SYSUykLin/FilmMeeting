@@ -14,7 +14,7 @@ ftp:
   user-name: root
   password: 199821130365Lyk
 server:
-  port: 8086 #项目端口
+  port: 8087 #项目端口
 
 mybatis-plus:
   mapper-locations: classpath*:com/stylefeng/guns/rest/**/mapping/*.xml
@@ -39,7 +39,7 @@ spring:
     registry: zookeeper://127.0.0.1:2181
     protocol:
       name: dubbo
-      port: 20886
+      port: 20887
     provider:
       timeout: 50000
   datasource:

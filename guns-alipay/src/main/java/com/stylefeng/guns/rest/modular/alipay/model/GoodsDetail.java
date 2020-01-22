@@ -1,8 +1,8 @@
 package com.stylefeng.guns.rest.modular.alipay.model;
 
 
-import com.alipay.demo.trade.utils.Utils;
 import com.google.gson.annotations.SerializedName;
+import com.stylefeng.guns.rest.modular.alipay.utils.Utils;
 
 /**
  * Created by liuyangkly on 15/6/26.

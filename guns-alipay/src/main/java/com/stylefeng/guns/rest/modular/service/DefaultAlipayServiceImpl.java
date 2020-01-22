@@ -155,7 +155,7 @@ public class DefaultAlipayServiceImpl implements AliPayServiceAPI {
                 AlipayTradePrecreateResponse response = result.getResponse();
 
                 // 需要修改为运行机器上的路径
-                String filePath = String.format("/Users/GreenArrow/Downloads/Google Docs/alipaytest/qr-%s.png",
+                String filePath = String.format("/Users/GreenArrow/Downloads/qr-%s.png",
                         response.getOutTradeNo());
                 file_path = filePath;
                 log.info("filePath:" + filePath);

@@ -4,9 +4,13 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
+import com.stylefeng.guns.api.alipay.AliPayServiceAPI;
+import com.stylefeng.guns.api.alipay.vo.AliPayInfoVO;
+import com.stylefeng.guns.api.alipay.vo.AliPayResultVO;
 import com.stylefeng.guns.api.order.OrderServiceAPI;
 import com.stylefeng.guns.api.order.vo.OrderVO;
 import com.stylefeng.guns.core.util.TokenBucket;
+import com.stylefeng.guns.core.util.ToolUtil;
 import com.stylefeng.guns.rest.common.CurrentUser;
 import com.stylefeng.guns.rest.modular.vo.ResponseVO;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +29,11 @@ public class OrderController {
 
     private static TokenBucket tokenBucket = new TokenBucket();
 
+    private static final String IMG_PRE = "http://meetingshop.cn/";
+
+    @Reference(interfaceClass = AliPayServiceAPI.class, check = false)
+    private AliPayServiceAPI aliPayServiceAPI;
+
 
     @Reference(interfaceClass = OrderServiceAPI.class, check = false)
     private OrderServiceAPI orderServiceAPI;
@@ -37,7 +46,7 @@ public class OrderController {
     @HystrixCommand(fallbackMethod = "error", commandProperties = {
             @HystrixProperty(name = "execution.isolation.strategy", value = "THREAD"),
             @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value
-                    = "4000"),
+                    = "20000"),
             @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "10"),
             @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "50")
     }, threadPoolProperties = {
@@ -93,12 +102,36 @@ public class OrderController {
 
     @RequestMapping(value = "getPayInfo", method = RequestMethod.POST)
     public ResponseVO getPayInfo(@RequestParam("orderId") String orderId) {
-        return null;
+        String userId = CurrentUser.getCurrentUser();
+        if (userId == null || userId.trim().length() == 0) {
+            return ResponseVO.serviceFail("用户未登录");
+        }
+
+        AliPayInfoVO qrCode = aliPayServiceAPI.getQRCode(orderId);
+
+        return ResponseVO.success(IMG_PRE, qrCode);
     }
 
     @RequestMapping(value = "getPayResult", method = RequestMethod.POST)
     public ResponseVO getPayResult(@RequestParam("orderId") String orderId,
-                                   @RequestParam("tryNums") String tryNums) {
-        return null;
+                                   @RequestParam(name = "tryNums", required = false, defaultValue = "1") Integer tryNums) {
+        String userId = CurrentUser.getCurrentUser();
+        if (userId == null || userId.trim().length() == 0) {
+            return ResponseVO.serviceFail("用户未登录");
+        }
+
+        if (tryNums >= 4){
+            return ResponseVO.serviceFail("订单支付失败");
+        }
+
+        AliPayResultVO orderStatus = aliPayServiceAPI.getOrderStatus(orderId);
+        if (orderStatus == null || ToolUtil.isEmpty(orderStatus.getOrderId())){
+            AliPayResultVO aliPayResultVO = new AliPayResultVO();
+            aliPayResultVO.setOrderId(orderId);
+            aliPayResultVO.setOrderStatus(0);
+            aliPayResultVO.setOrderMsg("支付不成功！");
+            return ResponseVO.success(aliPayResultVO);
+        }
+        return ResponseVO.success(orderStatus);
     }
 }

@@ -4,7 +4,7 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.stylefeng.guns.rest.common.persistence.model.OrderT">
-        <result column="UUID" property="uuid"/>
+        <id column="UUID" property="uuid"/>
         <result column="cinema_id" property="cinemaId"/>
         <result column="field_id" property="fieldId"/>
         <result column="film_id" property="filmId"/>

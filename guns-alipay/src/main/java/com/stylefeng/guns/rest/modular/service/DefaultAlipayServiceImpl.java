@@ -8,6 +8,7 @@ import com.stylefeng.guns.api.alipay.vo.AliPayInfoVO;
 import com.stylefeng.guns.api.alipay.vo.AliPayResultVO;
 import com.stylefeng.guns.api.order.OrderServiceAPI;
 import com.stylefeng.guns.api.order.vo.OrderVO;
+import com.stylefeng.guns.rest.common.util.FTPUtil;
 import com.stylefeng.guns.rest.modular.alipay.config.Configs;
 import com.stylefeng.guns.rest.modular.alipay.model.ExtendParams;
 import com.stylefeng.guns.rest.modular.alipay.model.GoodsDetail;
@@ -22,8 +23,10 @@ import com.stylefeng.guns.rest.modular.alipay.service.impl.AlipayTradeServiceImp
 import com.stylefeng.guns.rest.modular.alipay.service.impl.AlipayTradeWithHBServiceImpl;
 import com.stylefeng.guns.rest.modular.alipay.utils.ZxingUtils;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,11 +37,12 @@ import java.util.List;
  */
 @Slf4j
 @Component
-@Service(interfaceClass = AliPayServiceAPI.class)
+@Service(interfaceClass = AliPayServiceAPI.class, mock = "com.stylefeng.guns.api.alipay.AliPayServiceMock")
 public class DefaultAlipayServiceImpl implements AliPayServiceAPI {
     @Reference(interfaceClass = OrderServiceAPI.class, check = false)
     private OrderServiceAPI orderServiceAPI;
-
+    @Autowired
+    private FTPUtil ftpUtil;
 
     // 支付宝当面付2.0服务
     private static AlipayTradeService tradeService;
@@ -158,8 +162,14 @@ public class DefaultAlipayServiceImpl implements AliPayServiceAPI {
                 String filePath = String.format("/Users/GreenArrow/Downloads/qr-%s.png",
                         response.getOutTradeNo());
                 file_path = filePath;
+                String fileName = String.format("qr-%s.png", response.getOutTradeNo());
                 log.info("filePath:" + filePath);
-                ZxingUtils.getQRCodeImge(response.getQrCode(), 256, filePath);
+                File qrCodeImge = ZxingUtils.getQRCodeImge(response.getQrCode(), 256, filePath);
+                boolean isSuccess = ftpUtil.uploadFile(fileName, qrCodeImge);
+                if (!isSuccess) {
+                    filePath = "";
+                    log.error("二维码上传FTP失败");
+                } else log.info("二维码上传成功");
                 break;
 
             case FAILED:

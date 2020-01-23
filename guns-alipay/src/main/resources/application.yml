@@ -13,6 +13,7 @@ ftp:
   port: 21
   user-name: root
   password: 199821130365Lyk
+  upload-path: qrcode
 server:
   port: 8086 #项目端口
 

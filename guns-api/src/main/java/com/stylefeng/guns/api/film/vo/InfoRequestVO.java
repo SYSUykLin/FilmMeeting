@@ -1,6 +1,5 @@
 package com.stylefeng.guns.api.film.vo;
 
-import com.sun.source.doctree.SerialDataTree;
 import lombok.Data;
 
 import java.io.Serializable;

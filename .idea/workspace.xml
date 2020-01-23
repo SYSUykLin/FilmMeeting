@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f1fbc0fb-346e-4439-a5b6-1373b6a9e629" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/guns-order.log.2020-01-22.0.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-order.log.2020-01-22.043542165111198.tmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/guns-rest.log.2020-01-22.0.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e5002b80-7306-4889-a4ea-00ad1b1cc009.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e5002b80-7306-4889-a4ea-00ad1b1cc009.xml" afterDir="false" />
+    <list default="true" id="f1fbc0fb-346e-4439-a5b6-1373b6a9e629" name="Default Changelist" comment="finish the Alipay Module,tomorrow starting distributed transactions.&#10;everything goes will!!!">
+      <change afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/alipay/AliPayServiceMock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-order.log.2020-01-23.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/guns-rest.log.2020-01-23.0.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/model/GoodsDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/model/GoodsDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/model/hb/ExceptionInfoAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/model/hb/ExceptionInfoAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/model/hb/TradeInfoAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/alipay/model/hb/TradeInfoAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/AlipayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/AlipayApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/common/util/FTPUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/common/util/FTPUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/service/DefaultAlipayServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-alipay/src/main/java/com/stylefeng/guns/rest/modular/service/DefaultAlipayServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/order/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-gateway/src/main/java/com/stylefeng/guns/rest/modular/order/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-order/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/mapping/OrderTMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/guns-order/src/main/java/com/stylefeng/guns/rest/common/persistence/dao/mapping/OrderTMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-order/src/main/java/com/stylefeng/guns/rest/common/persistence/model/OrderT.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-order/src/main/java/com/stylefeng/guns/rest/common/persistence/model/OrderT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/guns-order/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/guns-order/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-alipay/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/guns-alipay/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/film/vo/InfoRequestVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/guns-api/src/main/java/com/stylefeng/guns/api/film/vo/InfoRequestVO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,6 +268,7 @@
     </configuration>
     <list>
       <item itemvalue="Application.FTPUtil" />
+      <item itemvalue="HTTP Request.GatewayApplication#1" />
       <item itemvalue="JUnit.EntityGenerator (1)" />
       <item itemvalue="JUnit.GunsRestApplicationTests.contextLoads" />
       <item itemvalue="Maven.[order]" />
@@ -282,7 +280,6 @@
       <item itemvalue="Spring Boot.FilmApplication" />
       <item itemvalue="Spring Boot.AlipayApplication" />
       <item itemvalue="Spring Boot.GatewayApplication" />
-      <item itemvalue="HTTP Request.GatewayApplication#1" />
     </list>
     <recent_temporary>
       <list>
@@ -299,17 +296,7 @@
       <list>
         <serviceView>
           <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:guns_rest@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:guns_rest@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@2334a329" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </treeState>
         </serviceView>
@@ -367,7 +354,8 @@
       <workItem from="1579452241268" duration="3231000" />
       <workItem from="1579489930421" duration="13083000" />
       <workItem from="1579591182519" duration="3407000" />
-      <workItem from="1579670412337" duration="11195000" />
+      <workItem from="1579670412337" duration="11471000" />
+      <workItem from="1579753766466" duration="9700000" />
     </task>
     <task id="LOCAL-00001" summary="first update">
       <created>1578566760158</created>
@@ -530,7 +518,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579541836078</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="test order model about buying tickets and paying,everything goes will!!">
+      <created>1579717119405</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1579717119406</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,7 +576,9 @@
     <MESSAGE value="complete the order model and dispose Hystrix,update README.md" />
     <MESSAGE value="update README.md" />
     <MESSAGE value="connect with alipay interface,and continue find out a bug cause by virtual ip(may be),but get nothing.go fuck dubbo's mother!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="connect with alipay interface,and continue find out a bug cause by virtual ip(may be),but get nothing.go fuck dubbo's mother!!!" />
+    <MESSAGE value="test order model about buying tickets and paying,everything goes will!!" />
+    <MESSAGE value="finish the Alipay Module,tomorrow starting distributed transactions.&#10;everything goes will!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish the Alipay Module,tomorrow starting distributed transactions.&#10;everything goes will!!!" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="117" key="#Inspections" timestamp="1578493411691">
@@ -600,10 +597,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="465" y="260" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1578758376004" />
-    <state x="533" y="162" key="#com.intellij.ide.util.MemberChooser" timestamp="1579529307900">
+    <state x="533" y="162" key="#com.intellij.ide.util.MemberChooser" timestamp="1579793694677">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="533" y="162" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1579529307900" />
+    <state x="533" y="162" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1579793694677" />
     <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1579166939748">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -612,10 +609,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1579519392622" />
-    <state x="28" y="23" width="987" height="777" key="CommitChangelistDialog2" timestamp="1579541835047">
+    <state x="28" y="23" width="987" height="777" key="CommitChangelistDialog2" timestamp="1579796356261">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="28" y="23" width="987" height="777" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1579541835047" />
+    <state x="28" y="23" width="987" height="777" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1579796356261" />
     <state x="28" y="23" width="948" height="777" key="CommitChangelistDialog2/0.23.1440.777@0.23.1440.777" timestamp="1579059526078" />
     <state x="100" y="100" width="1240" height="700" key="DiffContextDialog" timestamp="1579453494083">
       <screen x="0" y="23" width="1440" height="777" />
@@ -629,47 +626,47 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="583" y="355" key="Github.ShareDialog/0.0.1440.900@0.0.1440.900" timestamp="1578848247203" />
-    <state width="1398" height="300" key="GridCell.Tab.0.bottom" timestamp="1579717041011">
+    <state width="1398" height="300" key="GridCell.Tab.0.bottom" timestamp="1579796100086">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="300" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1579717041011" />
-    <state width="1398" height="300" key="GridCell.Tab.0.bottom/0.23.1440.777@0.23.1440.777" timestamp="1579714714114" />
-    <state width="1398" height="300" key="GridCell.Tab.0.center" timestamp="1579717041009">
+    <state width="1398" height="300" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1579796100086" />
+    <state width="1398" height="300" key="GridCell.Tab.0.bottom/0.23.1440.777@0.23.1440.777" timestamp="1579794505751" />
+    <state width="1398" height="300" key="GridCell.Tab.0.center" timestamp="1579796100084">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="300" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1579717041009" />
-    <state width="1398" height="300" key="GridCell.Tab.0.center/0.23.1440.777@0.23.1440.777" timestamp="1579714714111" />
-    <state width="1398" height="300" key="GridCell.Tab.0.left" timestamp="1579717041008">
+    <state width="1398" height="300" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1579796100084" />
+    <state width="1398" height="300" key="GridCell.Tab.0.center/0.23.1440.777@0.23.1440.777" timestamp="1579794505749" />
+    <state width="1398" height="300" key="GridCell.Tab.0.left" timestamp="1579796100084">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="300" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1579717041008" />
+    <state width="1398" height="300" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1579796100084" />
     <state width="1398" height="313" key="GridCell.Tab.0.left/0.0.1440.900@0.23.1440.777" timestamp="1579425461160" />
-    <state width="1398" height="300" key="GridCell.Tab.0.left/0.23.1440.777@0.23.1440.777" timestamp="1579714714109" />
-    <state width="1398" height="300" key="GridCell.Tab.0.right" timestamp="1579717041010">
+    <state width="1398" height="300" key="GridCell.Tab.0.left/0.23.1440.777@0.23.1440.777" timestamp="1579794505747" />
+    <state width="1398" height="300" key="GridCell.Tab.0.right" timestamp="1579796100085">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="300" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1579717041010" />
-    <state width="1398" height="300" key="GridCell.Tab.0.right/0.23.1440.777@0.23.1440.777" timestamp="1579714714113" />
-    <state width="1398" height="300" key="GridCell.Tab.1.bottom" timestamp="1579717041013">
+    <state width="1398" height="300" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1579796100085" />
+    <state width="1398" height="300" key="GridCell.Tab.0.right/0.23.1440.777@0.23.1440.777" timestamp="1579794505750" />
+    <state width="1398" height="300" key="GridCell.Tab.1.bottom" timestamp="1579796100089">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="300" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1579717041013" />
-    <state width="1398" height="300" key="GridCell.Tab.1.bottom/0.23.1440.777@0.23.1440.777" timestamp="1579714714137" />
-    <state width="1398" height="300" key="GridCell.Tab.1.center" timestamp="1579717041012">
+    <state width="1398" height="300" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1579796100089" />
+    <state width="1398" height="300" key="GridCell.Tab.1.bottom/0.23.1440.777@0.23.1440.777" timestamp="1579794505758" />
+    <state width="1398" height="300" key="GridCell.Tab.1.center" timestamp="1579796100088">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="300" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1579717041012" />
-    <state width="1398" height="300" key="GridCell.Tab.1.center/0.23.1440.777@0.23.1440.777" timestamp="1579714714127" />
-    <state width="1398" height="300" key="GridCell.Tab.1.left" timestamp="1579717041011">
+    <state width="1398" height="300" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1579796100088" />
+    <state width="1398" height="300" key="GridCell.Tab.1.center/0.23.1440.777@0.23.1440.777" timestamp="1579794505754" />
+    <state width="1398" height="300" key="GridCell.Tab.1.left" timestamp="1579796100087">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="300" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1579717041011" />
-    <state width="1398" height="300" key="GridCell.Tab.1.left/0.23.1440.777@0.23.1440.777" timestamp="1579714714122" />
-    <state width="1398" height="300" key="GridCell.Tab.1.right" timestamp="1579717041012">
+    <state width="1398" height="300" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1579796100087" />
+    <state width="1398" height="300" key="GridCell.Tab.1.left/0.23.1440.777@0.23.1440.777" timestamp="1579794505752" />
+    <state width="1398" height="300" key="GridCell.Tab.1.right" timestamp="1579796100089">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="300" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1579717041012" />
-    <state width="1398" height="300" key="GridCell.Tab.1.right/0.23.1440.777@0.23.1440.777" timestamp="1579714714136" />
+    <state width="1398" height="300" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1579796100089" />
+    <state width="1398" height="300" key="GridCell.Tab.1.right/0.23.1440.777@0.23.1440.777" timestamp="1579794505757" />
     <state width="1398" height="303" key="GridCell.Tab.2.bottom" timestamp="1578637077773">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -695,10 +692,10 @@
     </state>
     <state x="215" y="56" width="1024" height="777" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1579519235294" />
     <state x="126" y="23" key="SettingsEditor/0.23.1440.777@0.23.1440.777" timestamp="1579519193398" />
-    <state x="320" y="191" key="Vcs.Push.Dialog.v2" timestamp="1579541858692">
+    <state x="320" y="191" key="Vcs.Push.Dialog.v2" timestamp="1579796339748">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="191" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1579541858692" />
+    <state x="320" y="191" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1579796339748" />
     <state x="320" y="188" key="Vcs.Push.Dialog.v2/0.23.1440.777@0.23.1440.777" timestamp="1579059530591" />
     <state x="496" y="331" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1578985176113">
       <screen x="0" y="0" width="1440" height="900" />
@@ -725,9 +722,9 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="482" y="76" key="refactoring.ChangeSignatureDialog/0.0.1440.900@0.0.1440.900" timestamp="1578886826191" />
-    <state x="385" y="196" width="670" height="158" key="search.everywhere.popup" timestamp="1579281552080">
+    <state x="385" y="196" width="670" height="158" key="search.everywhere.popup" timestamp="1579754833001">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="158" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1579281552080" />
+    <state x="385" y="196" width="670" height="158" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1579754833001" />
   </component>
 </project>

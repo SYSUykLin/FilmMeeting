@@ -929,7 +929,7 @@ resultMap定义自定义对象，这样就可以返回自定义类型了。接�
 同时，dubbo可以对并发和连接数量进行控制，可以在配置文件设置并发控制数量等等。首先明确，如果并发与连接数量超出了，并不会等待，会以错误的形式进行返回，dubbo本身虽然有服务降级，但服务降级这个东西实现的并没有特别好，其次，dubbo本身是有服务守恒的问题，但是在以前dubbo防止雪崩是通过控制并发与连接数量来控制的，尤其是连接。雪崩：目前3个服务，其中一个服务不知道为什么原因并发量非常大，超出了他本身所能承受的力度，然后这个服务就只能被冲崩了，然后这些请求又全部被送到了二号，二号又雪崩了以此类推。所以就叫雪崩。以往对于这种控制是用控制连接与并发数。
 # 订单模块
 订单模块这玩意，之前都没有碰过，订单模块主要是涉及一些dubbo特性或者是服务配置的问题，订单本身的业务很简单，就两个，下订单，查看订单，没了，服务配置比如限流，服务降级，熔断等等，dubbo本身有熔断，但是这个实现不太好，所以使用其他的熔断器来进行处理。首先是安装ftp，10.13版本前的ISO是自带的，Mac往后版本是没有的了，我的恰好是10.14的，ftp没有带上自带了sftp，sftp是ftp的变体，FTP另外一种是TFTP，FTP，TFTP，SFTP都是三种文件传输，区别就在于，FTP是需要在可信赖网络上传输，他没有很高的安全加密，SFTP有，如果信息很铭感，那就需要用SFTP了，增加了安全层进行信息加密，TFTP即是简单文件传输，基本适用于局域网，而且与其他两种协议不同就在于，FTP和SFTP使用TCP协议，而TFTP使用UDP协议，既然自带了那就使用sftp充当FTP吧。
-首先对于购票业务，后端要有一个原则，永远都不能相信前端给你的东西，因为是可以通过前端进行更改的，所以要验证是否为真。影院列表是使用json文件，判断座位id是不是正确，判断在订单里面有没有座位id，既然售出自然不能再买了，验证完这些后才能创建订单信息。对于订单业务，获取当前登录信息，获取订单即可。由于座位信息是通过json文件传输，需要从ftp服务器获取，但是我的Mac没有ftp，就去阿里云找了一个。**使用FileZilla用户root发现登录成功，但是获取目录失败了，密码也没有错，错误原因有可能就是端口了，但是21  22端口开了，21传输命令，22端口传输文件。这里的问题确实实在端口，但是是在ftp的传输方式上，ftp有两种传输方式，一种是主动，一种是被动，主动：服务端来找客户端，通过21传输命令，通过22传输数据；被动方式：客户端找服务端，命令还是用21端口，但是文件使用1025-65535随机一个，而FileZilla默认使用passive mode，自然要开启全部了。所以当输入账户密码的时候，即是命令登录，使用21，没有问题，但是文件目录是使用随机端口了，所以出现问题。408历年真题有一个选项就是这玩意，ftp任何情况下传输文件使用22端口，错误的，主动才是。**
+首先对于购票业务，后端要有一个原则，永远都不能相信前端给你的东西，因为是可以通过前端进行更改的，所以要验证是否为真。影院列表是使用json文件，判断座位id是不是正确，判断在订单里面有没有座位id，既然售出自然不能再买了，验证完这些后才能创建订单信息。对于订单业务，获取当前登录信息，获取订单即可。由于座位信息是通过json文件传输，需要从ftp服务器获取，但是我的Mac没有ftp，就去阿里云找了一个。**使用FileZilla用户root发现登录成功，但是获取目录失败了，密码也没有错，错误原因有可能就是端口了，但是21  20端口开了，21传输命令，20端口传输文件。这里的问题确实实在端口，但是是在ftp的传输方式上，ftp有两种传输方式，一种是主动，一种是被动，主动：服务端来找客户端，通过21传输命令，通过20传输数据；被动方式：客户端找服务端，命令还是用21端口，但是文件使用1025-65535随机一个，而FileZilla默认使用passive mode，自然要开启全部了。所以当输入账户密码的时候，即是命令登录，使用21，没有问题，但是文件目录是使用随机端口了，所以出现问题。408历年真题有一个选项就是这玩意，ftp任何情况下传输文件使用20端口，错误的，主动才是。**
 然后就是配置阿里云服务器了，配置很简单，读取信息的那些stream可能有点烦：
 ```
 
@@ -1124,6 +1124,51 @@ public class CurrentUser {
 **用sandbox版的支付宝支付一下**
 ![](https://upload-images.jianshu.io/upload_images/10624272-5d2c49bc5a42bef9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 **显示支付成功，那么这样这个下单支付的后台基本没有问题了，下面就是要把二维码上传到FTP上去了，这个时候生成二维码服务可能会更加慢。另外打开WiFi就找不到服务的问题，今天突然可以了，这也是为什么今晚测试这么快的原因。练着WiFi能找到服务可能是因为我去了家里另外一处房子，那里的WiFi突然就可以了；以往这个bug得到的结论是WiFi的开关和Provider能否被Consumer找到互相有因果关系，现在原因可能会与WiFi路由器的不同相关，仍在观查——2020.1.23  2:12分凌晨**
+配置上传到ftp也很简单，首先加入上传的目录：
+![](https://upload-images.jianshu.io/upload_images/10624272-4e88d903146c5157.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+配置路径
+```
+    public boolean uploadFile(String fileName, File file){
+        FileInputStream fileInputStream = null;
+        try{
+            fileInputStream = new FileInputStream(file);
+            initFTPClient();
+            ftpClient.setControlEncoding("utf-8");
+            ftpClient.setFileType(FTPClient.BINARY_FILE_TYPE);
+            ftpClient.enterLocalPassiveMode();
+
+            boolean change = ftpClient.changeWorkingDirectory(this.getUploadPath());
+            System.out.println(this.getUploadPath());
+            System.out.println("切换目录是否成功：" + change);
+            ftpClient.storeFile(fileName, fileInputStream);
+            return true;
+        }catch (Exception e){
+            log.error("上传文件失败！", e);
+            return false;
+
+        }finally {
+            try {
+                assert fileInputStream != null;
+                fileInputStream.close();
+                ftpClient.logout();
+            } catch (IOException e) {
+                log.error("关闭流异常");
+                e.printStackTrace();
+            }
+        }
+
+```
+设置编码，上传的是图片，配置上传格式二进制，配置被动模式，改变上传目录。**启动的时候发现，上传是成功了，但是上传的路径不对，上传到了根目录，也就是说，改变目录的位置失败了，突然这个changeWorkDirectory类似于Linux里面的cd，那么配置文件里面写的/qrcode应该要去掉/，然后就可以了。
+**
+# Dubbo特性——本地存根
+本地存根其实就类似于静态代理，按照以往的方式，接口在客户端，实现在服务端，那么客户端很受限制，比如参数的验证等等；在拿到返回调用结果之后，用户可能需要缓存结果；或者是在调用失败的时候构造容错数据，而不是简单的抛出异常。找一个接口，做一个代理类，代理类访问目标对象，当用户要访问目标对象需要先访问代理。dubbo使用本地存根的时候会在客户端生成一个代理，处理部分业务，而且Stub必须传入proxy函数。
+![](https://upload-images.jianshu.io/upload_images/10624272-b57a53a05699b04e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+Consumer和Provider就是消费者和服务提供者，api就是之前写的服务接口，以往的操作是略过dubbo，action访问Service接口部分，接口通过Provider注入进来，**现在不一样了，如果使用本地存根，首先先创建一个Stub，类似一个静态代理，来实现service接口，消费者访问的时候，先访问Stub，既然Stub是代理，那么action就不会直接访问api接口，先访问代理Stub，但是在逻辑上还是去访问Servic接口，当Stub接到请求之后，转发请求到ServiceProxy对象，如果Proxy满足条件，就会路由到实现类Impl上，如果不满足就到Mock中做返回，Mock也叫伪装，proxy是远程服务的代理实例，保护目标对象，提供间接访问途径。**但是这么一看，其实我感觉用拦截器也可以的，而且Mock那个伪装有点类似于Hystrix降级，还不是很能理解这玩意作用在哪里。
+我们现在的项目，客户端是guns-gateway->API，服务端是guns-alipay还有其他的模块订单->Impl，这个时候对于用户的orderId的验证，就可以放在Stub里面，这样做的好处很多，首先可以保护目标对象，其次也可以减少一次缓存。本地存根理解为一种比较特殊的静态代理模式， 用于对真实目标的一种保护，或者额外增加功能， 拦截器更适合进行切面编程， 但是存根更适合对目标对象进行精准打击，或者其实可以把这两个内容变相理解为静态代理和动态代理之间的区别。这里的容错，也就是降级返回有点类似于Hystrix，**但是本地存根的核心在于服务端反向调用客户端获取一些信息， 但是熔断的目标是容错，本质上来讲不是一个东西，服务端在调用的时候需要客户端的一些信息就可以用本地存根， 这个是Hystrix完全做不到的，有点像aop。**
+另外，本地存根还有一个本地伪装的概念，本地伪装是本地存根的一个子集，其实就是Mock，当失败的时候就会走mock，但是用途反而是更多的。通常会使用本地伪装来完成服务降级，前面Hystrix也是可以做服务降级，但是Hystrix是在springboot和dubbo才能用，如果不用springboot是使用不了的。一般在客户端就可以实现。所以这玩意算作是一种补充把，使用到业务上体验一下。比如想要在返回支付结果上做降级处理，只需要继承这个类，然后service加上配置即可。
+![](https://upload-images.jianshu.io/upload_images/10624272-82d213abf6460fe1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+这样一个接口的方法都可以降级了，**而Hystrix相比之下只能是方法做降级，一个个方法的填上，本地伪装相对简单一点，但是也有本地伪装只能是捕获RPC的异常，RpcException，其他的不行，比如超时，网络问题，找不到服务等等，而计算问题，除0异常等等都无法捕获，所以各有优劣把。**
+**dubbo还有隐式参数的特性，把参数放在RpcContext里面可以通过getAttachment获取，有些比较敏感的数据等等，正式业务系统里面，往往会有一个requestId，这个requestId是request唯一，而分布式锁也是根据requestId生成，比如在获取订单状态或者下单，可以把userId取出来对比防止伪造，这有点像spring里面getAttribute，类似于一个全局变量，但是dubbo没有全局变量这个说法。**
 
 
 

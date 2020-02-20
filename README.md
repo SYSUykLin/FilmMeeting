@@ -1170,6 +1170,252 @@ Consumer和Provider就是消费者和服务提供者，api就是之前写的服�
 这样一个接口的方法都可以降级了，**而Hystrix相比之下只能是方法做降级，一个个方法的填上，本地伪装相对简单一点，但是也有本地伪装只能是捕获RPC的异常，RpcException，其他的不行，比如超时，网络问题，找不到服务等等，而计算问题，除0异常等等都无法捕获，所以各有优劣把。**
 **dubbo还有隐式参数的特性，把参数放在RpcContext里面可以通过getAttachment获取，有些比较敏感的数据等等，正式业务系统里面，往往会有一个requestId，这个requestId是request唯一，而分布式锁也是根据requestId生成，比如在获取订单状态或者下单，可以把userId取出来对比防止伪造，这有点像spring里面getAttribute，类似于一个全局变量，但是dubbo没有全局变量这个说法。**
 
+# 分布式事务
+首先，事务是用来保证一组数据操作的完整性和一致性。事务的四种特性，Atomicity原子性，consistency一致性，isolation隔离性，durability持久性。
+分布式事务大体可以分成两部分，首先是事务，以前的分布式是一个单体性的事务，其次就是分布式，分布式事务就是将多个节点的事务看成是一个整体。现在有十个节点，每台机器部署了不同的应用，有订单支付影片等等都部署在不同机器，如果在同一个事务里，处理很简单，但是如果是在不同的事务，不同机器上，其他的事务怎么知道其他事务发生失败了，失败了又怎么处理。分布式事务一般由事务参与者，资源服务器，事务管理器组成。事务参与者类比于机器和服务，资源服务器就是用来控制比如库存数量，金额等等，最后是事务管理器，是用来辅助，比如刚刚的例子，一个事务出事了，其他的事务怎么知道，那么这个事务管理就会通知其他事务。最常见的分布式事务就是支付，下订单等。
+****
+**分布式实现一般有两种，两段式事务和三段式事务，基于XA的分布式事务，基于消息的最终一致性方案，这里的信息一般是指信息队列或者是Redis一致性缓存，还有TCC编程式补偿性事务。**
+![image](https://upload-images.jianshu.io/upload_images/10624272-eeeca1ae603b37fd?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+#####  两段式事务和三段式事务
+TC就是事务管理器，先准备好数据交流，然后双方开始提交，提交完成后告诉事务管理器，现在有两个，如果只有一个，那么久提交失败，回退即可。**但是这种两段式还是有点问题的，都是在事务管理器要求你干什么就干什么，比如准备就绪了，事务管理器要你提交，结果有一台机器出问题，你怎么知道这个问题是在提交前还是提交后出现的，提交后出现的那就不用回滚了，提交前的那就要回滚。基于上述缺点，出现了三段式事务，但是都是基于两段式，只不过把第一段分成了两部分，第三段和两段式的第二段一样。三段式的第一阶段是canCommit阶段，事务管理器会给所有事务参与者发送canCommit，各个事务管理者根据自己的状态查看能否提交，如果可以则回执OK，否者返回fail，并不开启本地事务并执行。如果所有的都正常，则进入第二阶段，否则停止；第二阶段即是preCommit，事务协调器向所有参与者发起准备事务请求，参与者接受到后，开启本地事务并执行，但是不提交。第三阶段则是提交了。**
+##### 基于XA的分布式事务
+![image](https://upload-images.jianshu.io/upload_images/10624272-716531f70ada1ab8?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+本质上讲还是一个两段式的提交。这个流程和前面的二三段其实是差不多的，首先询问准备好没有，准备好回个OK，然后提交执行。流程差不多，但是调用方式出现了变化，但是不常见，应用场景多，MySQL，DB2这些关系型数据库绝大多数都是基于XA来的。
+##### 基于消息一致性方案的分布式事务
+![image](https://upload-images.jianshu.io/upload_images/10624272-84ce2b4641657f8e?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+这里和前面介绍的几种方式有所不同，参与者有两个A系统和消息中间件两个，首先系统A发送预备消息，中间件保存预备消息后返回说我已经收到了。接着执行本地事务，执行后把执行结果告诉消息中间件，不一定是成功的，可能成功也可能失败，消息中间件保存消息回调。可能会觉得回调和保存消息很多余，我看到这个图也是这么想的，因为执行事务无非就是成功和失败，为什么要回调保存？但是别忘了，分布式事务是多个事务之间的关系，我这里只是一个事务，将多个事务结合在一起：
+![image](https://upload-images.jianshu.io/upload_images/10624272-ae04b3df5b633129?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+如果有一个B系统，那么当A系统执行完成了，消息中间件通知了B：系统A执行完成了，然后B再执行。**在整个售票系统中有一个支付系统，钱到账了修改订单状态，但是如果钱到账了修改订单状态失败了怎么办？这个时候就可以使用消息一致性了，可以在支付宝下订单支付的时候暂停线程，启动另外一个线程进行修改订单操作。修改成功了才启用支付宝线程。这种方案是强一致性方案，同一个时刻成功一定成功，失败一起失败，不会存在其他情况，但是缺点也很明显，会存在等待时期，会使得支付宝线程等待，这样会影响性能。**
+##### TCC补偿性事务
+![image](https://upload-images.jianshu.io/upload_images/10624272-77b1d9186f777ea8?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+主要进行的三个操作依次是Try接口，Confirm接口，cancel接口，confirm接口和cancel接口只能使用一个，事务要么成功要么失败。**首先启动事务协调器，告诉事务协调器要开始工作了，接着调用不同的服务，尝试进行操作，比如扣减库存和创建订单，结果A成功了，B失败了，那么业务就会调用cancel接口，成功了调用从confirm接口。try，confirm，cancel接口都是在服务里面实现，业务只是去调用这些接口，关心返回结果，根据返回结果确定是调用confirm还是cancel接口。cancel接口把try做过的东西全部取消，confirm确认提交，所以也称为是补偿式。**
+**基于消息一致性的事务是一种强一致性的事务，很大程度上会造成资源的浪费，尤其是对于时间的浪费，上面的例子是两个事务，如果发展到多个事务，等待的时间就会更多了。但是他的优点也很明显，就是强一致性，缺点也是强一致性。在实际工程中经常会有对接京东支付，阿里支付等等的场景，假设使用TCC，那么问题来了，钱打进去是回不来的，想要调用cancel接口那只能自己掏腰包，而消息一致性就没有这种问题。TCC补偿性事务是柔性事务，在try阶段要对资源做预留，在确认和取消阶段释放资源，confirm没有什么，cancel做反向操作。相比基于消息一致性来说TCC的时效性更强。**
+##### 主流的分布式框架
+全局事务服务，GTS
+蚂蚁金服分布式事务，DTX
+开源TCC框架，TCC-Transaction
+开源TCC框架，ByteTCC
+这里使用TCC-Transaction开源框架。
+![image](https://upload-images.jianshu.io/upload_images/10624272-9b1e061db217d0a3?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+api就是接口，core为核心包，类似于guns-core的核心，server是事务监控工具，有多少事务，事务状态，spring即是spring的支持，然后dubbo的支持，unit即为测试，tutorial教程。简要测试一下，打开简要教程，dbscripts里面执行SQL语句，会生成四个数据库：
+![image](https://upload-images.jianshu.io/upload_images/10624272-e782378db7a28d7d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+第一个tcc的库是必须要建立的，只要使用就需要建立；下面的cap,ord,red分布模拟了业务场景，cap为资金账户，ord订单，red红包。tutorial里面有两个例子，一个是HTTP的例子，一个就是整合了dubbo的例子，HTTP的例子没有什么问题，很简单。看看dubbo的例子，首先先要部署Tomcat：
+![image](https://upload-images.jianshu.io/upload_images/10624272-977fbe0addfc99d8?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+order模块的前缀/即可。打开web.xml，发现三个模块的web.xml都没有报错，是由于执行顺序的问题，错误提示**{**The content of element type "web-app" must match "(icon?,display-name?,description?,distributable?,context-param*,filter*,filter-mapping*,listener*,servlet*,servlet-mapping*,session-config?,mime-mapping*,welcome-file-list?,error-page*,taglib*,resource-env-ref*,resource-ref*,security-constraint*,login-config?,security-role*,env-entry*,ejb-ref*,ejb-local-ref*)".- No grammar constraints (DTD or XML schema) detected for the document**}**，listener要再filter-mappering和servlet之间，调整位置就好了，启动跑起来环境就搭建好了。现在就是要按照案例里面的代码把自己的项目改造一下。首先查看一下工程结构：
+![image](https://upload-images.jianshu.io/upload_images/10624272-02b812b472d43e67?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+api和之前业务里面的api接口没有什么区别，注意有一个接口：
+![image](https://upload-images.jianshu.io/upload_images/10624272-82e4ce878d53d5d1?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+带有compensable标签，即是需要进行事务处理的接口，RedPacketAccountServiceImpl这个接口实现是查询红包信息而已，不需要事务支持。
+![image](https://upload-images.jianshu.io/upload_images/10624272-4e3ccfbf8d543f89?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+当前注解的方法就是try方法，就是业务方法，注解提到的confirmMethod，cancelMethod就是TCC，最后一个参数是事务上下文支持，这里使用的是隐式上下文的支持，可能这里需要用到隐式参数传递，接下来下面就要实现两个confirm和cancel两个方法，而且必须在同一个类里，因为注解绝大多数是要通过放射和AOP来读取，如果不在同一个类里面，是没有办法找到的，类是通过包名加上类名找到的，只返回一个字符串就能找到是不可能的，所以只有放在同一个类里面才能找到
+![image](https://upload-images.jianshu.io/upload_images/10624272-958f631dbacdf5b1?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+record也就是try业务，注意catch里面不是捕获所有的异常，业务TCC是根据异常的有无来判断业务执行成功或者失败，有异常才会回滚，对于业务返回的结果不关心。这里的订单多出两种状态，draft草稿和cancel取消，draft即是try完但是没有confirm的订单，confirm完成就是真正支付完成的订单了。
+![image](https://upload-images.jianshu.io/upload_images/10624272-fb98a8d4801db4c7?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+注意在cancel和confirm里面都需要判断订单是空而且订单状态为draft草稿状态。**但是这里涉及到一个服务幂等性的问题，即是一个服务重复多次执行和一次执行的结果相同，幂等性还不是理解的很好，做完这个服务再去看看。**所以TCC的分布式事务需要注意两个部分，**1、分布式事务里，不要轻易在业务层捕获所有异常，2、使用TCC-Transaction时，confirm和cancel的幂等性需要自己代码支持。**然后部署Tomcat，运行即可，注意TCC-trancation-order这个模块，在部署artificial的时候路径一个斜杠就好了。
+测试完成之后就可以仿造加到这个项目上了。首先是打包，idea里面maven的package功能打包：
+![image](https://upload-images.jianshu.io/upload_images/10624272-3cdfc57530f05e78?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+控制台用mvn install进去，当然了，最简单的还是直接接idea里maven install进去就好了。需要把刚刚的几个tcc-transaction打包成jar加进原来的工程里面才能使用tcc事务。**（2020.1.29.凌晨1:20）**
+##### 部署环境
+部署环境有点麻烦，比springboot麻烦多了，再加上文档东写一点西写一点的，调试的头都大了。install进去之后设置自己的tcc-transaction版本，我的设置是1.2.11版本，引入包之后出现了些问题：
+![image](https://upload-images.jianshu.io/upload_images/10624272-44a0ccca84910af8?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+**这个问题之前也遇到过，一般就几种情况，jdk版本不一致（这个可能性最高）；pom包之间互相引用，但是调用的版本不一致；环境不一致；log4j的包没有导入;之前的原因是因为Tomcat使用jdk1.7，可是项目环境1.8，导致的问题，这里gteLogger方法上网百度了一下，com.alibaba.dubbo.common这个包一直以来的重大更新都没有去掉这个方法，LoggerAdapter这个类下一个版本将会淘汰，但是现在还有，不应该出现问题。那可能就是我打包的tcc-transaction的jar有问题了，翻了一下tcc-transaction的几个项目，com.alibaba.dubbo这个以来全都依赖到，但是版本也都一致的，而我本来项目环境也没有用到这个包，是直接引入alibobo-springboot的dubbo包的，很可能就是springboot的dubbo包的冲突导致。上网看了一下好像没有找到有出过这样的问题，但是有出现成功的例子，他的版本是1.2.4.23，拿来试了一下，结果就好了。应该是整合了nutz所导致的。在package tcctransaction的时候可能有些错误，需要在server目录下面建立config/dev目录，为什么要建立我也不知道，不创建他就提示错误，找不到目录。**
+接下来就是按照部署文档把项目部署上去，首先是把tcc-transaction-dubbo和tcc-transaction-spring目录下两个xml的文件拷贝过来。还要读到springboot容器里面，而主要要进行分布式事务的就是支付模块了，所以在guns-order加上一个config类，用于读取配置文件：
+![image](https://upload-images.jianshu.io/upload_images/10624272-d505c39c4a8dba3d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+启动项目，出现错误![image](https://upload-images.jianshu.io/upload_images/10624272-fba9c8913ba245e0?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+就说明是读取成功了，还需要配置一个数据源的支持，transaction repository。按照文档把bean拿过来：
+```
+<bean id="transactionRepository"
+      class="org.mengyun.tcctransaction.spring.repository.SpringJdbcTransactionRepository">
+    <property name="dataSource" ref="dataSource"/>
+</bean>
+
+<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+      destroy-method="close">
+    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+    <property name="url" value="jdbc:mysql://127.0.0.1:3306/test"/>
+    <property name="username" value="root"/>
+    <property name="password" value=""/>
+</bean>
+```
+BasicDataSource改成自己的数据源Alibaba那个，想用其他的也可以。dataSource需要单独配置，不能和业务里使用的dataSource复用,即使使用的是同一个数据库。JOB恢复也要配置上，还有一些表空间等等，配置完成之后还需要创建表，tcc-transaction需要使用自己的一张表来存储数据，需要自己创建。
+![image](https://upload-images.jianshu.io/upload_images/10624272-f66ff65e08d148af?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+tbSuffix后缀，这个模块是订单模块，那么后缀就是order，创建的表就是tcc_transaction_order，还需要加上数据源配置：
+![image](https://upload-images.jianshu.io/upload_images/10624272-b3ca2a48bf37bf06?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+还有一些零零散散的配置加上即可，启动一下没有问题即可。这是服务提供者的配置，消费者的配置也是一样的，gateway写上相同的配置即可。
+*****
+**在gateway启用相同配置并且启动的时候，问题来了，在启动的时候出现了问题：**
+```
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/zhanggong004/.m2/repository/org/slf4j/slf4j-log4j12/1.7.25/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/zhanggong004/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+Exception in thread "main" java.lang.IllegalArgumentException: LoggerFactory is not a Logback LoggerContext but Logback is on the classpath. Either remove Logback or the competing implementation (class org.slf4j.impl.Log4jLoggerFactory loaded from file:/C:/Users/zhanggong004/.m2/repository/org/slf4j/slf4j-log4j12/1.7.25/slf4j-log4j12-1.7.25.jar). If you are using WebLogic you will need to add 'org.slf4j' to prefer-application-packages in WEB-INF/weblogic.xml: org.slf4j.impl.Log4jLoggerFactory
+	at org.springframework.util.Assert.instanceCheckFailed(Assert.java:655)
+	at org.springframework.util.Assert.isInstanceOf(Assert.java:555)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.getLoggerContext(LogbackLoggingSystem.java:286)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.beforeInitialize(LogbackLoggingSystem.java:102)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationStartingEvent(LoggingApplicationListener.java:220)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:199)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.starting(EventPublishingRunListener.java:69)
+	at org.springframework.boot.SpringApplicationRunListeners.starting(SpringApplicationRunListeners.java:48)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.example.dubboconsumer.DubboConsumerApplication.main(DubboConsumerApplication.java:13)
+ 
+```
+**因为上面那两个binding一直都有，我也就没有在意，觉得应该不是那两玩意的问题，可能是新加入的pom依赖导致的，把依赖去掉，就没有这个问题了，那么剩下就是在依赖里面找找到底是引入哪个依赖导致，一个一个尝试发现是tcc-transaction-dubbo，tcc-transaction-core，tcc-transaction-spring这三个依赖导致，就是tcc-transaction三个项目导致，看错误提示应该是log4j日志包冲突导致的，由于dubbo，spring这两包都依赖了core包，那么把core包的log4j的依赖exclude即可：**
+![image](https://upload-images.jianshu.io/upload_images/10624272-83ce4b3104e74e89?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+**我不知道是哪个包有slf4j，所以全部加上了，还是没用。然后仔细读了一下错误提示，大概意思是说有两个类重复了，StaticLoggerBinder.class，slf4j和loggback都有，但是找错了，找到了slf4j的，错误已经提示了：**
+```
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+```
+**自动绑定了slf4j的，其实就是包冲突，那么把logback的包删掉就好了。然而这个项目引用了大量的依赖，每一个依赖都有可能自带了logback，到这里还是懵懵懂懂的，于是只好查阅了一下源码，既然是日志，那肯定与监听相关，直接找LoggingApplicationListener相关，直接找过去：**
+![image](https://upload-images.jianshu.io/upload_images/10624272-61d1cada67c95b54.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+启动时会通过LoggingSystem加载，查看LoggingSystem，![image](https://upload-images.jianshu.io/upload_images/10624272-0114b105fc728122?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+**这个systems里面有三个日志类，默认读取的是第一个logback，但是logback和log4j-slf4j都有项目的implement function，即StaticLoggerBinder方法，结果项目自动绑定了StaticLoggerBinder方法，导致加载logback的时候找不到，所以报错。确认一下，查找一下第一次出错的地方：**
+![image](https://upload-images.jianshu.io/upload_images/10624272-a5005b4e7347ebcc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+**果然，类型不匹配之后就断言出错了。那么现在的问题就只需要把log4j-slj4f包exclude掉即可。然而各个包纵横交错，要全部删掉或者exclude掉很麻烦，使用maven提供的工具，右键maven-》show dependencies**
+
+
+![image](https://upload-images.jianshu.io/upload_images/10624272-423435f44537a1de?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+**红线的即是版本不一致冗余的包，找到log4j-slf4j的包exclude就好了，还有一个maven helper也可以。再启动项目：**
+![image](https://upload-images.jianshu.io/upload_images/10624272-e97a763399ae80ce?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+**好了。测试一下之前的业务，发现又出现新问题了，这次是数据库问题：**
+![image](https://upload-images.jianshu.io/upload_images/10624272-ed0e90f9095d3591?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+**显示连接到了tcc.order_t的库上面，很明显，是加载到错误的数据源了，就是刚刚的配置的数据源bean的问题：**
+![image](https://upload-images.jianshu.io/upload_images/10624272-b53aec35e9b71931?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+**显示id重复，已经有一个了，修改id号。修改完又有问题，tcc-transaction倒是找不到了，所以还是得读源码，把tcc-transaction的数据源改了。其实有一个更简单的方法，使用同一个数据库即可，但是为了方便，还是改读取的bean吧。bean的读取方式记得有好几种，可以直接读xml文件再用getbean方法，也可以用WebApplicationContextUnil来获取。然而我读了半天，根本没有读入的操作，可能是自动转配，注意到**![image](https://upload-images.jianshu.io/upload_images/10624272-1b553f80cd0939cd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](https://upload-images.jianshu.io/upload_images/10624272-15e11035ae4a8eff?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+**这就一目了然了，先引进了TransactionRepository，TransactionRepositor再被自动转配进程序里面。然后改成dataSource_transaction即可。**
+接下来就是编写事务程序了，tcc-transaction由三部分组成，try，confirm，cancel三部分组成，try就是本身的业务：
+![image](https://upload-images.jianshu.io/upload_images/10624272-d3bfd11aadf4bacf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+仿造tcc-transaction的订单状态，多添加一个草稿状态，那么在下订单的时候，订单状态设置成草稿状态
+![image](https://upload-images.jianshu.io/upload_images/10624272-6a8e4d3d0e5cf614.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+在confirm的时候再改成其他的状态
+![image](https://upload-images.jianshu.io/upload_images/10624272-abe7c4ff5e1c3ace?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+**要注意服务幂等性，服务的幂等性需要confirm，cancel自己实现，所以在确认之前需要判断是不是草稿状态，其他就都按部就班了，cancel也是。如果是草稿状态，那就变成已关闭或者是未支付状态，如果刚下好的订单不是草稿状态，那就是系统出问题了。测试一下出现问题了：**
+```
+java.lang.RuntimeException: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.transaction.PlatformTransactionManager' available
+org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.transaction.PlatformTransactionManager' available
+
+```
+**提示没有指定事务管理器，之前是不需要指定的，因为默认transactionManager就是事务管理器bean的id，不需要指定，可能是事务冲突了，tcc有一个，springboot本身自带也有一个，那么就指定一个名字吧**
+![image](https://upload-images.jianshu.io/upload_images/10624272-5424d5bfea8a72b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+**但是还是不行，还是相同的错误，后来去找了文档发现，和dubbo结合是不需要@transactional注解的，去掉就没事了。再测试就没有问题了。**
+![image](https://upload-images.jianshu.io/upload_images/10624272-62c88a2fdf308b1d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](https://upload-images.jianshu.io/upload_images/10624272-b7cb48fac288d687.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](https://upload-images.jianshu.io/upload_images/10624272-1f9dd15eefece4ff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+**日志都提示成功了。**
+到这来差不多就实现完成了，总的来说，tcc包含四个组成部分，事务拦截器，事务管理器，事务存储器，事务处理job![image](https://upload-images.jianshu.io/upload_images/10624272-689943369f1114f2?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+核心就是事务处理器，当事务存储器存储了数据之后，事务管理和事务处理只和事务存储器有关，job对事务数据进行恢复。不管是什么业务，但凡是需要事务，就会被事务拦截器拦截到，处理后给到事务管理器，事务管理器存储数据，然后JOB会针对不同事务对事务存储器的内容做处理，一个处理事务前，一个处理事务后。
+# 阅读源码
+首先看一下事务存储器，这个应该是最简单的了![image](https://upload-images.jianshu.io/upload_images/10624272-f3333be42d306a21.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+在core核心包的repository就是存储器了，提供了缓存，文件，jdbc，zookeeper五种分布式存储，上面使用的是jdbc方式，但是FileSystem是很明显不可取的，因为分布式事务是分布式组件体系里面的一部分，如果存在本地，那就意味着这个只能在同一个机器里面的，cache差不多也是本地的意思，Redis可以考虑，zookeeper也不建议，因为transaction数据变动很大的，zookeeper是强一致性的组件，如果频繁读取，那么对集群压力很大。所以一般就是jdbc和redis。
+然后其次看一下事务拦截器![image](https://upload-images.jianshu.io/upload_images/10624272-f71a5f251087b280?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+首先，拦截器分成两种，Compensable和Resource两种，Compensable是注解事务拦截器，resource是资源拦截器，**资源是事务里面很重要的东西，在TCC中try就是用来预留资源的，比如在处理业务的时候，try不会把所有问题都解决掉，会把一部分不能解决的问题的相关数据资源存在库里面，加上版本号或者是状态。地下面的都是事务参与者了。**![image](https://upload-images.jianshu.io/upload_images/10624272-945ba44f0405caa9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+compensable有两个，CompensableTransactionAspect和CompensableTransactionInterceptor，CompensableTransactionAspect是一个aop的切面
+![image](https://upload-images.jianshu.io/upload_images/10624272-eb097a2e682500a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+在带有compensable注解的方法上切面下去，接下来就是Around方法了
+![image](https://upload-images.jianshu.io/upload_images/10624272-11976f05080bfb13.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](https://upload-images.jianshu.io/upload_images/10624272-7932842b87c25c0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+在切点开始和结束都要经过这个Compensable的拦截器。这些注解都是spring的注解。在切点开始结束都会调用        compensableTransactionInterceptor.interceptCompensableMethod(pjp);方法，进去看看
+![image](https://upload-images.jianshu.io/upload_images/10624272-346ce69cc93e3887?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+首先传入一个代理对象，pjp就是代理的目标，然后用getCompensableMethod方法获取对象的名字，这里的pjp可以抽象成很多对象，只要带有了compensable的就是可以被拦截，在本次业务可能就是方法了，那么getCompensableMethod就是获得方法的名字，然后getAnnotation获得注解，之前还以为是用反射获取注解，因为spring基本都是用反射取得包名什么的。Compensable是事务对象，里面有一个事务传播级别，默认是Request，发现如果有事务就用已经有的事务，如果没有就重启一个事务。接下来就是compensable.propagation()获取这个事务的传播级别了。接下来那句有点看不懂：
+```
+        TransactionContext transactionContext = FactoryBuilder.factoryOf(compensable.transactionContextEditor()).getInstance().get(pjp.getTarget(), method, pjp.getArgs());
+
+```
+![image](https://upload-images.jianshu.io/upload_images/10624272-37da731f6db8ff03?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+serialVersionUID是序列化版本号，TransactionXid为事务ID，attachments存储子事务，所以这个方法就是获取事务上下文，也可以说是获取事务本身。第一次知道事务居然是这样存储，还以为是全部存储在一个数据库里面。然后就是这句代码了，FactoryOf有点像是工厂模式，剩下就是判断是否是异步提交。事务处理都说通过事务管理器，而且不同事务之间是有隔离性的，所以接下来就是判断是不是已经存在一个事务
+```
+        boolean isTransactionActive = transactionManager.isTransactionActive();
+
+```
+这一句就是判断是否有事务存在![image](https://upload-images.jianshu.io/upload_images/10624272-ef61da1a103ae4de.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+具体实现也很简单，CURRENT就是threadlocal，只要保证线程安全就能保证主从事务的隔离性。接下来这一段很重要，是用来判断用户角色的：
+```
+        MethodType methodType = CompensableMethodUtils.calculateMethodType(propagation, isTransactionActive, transactionContext);
+```
+角色有4种：
+![image](https://upload-images.jianshu.io/upload_images/10624272-69c1cac7b921590e?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+但实际上只关心root和Provider两个，root是主事务，Provider即为事务参与者，事务参与者也叫分支事务，比如在tcc的sample例子，order就是主事务，redPacket就是分支事务了；我售票系统里面，buyticket就主事务，里面的判断和下订单都是分支事务。因为每一个注解了compensable的方法都会进来，所以是需要判断主从事务。
+![image](https://upload-images.jianshu.io/upload_images/10624272-5f0dac0b005497f0?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](https://upload-images.jianshu.io/upload_images/10624272-67711037a25dfd3e?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+进入root主事务执行的方法
+```
+            transaction = transactionManager.begin();
+```
+既然是主事务，那就直接开启一个全新的事务。**首先创建一个事务对象，然后存储到数据库，然后把事务把他放在threadlocal里面，也就是刚刚的CURRENT对象里面，这个过程也叫注册。**
+```
+                returnValue = pjp.proceed();
+```
+然后就是执行目标方法了。如果有异常，那就rollback，没有异常就commit提交，最后别注意要清除，因为这个是主事务，主事务都执行完了，那么分支事务肯定也执行完了，所以要在队列中清除事务。**到这里root要执行的步骤都执行完了，总的来说就那么几件事：开启全局事务，持久化全局事务，注册全局事务，判断应该是confirm还是cancel，清除事务。注意commit只是调用自己本身的confirm，不调用子事务的。**
+分支事务也是一样：
+![image](https://upload-images.jianshu.io/upload_images/10624272-a836a7153264c307?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+这个比较简单，判断是try，confirm还是cancel，分别执行不同的事情。propagationExitBegin其实就是修改事务状态。
+然后就是Resource资源拦截器了，Resource的资源拦截器的 ResourceCoordinatorAspect也是和compensable一样![image](https://upload-images.jianshu.io/upload_images/10624272-f0a65bfb7c675a3d?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+直接看切面后执行的程序，首先从事务管理器获取当前事务，注意，两个intercept之间是不能直接传递参数的，这里的intercept也就是compensable和Resource这两个，所以只能从事务管理器获取事务对象。confirm和cancel都不执行，只是执行try的数据，**到目前为止，两个处理器都没有执行cancel和confirm的方法，前面compensable里面的confirm和cancel只是改变事务的状态而已，正在执行我们自定义的confirm和cancel还没有执行。进入到方法**
+![image](https://upload-images.jianshu.io/upload_images/10624272-4bff4d3aaf33552b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+这确认了事务是try状态之后要执行的方法，传入的自然是方法对象了，然后获取注解，前面有一模一样的调用：
+![image](https://upload-images.jianshu.io/upload_images/10624272-32bcdcb1af6c292b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+获取compensable对象，接着下面就是获取方法名，而在Java里面获取对应的方法唯一的方法是全限定名，也就是类名+包名+方法名，注意在compensable注解里面只是配置了一个方法名字，所以这两个confirm和cancel方法只能是和try同一个类下面，否则找不到包名和类名。
+![image](https://upload-images.jianshu.io/upload_images/10624272-2b0c5297813b5be7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+然后是获取事务和事务的编号
+![image](https://upload-images.jianshu.io/upload_images/10624272-ed91327799cdd954.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+判断是否有一个全局的事务上下文对象了，没有创建一个新的
+![image](https://upload-images.jianshu.io/upload_images/10624272-dec44963db8c8f2f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+接着获取目标对象的class类，使用反射机制，其实就是一些实现类，比如一些业务里面的Impl类
+![image](https://upload-images.jianshu.io/upload_images/10624272-6efdd425bfccce22.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+接下来就是要准备执行了，前面两句是保存confirm和cancel执行的上下文，大概就是要给某个人发消息，首先要告诉那个人的电话号码吧。Participant也是一个事务，上面也提到过另一个类型的事务，差不多，但是这里要传入cancel和confirm上下文以及事务的编号，很明显不是自己执行用的，自己执行直接就执行了，为什么要收集这么多信息，而且也不需要xid，当前事务就能获取xid的。
+![image](https://upload-images.jianshu.io/upload_images/10624272-04d971a96dbe5d5b?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+果不其然，下面就把所有的信息都给了事务管理器：
+![image](https://upload-images.jianshu.io/upload_images/10624272-496f7c27ac62214e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+**总起来，主要就是处理try阶段的事情，并把所有资源封装，包括了confirm和cancel的上下文信息，分支事务的信息，提交给事务管理器。enlistParticipant不用看了，就是把资源写进数据库里面，所以这个拦截器也没干啥，就是把资源放数据库里面，更新状态。**到这里基本上流程一半完成了，原来的流程是这样：
+**CompensableTransactionInterceptor -> ResourceCoordinatorInterceptor -> 事务参与者 -> ResourceCoordinatorInterceptor -> CompensableTransactionInterceptor，又绕回来是因为两个拦截器都使用了Around，现在还差最后一个CompensableTransactionInterceptor没有走，回来看一下Compensable**
+![image](https://upload-images.jianshu.io/upload_images/10624272-de8f1846ef15c032?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+进来拦截器的时候略过了rollback和commit，前面的流程和进来拦截器的是一样的，直接看看rollback
+![image](https://upload-images.jianshu.io/upload_images/10624272-18ee4bad34f29f4c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+获取当前事务，改变事务状态为cancel，更新事务状态，接下来就是rollback了，cancel方法害得分异步和同步，但是无论是哪个都会执行rollbackTransaction，直接看rollbackTransaction
+![image](https://upload-images.jianshu.io/upload_images/10624272-de8bffab0041d3ac?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+进去rollback看看
+![image](https://upload-images.jianshu.io/upload_images/10624272-beb60c30fc3a53a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+找到所有的子事务，进行rollback操作![image](https://upload-images.jianshu.io/upload_images/10624272-c77d711a782f0804.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+在这个方法就执行了我们的cancel或者是commit方法，所有这两句话是真的去执行了两个预设的方法。**总的来说，CompensableTransactionInterceptor（组织了事务上下文，注册初始化事务） -> ResourceCoordinatorInterceptor（组织事务参与者等资源） -> 事务参与者 -> ResourceCoordinatorInterceptor（这里什么也没做，因为Resource只是在try阶段做了东西） -> CompensableTransactionInterceptor（执行cancel和confirm）**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

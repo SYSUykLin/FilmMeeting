@@ -2,6 +2,7 @@ package com.stylefeng.guns.rest.modular.order.service;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.dubbo.config.annotation.Service;
+import com.alibaba.dubbo.rpc.RpcContext;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
@@ -14,9 +15,13 @@ import com.stylefeng.guns.core.util.UUIDUtil;
 import com.stylefeng.guns.rest.common.persistence.dao.OrderTMapper;
 import com.stylefeng.guns.rest.common.persistence.model.OrderT;
 import com.stylefeng.guns.rest.common.util.FTPUtil;
+import com.stylefeng.guns.rest.common.util.NotSeatException;
 import lombok.extern.slf4j.Slf4j;
+import org.mengyun.tcctransaction.api.Compensable;
+import org.mengyun.tcctransaction.dubbo.context.DubboTransactionContextEditor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;
@@ -41,6 +46,7 @@ public class DefaultOrderServiceImpl implements OrderServiceAPI {
     private FTPUtil ftpUtil;
 
     @Override
+    @Compensable(confirmMethod = "comfirmIsTrueSeats", cancelMethod = "cancelIsTrueSeats", transactionContextEditor = DubboTransactionContextEditor.class)
     public boolean isTrueSeats(String fieldId, String seats) {
         String seatPath = orderTMapper.getSeatsByFieldId(fieldId);
         String fileStrByAddress = ftpUtil.getFileStrByAddress(seatPath);
@@ -56,10 +62,24 @@ public class DefaultOrderServiceImpl implements OrderServiceAPI {
                 }
             }
         }
-        return isTrue == seatArr.length;
+        if (isTrue == seatArr.length) {
+            return true;
+        } else throw new NotSeatException("座位不合法！");
     }
 
+    public boolean comfirmIsTrueSeats(String fieldId, String seats) {
+        log.info("IsTureSeats事务执行成功！");
+        return true;
+    }
+
+    public boolean cancelIsTrueSeats(String fieldId, String seats) {
+        log.info("IsTureSeats事务执行失败！无事务回退");
+        return true;
+    }
+
+
     @Override
+    @Compensable(confirmMethod = "comfirmIsNotSoldSeats", cancelMethod = "cancelIsNotSoldSeats", transactionContextEditor = DubboTransactionContextEditor.class)
     public boolean isNotSoldSeats(String fieldId, String seats) {
         EntityWrapper entityWrapper = new EntityWrapper();
         entityWrapper.eq("field_id", fieldId);
@@ -70,7 +90,7 @@ public class DefaultOrderServiceImpl implements OrderServiceAPI {
             for (String id : ids) {
                 for (String seat : seatArr) {
                     if (id.equalsIgnoreCase(seat)) {
-                        return false;
+                        throw new NotSeatException("座位已被购买！");
                     }
                 }
             }
@@ -78,7 +98,27 @@ public class DefaultOrderServiceImpl implements OrderServiceAPI {
         return true;
     }
 
+    public boolean comfirmIsNotSoldSeats(String fieldId, String seats) {
+        log.info("IsNotSoldSeats事务执行成功！");
+        return true;
+    }
+
+    public boolean cancelIsNotSoldSeats(String fieldId, String seats) {
+        log.info("IsNotSoldSeats事务执行失败！无事务回退");
+        return true;
+    }
+
+    /**
+     * 0-待支付，1-已支付，3-已关闭，4-草稿
+     *
+     * @param fieldId
+     * @param soldSeats
+     * @param seatsName
+     * @param userId
+     * @return
+     */
     @Override
+    @Compensable(confirmMethod = "comfirmSaveOrderInfo", cancelMethod = "cancelSaveOrderInfo", transactionContextEditor = DubboTransactionContextEditor.class)
     public OrderVO saveOrderInfo(Integer fieldId, String soldSeats, String seatsName, Integer userId) {
         String uuid = UUIDUtil.genUuid();
         FilmInfoVO filmInfoVO = cinemaServiceAPI.getFilmInfoByFieldId(fieldId);
@@ -86,7 +126,6 @@ public class DefaultOrderServiceImpl implements OrderServiceAPI {
         OrderQueryVO orderQueryVO = cinemaServiceAPI.getOrderNeeds(fieldId);
         Integer cinemaId = Integer.parseInt(orderQueryVO.getCinemaId());
         double filmPrice = Double.parseDouble(orderQueryVO.getFilmPrice());
-        System.out.println();
         int solds = soldSeats.split(",").length;
         double totalPrice = getTotalPrice(solds, filmPrice);
         OrderT orderT = new OrderT();
@@ -99,6 +138,9 @@ public class DefaultOrderServiceImpl implements OrderServiceAPI {
         orderT.setFieldId(fieldId);
         orderT.setCinemaId(cinemaId);
         orderT.setFilmId(filmId);
+        //当前draft状态
+        orderT.setOrderStatus(4);
+
         Integer insert = orderTMapper.insert(orderT);
         if (insert > 0) {
             OrderVO orderVO = orderTMapper.getOrderInfoById(uuid);
@@ -106,13 +148,55 @@ public class DefaultOrderServiceImpl implements OrderServiceAPI {
                 log.error("订单信息为空，订单编号{}", uuid);
                 return null;
             } else {
+                RpcContext.getContext().setAttachment("orderId", orderVO.getOrderId());
                 return orderVO;
             }
         } else {
-            log.error("插入失败");
+            log.error("插入失败, 数据库无具体变化, insert < 0");
             return null;
         }
     }
+
+    public OrderVO comfirmSaveOrderInfo(Integer fieldId, String soldSeats, String seatsName, Integer userId) {
+        log.info("订单下单成功，正在确认");
+        OrderT orderT = orderTMapper.selectById(RpcContext.getContext().getAttachment("orderId"));
+        if (orderT.getOrderStatus() == 4) {
+            orderT.setOrderStatus(0);
+
+            Integer integer = orderTMapper.updateById(orderT);
+            if (integer > 0) {
+                log.info("订单信息确认成功");
+            } else log.error("订单信息确认失败");
+            OrderVO orderVO = orderTMapper.getOrderInfoById(RpcContext.getContext().getAttachment("orderId"));
+            if (orderVO == null) {
+                log.error("订单信息异常");
+            }
+            return orderVO;
+        } else {
+            log.error("数据库异常，订单未被插入或者新插入订单状态有误");
+            throw new NullPointerException("订单未被插入或者新插入订单状态有误");
+        }
+    }
+
+
+    public OrderVO cancelSaveOrderInfo(Integer fieldId, String soldSeats, String seatsName, Integer userId) {
+        log.error("下订单失败");
+        OrderT orderT = orderTMapper.selectById(RpcContext.getContext().getAttachment("orderId"));
+        if (orderT == null) {
+            log.error("事务失败执行cancelSaveOrderInfo，数据库并未创建订单");
+            return null;
+        } else {
+            orderT.setOrderStatus(3);
+            Integer integer = orderTMapper.updateById(orderT);
+            if (integer > 0) {
+                log.error("订单已关闭");
+            } else
+                log.error("订单关闭失败，数据库异常");
+            OrderVO orderVO = orderTMapper.getOrderInfoById(RpcContext.getContext().getAttachment("orderId"));
+            return orderVO;
+        }
+    }
+
 
     private double getTotalPrice(int solds, double filmPrice) {
         BigDecimal soldsDecimal = new BigDecimal(solds);
@@ -126,7 +210,7 @@ public class DefaultOrderServiceImpl implements OrderServiceAPI {
     public Page<OrderVO> getOrderByUserId(Integer userId, Page<OrderVO> page) {
         Page<OrderVO> result = new Page<>();
         if (userId == null) {
-            log.error("编号获取失败");
+            log.error("编号获取失败, userId == null");
             return null;
         } else {
             List<OrderVO> orderInfoByUserId = orderTMapper.getOrderInfoByUserId(userId, page);
@@ -148,7 +232,7 @@ public class DefaultOrderServiceImpl implements OrderServiceAPI {
     @Override
     public String getSoldSeatsByFieldId(Integer fieldId) {
         if (fieldId == null) {
-            log.error("场次编号错误");
+            log.error("场次编号错误, fieldId == null");
             return "";
         } else {
             String soldSeatsByFieldId = orderTMapper.getSoldSeatsByFieldId(fieldId);

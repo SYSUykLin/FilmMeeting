@@ -14,6 +14,43 @@
     <url>http://maven.apache.org</url>
 
     <dependencies>
+
+
+
+        <dependency>
+            <groupId>org.mengyun</groupId>
+            <artifactId>tcc-transaction-dubbo</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>dubbo</artifactId>
+                    <groupId>com.alibaba</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.mengyun</groupId>
+            <artifactId>tcc-transaction-core</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>slf4j-log4j12</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mengyun</groupId>
+            <artifactId>tcc-transaction-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mengyun</groupId>
+            <artifactId>tcc-transaction-spring</artifactId>
+        </dependency>
+
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -21,6 +58,10 @@
         <dependency>
             <groupId>com.stylefeng</groupId>
             <artifactId>guns-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mengyun</groupId>
+            <artifactId>tcc-transaction-api</artifactId>
         </dependency>
     </dependencies>
 

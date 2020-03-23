@@ -13,6 +13,7 @@ import com.stylefeng.guns.core.util.TokenBucket;
 import com.stylefeng.guns.core.util.ToolUtil;
 import com.stylefeng.guns.rest.common.CurrentUser;
 import com.stylefeng.guns.rest.modular.vo.ResponseVO;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;

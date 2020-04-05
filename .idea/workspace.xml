@@ -506,6 +506,7 @@
       <workItem from="1585454032762" duration="10602000" />
       <workItem from="1585499149877" duration="1692000" />
       <workItem from="1585886668802" duration="2103000" />
+      <workItem from="1586101550546" duration="504000" />
     </task>
     <task id="LOCAL-00001" summary="first update">
       <created>1578566760158</created>
@@ -689,7 +690,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584936341433</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="finished!">
+      <created>1586101784458</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1586101784458</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -742,7 +750,8 @@
     <MESSAGE value="connect with alipay interface,and continue find out a bug cause by virtual ip(may be),but get nothing.go fuck dubbo's mother!!!" />
     <MESSAGE value="test order model about buying tickets and paying,everything goes will!!" />
     <MESSAGE value="finish the Alipay Module,tomorrow starting distributed transactions.&#10;everything goes will!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish the Alipay Module,tomorrow starting distributed transactions.&#10;everything goes will!!!" />
+    <MESSAGE value="finished!" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished!" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="117" key="#Inspections" timestamp="1578493411691">
@@ -781,10 +790,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="205" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1579519392622" />
-    <state x="28" y="23" width="987" height="777" key="CommitChangelistDialog2" timestamp="1586101614931">
+    <state x="28" y="23" width="987" height="777" key="CommitChangelistDialog2" timestamp="1586101782700">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="28" y="23" width="987" height="777" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1586101614931" />
+    <state x="28" y="23" width="987" height="777" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1586101782700" />
     <state x="28" y="23" width="948" height="777" key="CommitChangelistDialog2/0.23.1440.777@0.23.1440.777" timestamp="1579059526078" />
     <state x="100" y="0" width="1240" height="900" key="DiffContextDialog" timestamp="1585484272999">
       <screen x="0" y="23" width="1440" height="779" />
@@ -878,10 +887,10 @@
     </state>
     <state width="254" height="200" key="ShowFilterAction_Filter_Popup/0.0.1440.900@0.0.1440.900" timestamp="1580444317591" />
     <state width="254" height="200" key="ShowFilterAction_Filter_Popup/0.23.1440.777@0.23.1440.777" timestamp="1580445310388" />
-    <state x="320" y="191" key="Vcs.Push.Dialog.v2" timestamp="1584936344680">
+    <state x="320" y="191" key="Vcs.Push.Dialog.v2" timestamp="1586101787777">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="191" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1584936344680" />
+    <state x="320" y="191" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1586101787777" />
     <state x="320" y="188" key="Vcs.Push.Dialog.v2/0.23.1440.777@0.23.1440.777" timestamp="1579059530591" />
     <state x="496" y="331" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1580381750760">
       <screen x="0" y="0" width="1440" height="900" />

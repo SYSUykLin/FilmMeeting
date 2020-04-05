@@ -26,7 +26,7 @@ import java.util.List;
 @RequestMapping("/cinema/")
 public class CinemaController {
 
-    private static final String IMG_PRE = "http://img.meetingshop.cn/";
+    private static final String IMG_PRE = "http://47.99.100.174/images/";
 
     @Reference(interfaceClass = OrderServiceAPI.class, check = false)
     private OrderServiceAPI orderServiceAPI;

@@ -19,7 +19,7 @@ import java.util.List;
  * @date 2020/1/15 8:50 PM
  */
 @Component
-@Service(interfaceClass = CinemaServiceAPI.class)
+@Service(interfaceClass = CinemaServiceAPI.class, filter = "tracing")
 public class DefaultCinemaServiceImpl implements CinemaServiceAPI {
 
     @Resource

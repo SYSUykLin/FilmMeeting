@@ -37,9 +37,12 @@ import java.util.List;
  */
 @Slf4j
 @Component
-@Service(interfaceClass = AliPayServiceAPI.class, mock = "com.stylefeng.guns.api.alipay.AliPayServiceMock")
+@Service(interfaceClass = AliPayServiceAPI.class, mock = "com.stylefeng.guns.api.alipay.AliPayServiceMock", filter = "tracing")
 public class DefaultAlipayServiceImpl implements AliPayServiceAPI {
-    @Reference(interfaceClass = OrderServiceAPI.class, check = false)
+
+    public final String serverHost = "44.99.100.174";
+
+    @Reference(interfaceClass = OrderServiceAPI.class, check = false, filter = "tracing")
     private OrderServiceAPI orderServiceAPI;
     @Autowired
     private FTPUtil ftpUtil;
@@ -158,11 +161,12 @@ public class DefaultAlipayServiceImpl implements AliPayServiceAPI {
 
                 AlipayTradePrecreateResponse response = result.getResponse();
 
-                // 需要修改为运行机器上的路径
-                String filePath = String.format("/Users/GreenArrow/Downloads/qr-%s.png",
+                // 需要修改为运行机器上的路径，保存在本地
+                String filePath = String.format("/Users/GreenArrow/Desktop/conf/images/qr-%s.png",
                         response.getOutTradeNo());
                 file_path = filePath;
                 String fileName = String.format("qr-%s.png", response.getOutTradeNo());
+                file_path = fileName;
                 log.info("filePath:" + filePath);
                 File qrCodeImge = ZxingUtils.getQRCodeImge(response.getQrCode(), 256, filePath);
                 boolean isSuccess = ftpUtil.uploadFile(fileName, qrCodeImge);

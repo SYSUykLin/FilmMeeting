@@ -13,7 +13,6 @@ import com.stylefeng.guns.core.util.TokenBucket;
 import com.stylefeng.guns.core.util.ToolUtil;
 import com.stylefeng.guns.rest.common.CurrentUser;
 import com.stylefeng.guns.rest.modular.vo.ResponseVO;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -30,13 +29,13 @@ public class OrderController {
 
     private static TokenBucket tokenBucket = new TokenBucket();
 
-    private static final String IMG_PRE = "http://meetingshop.cn/";
+    private static final String IMG_PRE = "http://47.99.100.174/images/";
 
-    @Reference(interfaceClass = AliPayServiceAPI.class, check = false)
+    @Reference(interfaceClass = AliPayServiceAPI.class, check = false, filter = "tracing")
     private AliPayServiceAPI aliPayServiceAPI;
 
 
-    @Reference(interfaceClass = OrderServiceAPI.class, check = false)
+    @Reference(interfaceClass = OrderServiceAPI.class, check = false, filter = "tracing")
     private OrderServiceAPI orderServiceAPI;
 
 
@@ -121,12 +120,12 @@ public class OrderController {
             return ResponseVO.serviceFail("用户未登录");
         }
 
-        if (tryNums >= 4){
+        if (tryNums >= 4) {
             return ResponseVO.serviceFail("订单支付失败");
         }
 
         AliPayResultVO orderStatus = aliPayServiceAPI.getOrderStatus(orderId);
-        if (orderStatus == null || ToolUtil.isEmpty(orderStatus.getOrderId())){
+        if (orderStatus == null || ToolUtil.isEmpty(orderStatus.getOrderId())) {
             AliPayResultVO aliPayResultVO = new AliPayResultVO();
             aliPayResultVO.setOrderId(orderId);
             aliPayResultVO.setOrderStatus(0);

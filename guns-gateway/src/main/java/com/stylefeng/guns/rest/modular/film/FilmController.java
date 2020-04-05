@@ -18,14 +18,18 @@ import java.util.concurrent.Future;
 
 /**
  * @author greenArrow
+ *
+ *
  * @version 1.0
  * @date 2020/1/11 8:55 PM
  */
+
+
 @RestController
 @RequestMapping("/film/")
 public class FilmController {
 
-    private static final String IMG_PRE = "http://img.meetingshop.cn/";
+    private static final String IMG_PRE = "http://47.99.100.174/images/";
 
     @Reference(interfaceClass = FilmServiceAPI.class)
     private FilmServiceAPI filmServiceAPI;
@@ -152,7 +156,7 @@ public class FilmController {
     @RequestMapping(value = "getFilms", method = RequestMethod.GET)
     public ResponseVO getFilms(FilmRequestVO filmRequestVO) {
 
-        String img_pre = "http://img.meetingshop.cn/";
+        String img_pre = IMG_PRE;
 
         FilmVO filmVO = null;
         switch (filmRequestVO.getShowType()) {
@@ -227,7 +231,7 @@ public class FilmController {
         infoRequestVO.setImgVO(imgVOFuture.get());
 
         filmDetail.setInfo04(infoRequestVO);
-        return ResponseVO.success("http://img.meetingshop.cn/", filmDetail);
+        return ResponseVO.success(IMG_PRE, filmDetail);
     }
 
 }

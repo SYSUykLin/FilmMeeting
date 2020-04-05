@@ -21,7 +21,6 @@ import org.mengyun.tcctransaction.api.Compensable;
 import org.mengyun.tcctransaction.dubbo.context.DubboTransactionContextEditor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;
@@ -36,11 +35,11 @@ import java.util.List;
  */
 @Slf4j
 @Component
-@Service(interfaceClass = OrderServiceAPI.class)
+@Service(interfaceClass = OrderServiceAPI.class, filter = "tracing")
 public class DefaultOrderServiceImpl implements OrderServiceAPI {
     @Resource
     private OrderTMapper orderTMapper;
-    @Reference(interfaceClass = CinemaServiceAPI.class, check = false)
+    @Reference(interfaceClass = CinemaServiceAPI.class, check = false, filter = "tracing")
     private CinemaServiceAPI cinemaServiceAPI;
     @Autowired
     private FTPUtil ftpUtil;

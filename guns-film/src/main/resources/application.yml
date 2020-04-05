@@ -28,7 +28,7 @@ mybatis-plus:
 
 spring:
   application:
-    name: meeting-user
+    name: meeting-file
   dubbo:
     timeout: 50000
     server: true
